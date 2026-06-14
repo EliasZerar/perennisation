@@ -6,8 +6,8 @@
             "label": "Qu'est-ce que VR-AI ?"
         },
         {
-            "href": "#pourquoi",
-            "label": "Pourquoi cet atelier existe ?"
+            "href": "#objectif",
+            "label": "Quel est l'objectif de cet atelier ?"
         },
         {
             "href": "#approche",
@@ -30,7 +30,7 @@
         {
             "type": "introImg",
             "title": "VR-AI, une enquête au cœur du numérique",
-            "description": "VR-AI est un atelier qui aide les élèves de 6e à comprendre comment les images sont <strong>créées et manipulées</strong> à l'ère de l'intelligence artificielle."
+            "description": "VR-AI est un atelier qui aide les élèves de 6ème à comprendre comment les images sont <strong>créées et manipulées</strong> à l'ère de l'intelligence artificielle."
         },
         {
             "type": "h2",
@@ -43,7 +43,7 @@
         },
         {
             "type": "p",
-            "text": "On a imaginé cet atelier en partant d'un constat simple : aujourd'hui, les élèves utilisent énormément d'images au quotidien, mais ils ne se posent presque jamais de questions sur leur <strong>origine</strong> ou leur <strong>fabrication</strong>."
+            "text": "Nous avons imaginé cet atelier à partir d’un constat simple : aujourd’hui, les élèves consomment chaque jour énormément d’images, sans vraiment se questionner sur leur <strong>origine</strong> ni sur la façon dont elles sont <strong>créées</strong>."
         },
         {
             "type": "alertInfo",
@@ -51,16 +51,16 @@
         },
         {
             "type": "h2",
-            "id": "pourquoi",
-            "text": "Pourquoi cet atelier existe ?"
+            "id": "objectif",
+            "text": "Quel est l'objectif de cet atelier ?"
         },
         {
             "type": "p",
-            "text": "En avançant dans nos recherches, on s'est rendu compte que les élèves sont très à l'aise avec les réseaux sociaux, les vidéos ou les contenus numériques en général."
+            "text": "En avançant dans nos recherches, nous avons constaté que les élèves sont très à l'aise avec les réseaux sociaux, les vidéos ou les contenus numériques en général."
         },
         {
             "type": "p",
-            "text": "Mais cette facilité d'usage cache une réalité : ils ont peu de recul sur ce qu'ils regardent."
+            "text": "Pourtant, cette facilité d’usage masque une réalité : ils prennent peu de recul sur ce qu’ils consultent."
         },
         {
             "type": "p",
@@ -68,7 +68,7 @@
         },
         {
             "type": "p",
-            "text": "C'est dans ce contexte que VR-AI a été conçu."
+            "text": "C’est dans ce contexte qu’a été conçu VR-AI."
         },
         {
             "type": "h2",
@@ -94,7 +94,7 @@
         },
         {
             "type": "p",
-            "text": "L'atelier est conçu pour des élèves de 6e, sans aucun prérequis technique."
+            "text": "L'atelier est conçu pour des élèves de 6ème, sans aucun prérequis technique."
         },
         {
             "type": "p",
