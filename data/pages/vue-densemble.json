@@ -1,0 +1,112 @@
+{
+    "title": "Vue d'ensemble — Alibi",
+    "toc": [
+        {
+            "href": "#presentation",
+            "label": "Présentation"
+        },
+        {
+            "href": "#objectif",
+            "label": "L'objectif pédagogique"
+        },
+        {
+            "href": "#deroulement",
+            "label": "Déroulement global"
+        },
+        {
+            "href": "#commencer",
+            "label": "Par où commencer ?"
+        }
+    ],
+    "content": [
+        {
+            "type": "introImg",
+            "title": "Alibi",
+            "description": "Un atelier pédagogique sur les images et l'intelligence artificielle."
+        },
+        {
+            "type": "h2",
+            "id": "presentation",
+            "text": "Présentation"
+        },
+        {
+            "type": "p",
+            "text": "Alibi est un atelier pédagogique conçu pour les élèves de 6e. Il les amène à questionner les images qu'ils consomment au quotidien, en particulier celles générées ou modifiées par l'intelligence artificielle."
+        },
+        {
+            "type": "h2",
+            "id": "objectif",
+            "text": "L'objectif pédagogique"
+        },
+        {
+            "type": "p",
+            "text": "L'atelier ne cherche pas à donner des réponses toutes faites. Il vise à développer un réflexe : prendre le temps d'observer avant de croire."
+        },
+        {
+            "type": "alertInfo",
+            "text": "Alibi s'inscrit dans une démarche d'éducation aux médias et à l'information (EMI)."
+        },
+        {
+            "type": "h2",
+            "id": "deroulement",
+            "text": "Déroulement global"
+        },
+        {
+            "type": "p",
+            "text": "L'atelier se déroule en plusieurs étapes successives, de la mise en place jusqu'au débrief final."
+        },
+        {
+            "type": "cardContainer",
+            "cards": [
+                {
+                    "title": "Préparation",
+                    "content": "Rassembler le matériel et préparer les espaces avant l'arrivée des élèves.",
+                    "link": {
+                        "href": "materiel.html",
+                        "label": "Voir le matériel"
+                    }
+                },
+                {
+                    "title": "Lancement",
+                    "content": "Installer l'ambiance, présenter la situation et lancer l'enquête.",
+                    "link": {
+                        "href": "lancement.html",
+                        "label": "Voir le lancement"
+                    }
+                },
+                {
+                    "title": "Enquête",
+                    "content": "Les élèves analysent les indices en groupes séparés.",
+                    "link": {
+                        "href": "enquete-1.html",
+                        "label": "Voir l'enquête"
+                    }
+                },
+                {
+                    "title": "Résolution",
+                    "content": "Les groupes se rejoignent pour découvrir la vérité.",
+                    "link": {
+                        "href": "resolution.html",
+                        "label": "Voir la résolution"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "h2",
+            "id": "commencer",
+            "text": "Par où commencer ?"
+        },
+        {
+            "type": "p",
+            "text": "Si c'est votre première fois avec Alibi, commencez par lire la page À propos pour comprendre le projet, puis consultez le Guide d'animation."
+        },
+        {
+            "type": "pageNav",
+            "next": {
+                "href": "a-propos.html",
+                "label": "À propos d'Alibi"
+            }
+        }
+    ]
+}

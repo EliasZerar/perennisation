@@ -1,0 +1,185 @@
+{
+    "title": "Template — Composants",
+    "toc": [
+        {
+            "href": "#titres",
+            "label": "Titres et paragraphes"
+        },
+        {
+            "href": "#alertes",
+            "label": "Alertes"
+        },
+        {
+            "href": "#intro-img",
+            "label": "Image d'introduction"
+        },
+        {
+            "href": "#tableau",
+            "label": "Tableau"
+        },
+        {
+            "href": "#copier",
+            "label": "Bloc à copier"
+        },
+        {
+            "href": "#cartes",
+            "label": "Cartes"
+        },
+        {
+            "href": "#formulaire",
+            "label": "Formulaire"
+        }
+    ],
+    "content": [
+        {
+            "type": "h1",
+            "id": "titres",
+            "text": "Template — Composants"
+        },
+        {
+            "type": "h2",
+            "id": "titres",
+            "text": "Titres et paragraphes"
+        },
+        {
+            "type": "p",
+            "text": "Ceci est un paragraphe standard. Il peut contenir du texte long décrivant une notion, un contexte ou une instruction à destination de l'animateur ou de l'élève. La lisibilité est au cœur du design."
+        },
+        {
+            "type": "h3",
+            "text": "Sous-titre de niveau 3"
+        },
+        {
+            "type": "p",
+            "text": "Les titres h3 permettent de structurer des sous-sections sans créer une entrée dans la table des matières. Utile pour organiser du contenu dense."
+        },
+        {
+            "type": "h2",
+            "id": "alertes",
+            "text": "Alertes"
+        },
+        {
+            "type": "alertInfo",
+            "text": "Info : ceci est une alerte de type information. Elle attire l'attention sur un conseil ou une remarque pédagogique sans caractère d'urgence."
+        },
+        {
+            "type": "alertError",
+            "text": "Attention : ceci est une alerte de type erreur. Elle signale un point critique à ne pas manquer lors de l'animation."
+        },
+        {
+            "type": "h2",
+            "id": "intro-img",
+            "text": "Image d'introduction"
+        },
+        {
+            "type": "p",
+            "text": "Le composant introImg affiche une image en pleine largeur avec un titre et une description en overlay. Il sert de visuel d'accroche en tête de page."
+        },
+        {
+            "type": "introImg",
+            "title": "Alibi, une enquête au cœur du numérique",
+            "description": "Alibi est un atelier qui aide les élèves de 6e à comprendre comment les images sont créées et manipulées à l'ère de l'intelligence artificielle."
+        },
+        {
+            "type": "h2",
+            "id": "tableau",
+            "text": "Tableau"
+        },
+        {
+            "type": "table",
+            "caption": "Liste du Matériel",
+            "headers": [
+                "Élément",
+                "Description",
+                "Quantité"
+            ],
+            "rows": [
+                [
+                    "Exemple A",
+                    "Description de l'élément",
+                    "1"
+                ],
+                [
+                    "Exemple B",
+                    "Autre description",
+                    "Variable"
+                ]
+            ]
+        },
+        {
+            "type": "h2",
+            "id": "copier",
+            "text": "Bloc à copier"
+        },
+        {
+            "type": "p",
+            "text": "Le composant copyBox permet d'afficher un texte que l'utilisateur peut copier en un clic. Utile pour les instructions, les codes ou les extraits à réutiliser."
+        },
+        {
+            "type": "copyBox",
+            "text": "Ceci est le texte que l'animateur peut copier directement pour l'envoyer aux participants ou l'intégrer dans un autre support."
+        },
+        {
+            "type": "h2",
+            "id": "cartes",
+            "text": "Cartes"
+        },
+        {
+            "type": "p",
+            "text": "Le composant card permet d'afficher une carte avec un titre, un contenu et un lien. Plusieurs cartes peuvent être regroupées dans un cardContainer en grille responsive."
+        },
+        {
+            "type": "cardContainer",
+            "cards": [
+                {
+                    "title": "Exemple de carte",
+                    "content": "Contenu de la carte avec une description courte.",
+                    "link": {
+                        "href": "#",
+                        "label": "En savoir plus"
+                    }
+                },
+                {
+                    "title": "Deuxième carte",
+                    "content": "Une autre carte avec un lien différent.",
+                    "link": {
+                        "href": "#",
+                        "label": "Voir plus"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "h2",
+            "id": "formulaire",
+            "text": "Formulaire"
+        },
+        {
+            "type": "form",
+            "action": "#",
+            "submit": "Envoyer",
+            "fields": [
+                {
+                    "id": "name",
+                    "type": "text",
+                    "label": "Nom"
+                },
+                {
+                    "id": "email",
+                    "type": "email",
+                    "label": "Email"
+                },
+                {
+                    "id": "subject",
+                    "type": "text",
+                    "label": "Sujet"
+                },
+                {
+                    "id": "message",
+                    "type": "textarea",
+                    "label": "Message"
+                }
+            ]
+        }
+    ]
+}

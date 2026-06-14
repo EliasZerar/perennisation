@@ -1,0 +1,185 @@
+{
+    "title": "Adapter l'atelier",
+    "toc": [
+        {
+            "href": "#temps",
+            "label": "Adapter selon le temps disponible"
+        },
+        {
+            "href": "#niveau",
+            "label": "Adapter selon le niveau des élèves"
+        },
+        {
+            "href": "#espace",
+            "label": "Adapter selon l'espace disponible"
+        },
+        {
+            "href": "#materiel",
+            "label": "Adapter le matériel"
+        },
+        {
+            "href": "#essentiel",
+            "label": "Garder l'essentiel"
+        }
+    ],
+    "content": [
+        {
+            "type": "h1",
+            "id": "titre",
+            "text": "Un atelier flexible"
+        },
+        {
+            "type": "p",
+            "text": "Alibi a été conçu pour être utilisé dans différents contextes."
+        },
+        {
+            "type": "p",
+            "text": "Il peut être adapté en fonction du groupe, du temps disponible ou des contraintes matérielles."
+        },
+        {
+            "type": "p",
+            "text": "L'objectif est de conserver la logique de l'enquête, tout en ajustant la mise en place."
+        },
+        {
+            "type": "h2",
+            "id": "temps",
+            "text": "Adapter selon le temps disponible"
+        },
+        {
+            "type": "p",
+            "text": "L'atelier peut être modulé en fonction de la durée."
+        },
+        {
+            "type": "p",
+            "text": "Si le temps est limité, vous pouvez :"
+        },
+        {
+            "type": "ul",
+            "items": [
+                "réduire le nombre d'indices",
+                "simplifier certaines étapes de l'enquête",
+                "accélérer la phase de débrief"
+            ]
+        },
+        {
+            "type": "p",
+            "text": "À l'inverse, si vous disposez de plus de temps, vous pouvez approfondir certaines étapes et laisser plus de place à la discussion."
+        },
+        {
+            "type": "alertInfo",
+            "text": "L'important n'est pas la durée, mais la compréhension des élèves."
+        },
+        {
+            "type": "h2",
+            "id": "niveau",
+            "text": "Adapter selon le niveau des élèves"
+        },
+        {
+            "type": "p",
+            "text": "Tous les groupes n'ont pas le même niveau d'observation ou de réflexion."
+        },
+        {
+            "type": "p",
+            "text": "Vous pouvez ajuster :"
+        },
+        {
+            "type": "ul",
+            "items": [
+                "la difficulté des incohérences",
+                "le nombre d'indices à analyser",
+                "le niveau de guidage"
+            ]
+        },
+        {
+            "type": "p",
+            "text": "Pour des élèves plus jeunes ou moins à l'aise, il est préférable de proposer des erreurs plus visibles."
+        },
+        {
+            "type": "h2",
+            "id": "espace",
+            "text": "Adapter selon l'espace disponible"
+        },
+        {
+            "type": "p",
+            "text": "L'atelier fonctionne idéalement avec deux espaces distincts."
+        },
+        {
+            "type": "p",
+            "text": "Si ce n'est pas possible, vous pouvez :"
+        },
+        {
+            "type": "ul",
+            "items": [
+                "organiser la classe en deux zones",
+                "utiliser des tables séparées",
+                "limiter les déplacements"
+            ]
+        },
+        {
+            "type": "p",
+            "text": "L'essentiel est de maintenir une séparation entre les groupes pour préserver la mécanique de collaboration."
+        },
+        {
+            "type": "alertError",
+            "text": "Si tous les élèves ont accès aux mêmes informations, la mécanique de l'enquête perd en intérêt."
+        },
+        {
+            "type": "h2",
+            "id": "materiel",
+            "text": "Adapter le matériel"
+        },
+        {
+            "type": "p",
+            "text": "Le matériel peut être simplifié si nécessaire."
+        },
+        {
+            "type": "p",
+            "text": "Par exemple :"
+        },
+        {
+            "type": "ul",
+            "items": [
+                "remplacer certains objets physiques par des documents imprimés",
+                "utiliser une seule série d'images",
+                "projeter la vidéo au lieu de la rendre interactive"
+            ]
+        },
+        {
+            "type": "p",
+            "text": "L'objectif est de rester fonctionnel, même avec peu de moyens."
+        },
+        {
+            "type": "h2",
+            "id": "essentiel",
+            "text": "Garder l'essentiel"
+        },
+        {
+            "type": "p",
+            "text": "Quelle que soit l'adaptation, certains éléments doivent être conservés :"
+        },
+        {
+            "type": "ul",
+            "items": [
+                "une séparation des informations entre les groupes",
+                "des images contenant des incohérences",
+                "un moment de mise en commun",
+                "un débrief final"
+            ]
+        },
+        {
+            "type": "p",
+            "text": "Ce sont ces éléments qui permettent à l'atelier de fonctionner."
+        },
+        {
+            "type": "pageNav",
+            "prev": {
+                "href": "creer-preuves.html",
+                "label": "Créer ses preuves"
+            },
+            "next": {
+                "href": "kit-telechargeable.html",
+                "label": "Kit téléchargeable"
+            }
+        }
+    ]
+}

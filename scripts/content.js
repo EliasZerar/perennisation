@@ -1,0 +1,345 @@
+// ─── Résolution des chemins (local vs GitHub Pages) ──────────────────────────
+(function () {
+    function getSiteBasePath() {
+        const isGithubPages = window.location.hostname.endsWith('github.io');
+        if (!isGithubPages) return '/';
+        const segments = window.location.pathname.split('/').filter(Boolean);
+        return segments.length > 0 ? `/${segments[0]}/` : '/';
+    }
+
+    window.resolveSitePath = function (path) {
+        if (!path || typeof path !== 'string') return '';
+        if (/^(?:https?:)?\/\//.test(path) || path.startsWith('data:')) return path;
+        return `${getSiteBasePath()}${path.replace(/^\/+/, '').replace(/^\.\//, '')}`;
+    };
+})();
+
+
+// ─── Chargement de la page ────────────────────────────────────────────────────
+(async function () {
+    const pageId = document.body.dataset.page;
+    if (!pageId) return;
+
+    const resolve = window.resolveSitePath;
+
+    try {
+        const [navRes, pageRes] = await Promise.all([
+            fetch(resolve('data/nav.json')),
+            fetch(resolve(`data/pages/${pageId}.json`))
+        ]);
+
+        const nav  = await navRes.json();
+        const page = await pageRes.json();
+
+        renderNav(nav, pageId);
+
+        if (page.title)   document.title = page.title;
+        if (page.content) renderContent(page.content);
+        if (page.toc)     renderToc(page.toc);
+        if (page.toc)     setupTocScroll();
+
+    } catch (e) {
+        console.error('Erreur de chargement :', e);
+    }
+
+    setupMobileNav();
+    setupMobileToc();
+})();
+
+
+// ─── Navigation ───────────────────────────────────────────────────────────────
+function renderNav(nav, activePageId) {
+    const navEl        = document.querySelector('.nav nav');
+    const mobileNavEl  = document.querySelector('.mobile-nav-list');
+    const breadcrumbEl = document.querySelector('.mobile-breadcrumb-text');
+    const currentFile  = window.location.pathname.split('/').pop() || 'index.html';
+
+    function isActive(link) {
+        return link.href.split('/').pop() === currentFile || link.pageId === activePageId;
+    }
+
+    let html = '';
+    let breadcrumb = null;
+
+    for (const link of nav.links ?? []) {
+        const active = isActive(link);
+        html += `<a href="${link.href}" class="nav-link${active ? ' active' : ''}">${link.label}</a>`;
+        if (active && !breadcrumb) breadcrumb = { label: link.label };
+    }
+
+    for (const group of nav.groups ?? []) {
+        html += `<div class="nav-group"><p class="nav-group-title">${group.title}</p><ul>`;
+        for (const link of group.links) {
+            const active = isActive(link);
+            html += `<li><a href="${link.href}" class="nav-link${active ? ' active' : ''}">${link.label}</a></li>`;
+            if (active && !breadcrumb) breadcrumb = { group: group.title, label: link.label };
+        }
+        html += `</ul></div>`;
+    }
+
+    if (navEl)       navEl.innerHTML = html;
+    if (mobileNavEl) mobileNavEl.innerHTML = html;
+
+    if (breadcrumbEl && breadcrumb) {
+        breadcrumbEl.innerHTML = breadcrumb.group
+            ? `${breadcrumb.group} <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin:0 2px"><path d="M1 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <strong>${breadcrumb.label}</strong>`
+            : `<strong>${breadcrumb.label}</strong>`;
+    }
+}
+
+
+// ─── Table des matières ───────────────────────────────────────────────────────
+function renderToc(toc) {
+    const tocList       = document.querySelector('.toc ul');
+    const mobileTocList = document.querySelector('.mobile-toc-list');
+
+    const html = toc.map((item, i) =>
+        `<li><a href="${item.href}" class="toc-link${i === 0 ? ' active' : ''}">${item.label}</a></li>`
+    ).join('');
+
+    if (tocList)       tocList.innerHTML = html;
+    if (mobileTocList) mobileTocList.innerHTML = html;
+}
+
+function setupTocScroll() {
+    const contentEl = document.querySelector('.content');
+    const headings  = Array.from(document.querySelectorAll('.content h1, .content h2, .content h3')).filter(h => h.id);
+    const tocLinks  = Array.from(document.querySelectorAll('.toc-link'));
+
+    if (!contentEl || !headings.length || !tocLinks.length) return;
+
+    const idToLink = {};
+    tocLinks.forEach(link => {
+        const id = link.getAttribute('href')?.slice(1);
+        if (id) idToLink[id] = link;
+    });
+
+    tocLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.getElementById(link.getAttribute('href')?.slice(1));
+            if (!target) return;
+            const offset = window.innerWidth <= 768 ? 16 : 30;
+            contentEl.scrollTo({
+                top: target.getBoundingClientRect().top - contentEl.getBoundingClientRect().top + contentEl.scrollTop - offset,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    contentEl.addEventListener('scroll', () => {
+        const contentTop = contentEl.getBoundingClientRect().top;
+        let activeLink = tocLinks[0];
+        headings.forEach(h => {
+            if (h.getBoundingClientRect().top - contentTop - 30 <= 1 && idToLink[h.id]) {
+                activeLink = idToLink[h.id];
+            }
+        });
+        tocLinks.forEach(l => l.classList.remove('active'));
+        activeLink?.classList.add('active');
+    });
+}
+
+
+// ─── Renderers de blocs ───────────────────────────────────────────────────────
+function renderContent(blocks) {
+    const contentEl   = document.querySelector('.content');
+    if (!contentEl) return;
+
+    const mobileHeader = contentEl.querySelector('.mobile-toc-header');
+
+    const renderers = {
+        h1: b => `<h1${b.id ? ` id="${b.id}"` : ''}>${b.text}</h1>`,
+        h2: b => `<h2${b.id ? ` id="${b.id}"` : ''}>${b.text}</h2>`,
+        h3: b => `<h3${b.id ? ` id="${b.id}"` : ''}>${b.text}</h3>`,
+        p:  b => `<p>${b.text}</p>`,
+        hr: () => `<hr class="section-divider">`,
+
+        ul: b => `<ul>${(b.items ?? []).map(i => `<li>${i}</li>`).join('')}</ul>`,
+        ol: b => `<ol>${(b.items ?? []).map(i => `<li>${i}</li>`).join('')}</ol>`,
+
+        alertInfo:  b => `<div class="alert info"><div class="icon-alert-svg"></div><span>${b.text}</span></div>`,
+        alertError: b => `<div class="alert error"><div class="icon-alert-svg"></div><span>${b.text}</span></div>`,
+
+        copyBox: b => `
+            <div class="copy-box">
+                <p class="copy-text text_limit">${b.text}</p>
+                <button class="copy-button" aria-label="Copier le texte">
+                    <div class="copy-logo" aria-hidden="true"></div>
+                    <div class="copy-logo copy-check" aria-hidden="true"></div>
+                </button>
+                <p class="copy-message" role="status" aria-live="polite">Le texte a été copié !</p>
+            </div>`,
+
+        table: b => {
+            const headers = b.headers.map(h => `<th scope="col">${h}</th>`).join('');
+            const rows    = b.rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('');
+            return `<div class="table-wrapper"><table><caption>${b.caption ?? ''}</caption><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table></div>`;
+        },
+
+        introImg: b => `
+            <div class="intro_img">
+                <h1 class="squareserif specimen-xl">${b.title}</h1>
+                ${b.description ? `<p class="text_limit">${b.description}</p>` : ''}
+            </div>`,
+
+        placeholder: b => `
+            <figure class="placeholder-img">
+                <div class="placeholder-box" style="aspect-ratio:${b.ratio ?? '16/9'}">
+                    <span>${b.label ?? 'Image à venir'}</span>
+                </div>
+                ${b.caption ? `<figcaption>${b.caption}</figcaption>` : ''}
+            </figure>`,
+
+        steps: b => {
+            const start = b.startAt ?? 1;
+            return `<ol class="steps-list" style="counter-reset: step-counter ${start - 1}">
+                ${(b.items ?? []).map((step, i) => `
+                <li class="step-item">
+                    <span class="step-number">${i + start}</span>
+                    <div class="step-content">
+                        <strong class="step-title">${step.title}</strong>
+                        ${(step.body ?? []).map(line => `<p>${line}</p>`).join('')}
+                        ${step.extraList ? `<ul>${step.extraList.map(li => `<li>${li}</li>`).join('')}</ul>` : ''}
+                        ${(step.extraBody ?? []).map(line => `<p>${line}</p>`).join('')}
+                        ${step.extraList2 ? `<ul>${step.extraList2.map(li => `<li>${li}</li>`).join('')}</ul>` : ''}
+                        ${(step.extraBody2 ?? []).map(line => `<p>${line}</p>`).join('')}
+                        ${step.alert ? `<div class="alert ${step.alert.type}"><div class="icon-alert-svg"></div><span>${step.alert.text}</span></div>` : ''}
+                    </div>
+                </li>`).join('')}
+            </ol>`;
+        },
+
+        card: b => `
+            <div class="input">
+                <div class="input-text">
+                    <h2 class="squareserif">${b.title}</h2>
+                    <p class="general-sans-medium">${b.content}</p>
+                </div>
+                ${b.link ? `<div class="link"><a href="${b.link.href}">${b.link.label}<div class="icon-arrow-svg"></div></a></div>` : ''}
+            </div>`,
+
+        cardContainer: b => `
+            <div class="card-container">
+                ${(b.cards ?? []).map(card => `
+                <div class="input">
+                    <div class="input-text">
+                        <h2 class="squareserif">${card.title}</h2>
+                        <p class="general-sans-medium">${card.content}</p>
+                    </div>
+                    ${card.link ? `<div class="link"><a href="${card.link.href}">${card.link.label}<div class="icon-arrow-svg"></div></a></div>` : ''}
+                </div>`).join('')}
+            </div>`,
+
+        questionGrid: b => `
+            <div class="question-grid">
+                ${(b.items ?? []).map(item => `
+                <div class="question-grid-item">
+                    <h3>${item.title}</h3>
+                    <ul>${(item.list ?? []).map(li => `<li>${li}</li>`).join('')}</ul>
+                </div>`).join('')}
+            </div>`,
+
+        pageNav: b => `
+            <nav class="page-nav" aria-label="Navigation entre pages">
+                ${b.prev ? `<a href="${b.prev.href}" class="page-nav-btn page-nav-prev">‹ ${b.prev.label}</a>` : '<span></span>'}
+                ${b.next ? `<a href="${b.next.href}" class="page-nav-btn page-nav-next">${b.next.label} ›</a>` : ''}
+            </nav>`,
+
+        form: b => `
+            <form action="${b.action ?? '#'}" method="POST" class="form" novalidate>
+                <p>*Tous les champs sont obligatoires.</p>
+                ${(b.fields ?? []).map(f => f.type === 'textarea'
+                    ? `<label for="${f.id}"><textarea id="${f.id}" name="${f.id}" placeholder=" " required></textarea><span>${f.label}</span></label>`
+                    : `<label for="${f.id}"><input type="${f.type ?? 'text'}" id="${f.id}" name="${f.id}" placeholder=" " required ${f.autocomplete ? `autocomplete="${f.autocomplete}"` : ''}><span>${f.label}</span></label>`
+                ).join('')}
+                <div id="errors" role="alert" aria-live="assertive" class="form-feedback">
+                    <div class="icon-alert-svg"></div>
+                    <span class="feedback-text"></span>
+                </div>
+                <button class="btn general-sans-semibold" type="submit">${b.submit ?? 'Envoyer'}</button>
+            </form>`,
+    };
+
+    // Regroupement automatique des infoImg consécutives en galerie
+    const htmlParts = [];
+    for (let i = 0; i < blocks.length; i++) {
+        const block = blocks[i];
+
+        if (block.type === 'infoImg') {
+            const gallery = [block];
+            while (i + 1 < blocks.length && blocks[i + 1].type === 'infoImg') {
+                gallery.push(blocks[++i]);
+            }
+            const cols       = Math.min(gallery.length, 3);
+            const singleClass = gallery.length === 1 ? ' info_img_gallery--single' : '';
+            htmlParts.push(
+                `<div class="info_img_gallery${singleClass}" style="--info-columns:${cols};">` +
+                gallery.map(item => {
+                    const src = window.resolveSitePath(item.src);
+                    return `<figure class="info_img"><img src="${src}" alt="${item.alt ?? ''}">${item.caption ? `<figcaption>${item.caption}</figcaption>` : ''}</figure>`;
+                }).join('') +
+                `</div>`
+            );
+            continue;
+        }
+
+        htmlParts.push(renderers[block.type]?.(block) ?? '');
+    }
+
+    contentEl.innerHTML = htmlParts.join('');
+
+    if (mobileHeader) contentEl.insertBefore(mobileHeader, contentEl.firstChild);
+    if (typeof initForm === 'function') initForm();
+
+    // Footer injecté dans .content pour qu'il suive le scroll et s'arrête à la sidebar
+    contentEl.insertAdjacentHTML('beforeend', `
+        <footer>
+            <a href="index.html" class="logo-link">
+                <img src="assets/svg/logoMetfordTigers.svg" alt="Accueil Metford Tigers">
+            </a>
+            <p>Alibi — Atelier pédagogique</p>
+            <p>Projet BUT MMI 2026-2027</p>
+        </footer>
+    `);
+}
+
+
+// ─── Navigation mobile ────────────────────────────────────────────────────────
+function setupMobileNav() {
+    const overlay   = document.getElementById('mobile-nav-overlay');
+    const trigger   = document.getElementById('mobile-nav-trigger');
+    const closeBtn  = overlay?.querySelector('.mobile-nav-close');
+    const backdrop  = overlay?.querySelector('.mobile-nav-backdrop');
+    const searchBtn = document.querySelector('.mobile-search-btn');
+
+    if (!overlay || !trigger) return;
+
+    const openNav  = () => { overlay.removeAttribute('hidden'); trigger.setAttribute('aria-expanded', 'true');  document.body.style.overflow = 'hidden'; };
+    const closeNav = () => { overlay.setAttribute('hidden', ''); trigger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
+
+    trigger.addEventListener('click', openNav);
+    searchBtn?.addEventListener('click', () => {
+        openNav();
+        setTimeout(() => overlay.querySelector('.mobile-nav-search-bar input')?.focus(), 50);
+    });
+    closeBtn?.addEventListener('click', closeNav);
+    backdrop?.addEventListener('click', closeNav);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !overlay.hasAttribute('hidden')) closeNav(); });
+}
+
+
+// ─── TOC mobile ───────────────────────────────────────────────────────────────
+function setupMobileToc() {
+    const btn   = document.querySelector('.mobile-toc-btn');
+    const popup = document.querySelector('.mobile-toc-popup');
+    if (!btn || !popup) return;
+
+    const openToc  = () => { popup.removeAttribute('hidden'); btn.setAttribute('aria-expanded', 'true'); };
+    const closeToc = () => { popup.setAttribute('hidden', ''); btn.setAttribute('aria-expanded', 'false'); };
+
+    btn.addEventListener('click', e => { e.stopPropagation(); popup.hasAttribute('hidden') ? openToc() : closeToc(); });
+    document.addEventListener('click', e => { if (!e.target.closest('.mobile-toc-header')) closeToc(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !popup.hasAttribute('hidden')) closeToc(); });
+    popup.addEventListener('click', e => { if (e.target.classList.contains('toc-link')) closeToc(); });
+}

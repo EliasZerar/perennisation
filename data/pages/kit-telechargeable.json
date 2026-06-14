@@ -1,0 +1,151 @@
+{
+    "title": "Kit téléchargeable",
+    "toc": [
+        {
+            "href": "#contenu",
+            "label": "Contenu du kit"
+        },
+        {
+            "href": "#utiliser",
+            "label": "Utiliser le kit"
+        },
+        {
+            "href": "#analyser",
+            "label": "Analyser les images"
+        },
+        {
+            "href": "#adapter",
+            "label": "Adapter les fichiers"
+        }
+    ],
+    "content": [
+        {
+            "type": "h1",
+            "id": "titre",
+            "text": "Télécharger le kit"
+        },
+        {
+            "type": "p",
+            "text": "Pour faciliter la mise en place de l'atelier, l'ensemble des ressources est regroupé dans un kit prêt à l'emploi."
+        },
+        {
+            "type": "p",
+            "text": "Ce kit permet de préparer, animer et adapter l'atelier sans avoir besoin de créer de nouveaux supports."
+        },
+        {
+            "type": "alertInfo",
+            "text": "Le kit a été conçu pour être utilisé directement. Il peut toutefois être modifié selon vos besoins."
+        },
+        {
+            "type": "h2",
+            "id": "contenu",
+            "text": "Contenu du kit"
+        },
+        {
+            "type": "cardContainer",
+            "cards": [
+                {
+                    "title": "Fiches élèves",
+                    "content": "Documents remis pendant l'enquête pour guider l'analyse des images.",
+                    "link": {
+                        "href": "#",
+                        "label": "Voir les fiches"
+                    }
+                },
+                {
+                    "title": "Images et preuves",
+                    "content": "Captures d'écran et éléments visuels utilisés dans l'enquête.",
+                    "link": {
+                        "href": "#",
+                        "label": "Explorer les ressources"
+                    }
+                },
+                {
+                    "title": "Vidéos",
+                    "content": "Vidéos de surveillance (version modifiée et originale).",
+                    "link": {
+                        "href": "#",
+                        "label": "Voir les vidéos"
+                    }
+                },
+                {
+                    "title": "Guide d'animation",
+                    "content": "Document récapitulatif pour accompagner l'animateur.",
+                    "link": {
+                        "href": "#",
+                        "label": "Consulter le guide"
+                    }
+                },
+                {
+                    "title": "Supports imprimables",
+                    "content": "Éléments à imprimer pour la mise en place de l'atelier.",
+                    "link": {
+                        "href": "#",
+                        "label": "Télécharger les supports"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "h2",
+            "id": "utiliser",
+            "text": "Utiliser le kit"
+        },
+        {
+            "type": "p",
+            "text": "Une fois téléchargé, il est recommandé de :"
+        },
+        {
+            "type": "ul",
+            "items": [
+                "vérifier le contenu",
+                "imprimer les documents nécessaires",
+                "tester les éléments avant l'atelier"
+            ]
+        },
+        {
+            "type": "p",
+            "text": "Cela permet d'éviter les imprévus le jour de l'animation."
+        },
+        {
+            "type": "alertError",
+            "text": "Pensez à tester les fichiers avant l'atelier pour éviter tout problème technique."
+        },
+        {
+            "type": "h2",
+            "id": "adapter",
+            "text": "Adapter les fichiers"
+        },
+        {
+            "type": "p",
+            "text": "Les fichiers fournis peuvent être modifiés."
+        },
+        {
+            "type": "p",
+            "text": "Vous pouvez :"
+        },
+        {
+            "type": "ul",
+            "items": [
+                "adapter les images",
+                "modifier les fiches",
+                "ajuster les éléments selon votre contexte"
+            ]
+        },
+        {
+            "type": "p",
+            "text": "L'objectif est de permettre une <strong>réutilisation simple et flexible</strong>."
+        },
+        {
+            "type": "pageNav",
+            "prev": {
+                "href": "adapter.html",
+                "label": "Adapter l'atelier"
+            },
+            "next": {
+                "href": "documents.html",
+                "label": "Documents"
+            }
+        }
+    ]
+}
