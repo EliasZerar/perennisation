@@ -1,5 +1,5 @@
 {
-    "title": "Vue d'ensemble — Alibi",
+    "title": "Vue d'ensemble — VR-AI",
     "toc": [
         {
             "href": "#presentation",
@@ -21,7 +21,7 @@
     "content": [
         {
             "type": "introImg",
-            "title": "Alibi",
+            "title": "VR-AI",
             "description": "Un atelier pédagogique sur les images et l'intelligence artificielle."
         },
         {
@@ -31,7 +31,7 @@
         },
         {
             "type": "p",
-            "text": "Alibi est un atelier pédagogique conçu pour les élèves de 6e. Il les amène à questionner les images qu'ils consomment au quotidien, en particulier celles générées ou modifiées par l'intelligence artificielle."
+            "text": "VR-AI est un atelier pédagogique conçu pour les élèves de 6e. Il les amène à questionner les images qu'ils consomment au quotidien, en particulier celles générées ou modifiées par l'intelligence artificielle."
         },
         {
             "type": "h2",
@@ -44,7 +44,7 @@
         },
         {
             "type": "alertInfo",
-            "text": "Alibi s'inscrit dans une démarche d'éducation aux médias et à l'information (EMI)."
+            "text": "VR-AI s'inscrit dans une démarche d'éducation aux médias et à l'information (EMI)."
         },
         {
             "type": "h2",
@@ -99,13 +99,13 @@
         },
         {
             "type": "p",
-            "text": "Si c'est votre première fois avec Alibi, commencez par lire la page À propos pour comprendre le projet, puis consultez le Guide d'animation."
+            "text": "Si c'est votre première fois avec VR-AI, commencez par lire la page À propos pour comprendre le projet, puis consultez le Guide d'animation."
         },
         {
             "type": "pageNav",
             "next": {
                 "href": "a-propos.html",
-                "label": "À propos d'Alibi"
+                "label": "À propos de VR-AI"
             }
         }
     ]

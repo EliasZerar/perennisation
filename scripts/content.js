@@ -275,7 +275,6 @@ function renderContent(blocks) {
                 ${b.next ? `<a href="${b.next.href}" class="page-nav-btn page-nav-next">${b.next.label} ›</a>` : ''}
             </nav>`,
 
-        // 🌟 Formulaire accessible (autocomplete et aria-live)
         form: b => `
             <form action="${b.action ?? '#'}" method="POST" class="form" novalidate>
                 <p>*Tous les champs sont obligatoires.</p>
