@@ -375,25 +375,32 @@ p {
 
 @media (max-width: 768px) {
     .question-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: var(--spacing-6) var(--spacing-4);
     }
 }
 
+/* ── 🌟 Grille d'images sécurisée (img_content) ──────────────────────── */
 .img-content-grid {
-    /* La variable --grid-cols est injectée par le JS (ex: 2) */
-    grid-template-columns: repeat(var(--grid-cols, 1), 1fr);
+    display: grid;
+    grid-template-columns: 1fr; /* Par défaut sur mobile : empilé */
     gap: var(--spacing-4);
-    margin: var(--spacing-4) 0;
+    margin-top: var(--spacing-4);
+    margin-bottom: var(--spacing-10); /* Évite le chevauchement avec le contenu du bas */
+    width: 100%;
 }
 
 .img-content-grid .placeholder-img {
     margin: 0;
-    height: 100%;
+    height: auto; /* Empêche l'effondrement de la boîte de calcul de hauteur */
+    display: flex;
+    flex-direction: column;
 }
 
-@media (max-width: 768px) {
+/* Version Desktop : passage côte à côte */
+@media (min-width: 768px) {
     .img-content-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(var(--grid-cols, 2), minmax(0, 1fr));
+        align-items: stretch; /* Aligne proprement la hauteur des deux blocs sans bugger */
     }
 }
