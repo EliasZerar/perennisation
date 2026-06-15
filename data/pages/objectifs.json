@@ -1,5 +1,5 @@
 {
-    "title": "Objectifs pédagogiques",
+    "title": "Objectifs pédagogiques de VR-AI",
     "toc": [
         {
             "href": "#esprit-critique",
@@ -141,7 +141,7 @@
             },
             "next": {
                 "href": "synopsis.html",
-                "label": "Synopsis"
+                "label": "Synopsis de VR-AI"
             }
         }
     ]
