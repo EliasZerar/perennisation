@@ -289,7 +289,7 @@ function renderContent(blocks) {
             </nav>`,
 
         form: b => `
-            <form action="${b.action ?? '#'}" method="POST" class="form" novalidate>
+            <form action="https://formspree.io/f/mbdeleeb" method="POST" class="form" novalidate>
                 <p>*Tous les champs sont obligatoires.</p>
                 ${(b.fields ?? []).map(f => f.type === 'textarea' ? 
                     `<label for="${f.id}">
@@ -307,6 +307,20 @@ function renderContent(blocks) {
                 </div>
                 <button class="btn general-sans-semibold" type="submit">${b.submit ?? 'Envoyer'}</button>
             </form>`,
+
+        SummaryGroup: b => `
+            <div class="accordion-group">
+                ${(b.items ?? []).map(acc => `
+                <details class="summary">
+                    <summary class="summary-header">
+                        <span class="summary-title">${acc.title}</span>
+                        <div class="icon-arrow-svg summary-icon"></div>
+                    </summary>
+                    <div class="summary-body">
+                        <p class="general-sans-medium">${acc.content}</p>
+                    </div>
+                </details>`).join('')}
+            </div>`,
     };
 
     // Regroupement automatique des infoImg consécutives en galerie
