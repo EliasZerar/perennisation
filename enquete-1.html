@@ -18,6 +18,12 @@
 
 <body data-page="enquete-1">
 
+<div class="ellipses-container" aria-hidden="true">
+    <div class="ellipse-4"></div>
+    <div class="ellipse-5"></div>
+    <div class="ellipse-6"></div>
+</div>
+
     <nav class="skip-links" aria-label="Accès rapide">
         <a href="#site-nav">Aller à la navigation</a>
         <a href="#page-content">Aller au contenu</a>
@@ -112,7 +118,7 @@
         <section class="nav" id="site-nav" tabindex="-1">
             <nav></nav>
         </section>
-        <section class="content" id="page-content" tabindex="-1">
+        <div class="main-right">
             <div class="mobile-toc-header mobile-only">
                 <button class="mobile-toc-btn" aria-label="Table des matières" aria-expanded="false">
                     <img class="invert-on-dark" src="assets/svg/iconToc.svg" alt="">
@@ -122,14 +128,18 @@
                     <ul class="mobile-toc-list"></ul>
                 </div>
             </div>
-        </section>
-        <section class="toc" id="page-toc" tabindex="-1">
-            <p class="toc-title">
-                <img class="invert-on-dark" src="assets/svg/iconToc.svg" alt="" aria-hidden="true">
-                Sur cette page
-            </p>
-            <ul></ul>
-        </section>
+            <div class="main-columns">
+                <section class="content" id="page-content" tabindex="-1">
+                </section>
+                <section class="toc" id="page-toc" tabindex="-1">
+                    <p class="toc-title">
+                        <img class="invert-on-dark" src="assets/svg/iconToc.svg" alt="" aria-hidden="true">
+                        Sur cette page
+                    </p>
+                    <ul></ul>
+                </section>
+            </div>
+        </div>
     </main>
 
 
@@ -139,6 +149,8 @@
     <script src="scripts/copy.js"></script>
     <script src="scripts/os-shortcuts.js"></script>
     <script src="scripts/search.js"></script>
+    <script src="scripts/ellipses.js"></script>
+
 </body>
 
 </html>
