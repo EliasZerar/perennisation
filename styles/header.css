@@ -208,6 +208,24 @@ header {
         box-sizing: border-box;
     }
 
+    .search-results::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .search-results::-webkit-scrollbar-track {
+        background: none;
+        margin: 5px;
+    }
+
+    .search-results::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: 2px;
+    }
+
+    .search-results::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-color-hover);
+    }
+
     .search-wrapper:has(input:focus) .search-results {
         border-color: var(--primary-color);
         box-shadow: 0 0 0 1px var(--primary-color);

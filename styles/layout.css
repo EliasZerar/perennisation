@@ -334,6 +334,24 @@ main {
         box-sizing: border-box;
     }
 
+    .mobile-search-results::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .mobile-search-results::-webkit-scrollbar-track {
+        background: none;
+        margin: 5px;
+    }
+
+    .mobile-search-results::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: 2px;
+    }
+
+    .mobile-search-results::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-color-hover);
+    }
+
     .mobile-nav-search-wrapper:has(input:focus) .mobile-search-results {
         border-color: var(--primary-color);
         box-shadow: 0 0 0 1px var(--primary-color);

@@ -55,6 +55,24 @@ body {
     flex-direction: column;
 }
 
+body::-webkit-scrollbar {
+    width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+    background: none;
+    margin: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-hover);
+}
+
 .skip-links {
     position: fixed;
     top: var(--spacing-2);
