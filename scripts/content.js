@@ -382,7 +382,7 @@ function renderSiteFooter() {
             <a href="index.html" class="logo-link">
                 <img src="${logoSrc}" alt="Accueil Metford Tigers">
             </a>
-            <p>Alibi — Atelier pédagogique</p>
+            <p>VR-AI : Atelier pédagogique</p>
             <p>Projet BUT MMI 2026-2027</p>
         </footer>
     `);
