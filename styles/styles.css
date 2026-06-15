@@ -162,13 +162,29 @@ h2{
     margin: var(--spacing-4) 0;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-6);
+    gap: 0;
 }
 
 .step-item {
     display: flex;
     gap: var(--spacing-4);
     align-items: flex-start;
+    position: relative;
+    padding-bottom: var(--spacing-6);
+}
+
+.step-item::after {
+    content: "";
+    position: absolute;
+    left: calc(1rem - 1px);
+    top: calc(3rem);
+    bottom: 2.5rem;
+    width: 2px;
+    background-color: var(--bg-subtle);
+}
+
+.step-item:last-child {
+    padding-bottom: 0;
 }
 
 .step-number {
@@ -176,8 +192,9 @@ h2{
     width: 2rem;
     height: 2rem;
     border-radius: var(--radius-full);
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--text-secondary);
+    background-color: var(--bg-subtle); 
     font-family: var(--font-body);
     font-weight: 700;
     font-size: 0.9rem;
