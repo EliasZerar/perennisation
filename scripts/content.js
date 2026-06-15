@@ -35,6 +35,7 @@
 
         if (page.title)   document.title = page.title;
         if (page.content) renderContent(page.content);
+        renderSiteFooter();
         if (page.toc)     renderToc(page.toc);
         if (page.toc)     setupTocScroll();
 
@@ -349,11 +350,17 @@ function renderContent(blocks) {
         });
     });
 
-    // Injection automatique du footer à la fin du content
-    contentEl.insertAdjacentHTML('beforeend', `
-        <footer>
+}
+
+function renderSiteFooter() {
+    const existingFooter = document.querySelector('body > footer.site-footer');
+    if (existingFooter) return;
+
+    const logoSrc = window.resolveSitePath('assets/svg/logoMetfordTigers.svg');
+    document.body.insertAdjacentHTML('beforeend', `
+        <footer class="site-footer">
             <a href="index.html" class="logo-link">
-                <img src="assets/svg/logoMetfordTigers.svg" alt="Accueil Metford Tigers">
+                <img src="${logoSrc}" alt="Accueil Metford Tigers">
             </a>
             <p>Alibi — Atelier pédagogique</p>
             <p>Projet BUT MMI 2026-2027</p>

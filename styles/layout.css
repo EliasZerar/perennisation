@@ -2,8 +2,9 @@ main {
     display: flex;
     justify-content: center;
     overflow: hidden;
-    flex: 1;
-    height: auto;
+    flex: 0 0 auto;
+    height: calc(100vh - var(--header-height, 90.5px));
+    min-height: calc(100vh - var(--header-height, 90.5px));
 }
 
 
@@ -174,7 +175,7 @@ main {
 @media (max-width: 768px) {
     main {
         flex-direction: column;
-        height: calc(100vh - var(--mobile-header-height));
+        height: calc(100vh - var(--header-height, var(--mobile-header-height)));
         overflow: hidden;
     }
 

@@ -54,6 +54,7 @@ header {
     border-bottom: 1px solid var(--border-default);
     position: sticky;
     top: 0;
+    background-color: var(--bg-default);
     z-index: 2;
 
     .logo {
