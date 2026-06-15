@@ -201,10 +201,10 @@ function renderContent(blocks) {
                 ${b.description ? `<p class="text_limit">${b.description}</p>` : ''}
             </div>`,
 
-        placeholder: b => {
+        img_content: b => {
             const visualContent = b.src 
-                ? `<img src="${window.resolveSitePath(b.src)}" alt="${b.label ?? b.caption ?? ''}" style="width: 100%; height: auto; border-radius: var(--radius-lg); object-fit: cover; aspect-ratio: ${b.ratio ?? 'auto'};">`
-                : `<div class="placeholder-box" style="aspect-ratio:${b.ratio ?? '16/9'}">
+                ? `<img src="${window.resolveSitePath(b.src)}" alt="${b.alt ?? ''}" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg); aspect-ratio: ${b.ratio ?? 'auto'};">`
+                : `<div class="placeholder-box" style="aspect-ratio:${b.ratio ?? '16/9'}; height: 100%;">
                     <span>${b.label ?? 'Image à venir'}</span>
                    </div>`;
 
@@ -234,14 +234,13 @@ function renderContent(blocks) {
             </ol>`;
         },
 
-        // 🌟 Cartes avec aria-labelledby dynamique et svg dans le lien
         card: (b, index) => {
             const cardId = `card-title-single-${Math.random().toString(36).substr(2, 9)}`;
             return `
                 <div class="input">
                     <div class="input-text">
                         ${renderCardIcon(b.icon, '')}
-                    <h2 class="squareserif"id="${cardId}">${b.title}</h2>
+                        <h2 class="squareserif" id="${cardId}">${b.title}</h2>
                         <p class="general-sans-medium">${b.content}</p>
                     </div>
                     ${b.link ? `
@@ -265,7 +264,7 @@ function renderContent(blocks) {
                         <div class="input">
                             <div class="input-text">
                                 ${renderCardIcon(card.icon, '')}
-                        <h2 class="squareserif"id="${cardId}">${card.title}</h2>
+                                <h2 class="squareserif" id="${cardId}">${card.title}</h2>
                                 <p class="general-sans-medium">${card.content}</p>
                             </div>
                             ${card.link ? `
@@ -330,11 +329,11 @@ function renderContent(blocks) {
             </div>`,
     };
 
-    // Regroupement automatique des infoImg consécutives en galerie
     const htmlParts = [];
     for (let i = 0; i < blocks.length; i++) {
         const block = blocks[i];
 
+        // 1. Logique pour infoImg
         if (block.type === 'infoImg') {
             const gallery = [block];
             while (i + 1 < blocks.length && blocks[i + 1].type === 'infoImg') {
@@ -353,6 +352,27 @@ function renderContent(blocks) {
             continue;
         }
 
+        // 2. Logique pour img_content (Grille dynamique)
+        if (block.type === 'img_content') {
+            const gallery = [block];
+            while (i + 1 < blocks.length && blocks[i + 1].type === 'img_content') {
+                gallery.push(blocks[++i]);
+            }
+            
+            if (gallery.length > 1) {
+                const cols = Math.min(gallery.length, 2); 
+                htmlParts.push(
+                    `<div class="img-content-grid" style="--grid-cols:${cols};">` +
+                    gallery.map(item => renderers.img_content(item)).join('') +
+                    `</div>`
+                );
+            } else {
+                htmlParts.push(renderers.img_content(gallery[0]));
+            }
+            continue;
+        }
+
+        // 3. Rendu par défaut
         htmlParts.push(renderers[block.type]?.(block) ?? '');
     }
 
@@ -361,7 +381,6 @@ function renderContent(blocks) {
     if (mobileHeader) contentEl.insertBefore(mobileHeader, contentEl.firstChild);
     if (typeof initForm === 'function') initForm();
 
-    // 🌟 Ajout dynamique de aria-current="location" sur le lien actif de la table des matières
     const tocLinks = document.querySelectorAll('.toc-link');
     tocLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -369,9 +388,9 @@ function renderContent(blocks) {
             link.setAttribute('aria-current', 'location');
         });
     });
-
 }
 
+// ─── Footer ──────────────────────────────────────────────────────────────────
 function renderSiteFooter() {
     const existingFooter = document.querySelector('body > footer.site-footer');
     if (existingFooter) return;
@@ -387,7 +406,6 @@ function renderSiteFooter() {
         </footer>
     `);
 }
-
 
 // ─── Navigation mobile ────────────────────────────────────────────────────────
 function setupMobileNav() {
@@ -411,7 +429,6 @@ function setupMobileNav() {
     backdrop?.addEventListener('click', closeNav);
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && !overlay.hasAttribute('hidden')) closeNav(); });
 }
-
 
 // ─── TOC mobile ───────────────────────────────────────────────────────────────
 function setupMobileToc() {

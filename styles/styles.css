@@ -375,3 +375,25 @@ h2{
         gap: var(--spacing-6) var(--spacing-4);
     }
 }
+
+/* ── Grille d'images (img_content) ──────────────────────── */
+.img-content-grid {
+    display: grid;
+    /* La variable --grid-cols est injectée par le JS (ex: 2) */
+    grid-template-columns: repeat(var(--grid-cols, 1), 1fr);
+    gap: var(--spacing-4);
+    margin: var(--spacing-4) 0;
+}
+
+/* On supprime les marges sur les figures quand elles sont dans la grille */
+.img-content-grid .placeholder-img {
+    margin: 0;
+    height: 100%; /* S'assure que les boîtes ont la même hauteur */
+}
+
+/* Sur mobile, on repasse sur 1 seule colonne pour que les images ne soient pas trop petites */
+@media (max-width: 768px) {
+    .img-content-grid {
+        grid-template-columns: 1fr;
+    }
+}
