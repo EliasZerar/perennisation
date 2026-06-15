@@ -8,6 +8,7 @@
 @import "copy-box.css";
 @import "table.css";
 @import "img.css";
+@import "summary.css";
 
 .mobile-only {
     display: none;

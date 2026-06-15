@@ -1,0 +1,99 @@
+{
+    "title": "Support et Contact",
+    "toc": [],
+    "content": [
+        {
+            "type": "h1",
+            "id": "aide",
+            "text": "Besoin d'aide ?"
+        },
+        {
+            "type": "p",
+            "text": "Retrouvez ici les réponses aux questions les plus fréquentes concernant la préparation, l'animation et l'adaptation de l'atelier Alibi."
+        },
+        {
+            "type": "accordionGroup",
+            "items": [
+                {
+                    "title": "L'atelier nécessite-t-il plusieurs salles ?",
+                    "content": "Contenu à compléter..."
+                },
+                {
+                    "title": "Combien de temps dure l'atelier ?",
+                    "content": "L'atelier complet dure environ <strong>45 minutes à 1 heure</strong>, selon le temps accordé au débrief et aux échanges avec les élèves."
+                },
+                {
+                    "title": "Faut-il des connaissances en intelligence artificielle ?",
+                    "content": "Contenu à compléter..."
+                },
+                {
+                    "title": "Le matériel doit-il être identique à celui présenté sur le site ?",
+                    "content": "Contenu à compléter..."
+                },
+                {
+                    "title": "Peut-on réaliser l'atelier sans acteur ?",
+                    "content": "Contenu à compléter..."
+                },
+                {
+                    "title": "À partir de quel âge l'atelier est-il adapté ?",
+                    "content": "Contenu à compléter..."
+                },
+                {
+                    "title": "Peut-on utiliser d'autres outils d'IA pour créer les preuves ?",
+                    "content": "Contenu à compléter..."
+                },
+                {
+                    "title": "L'atelier fonctionne-t-il sans ordinateur ?",
+                    "content": "Contenu à compléter..."
+                },
+                {
+                    "title": "Peut-on réutiliser librement les ressources du projet ?",
+                    "content": "Contenu à compléter..."
+                }
+            ]
+        },
+        {
+            "type": "h2",
+            "id": "contact",
+            "text": "Nous contacter"
+        },
+        {
+            "type": "p",
+            "text": "Si vous rencontrez un problème, souhaitez adapter l'atelier ou partager un retour d'expérience, vous pouvez nous contacter directement."
+        },
+        {
+            "type": "form",
+            "action": "#",
+            "submit": "Envoyer le message",
+            "fields": [
+                {
+                    "id": "name",
+                    "label": "Nom*",
+                    "type": "text",
+                    "autocomplete": "name"
+                },
+                {
+                    "id": "email",
+                    "label": "Adresse e-mail*",
+                    "type": "email",
+                    "autocomplete": "email"
+                },
+                {
+                    "id": "subject",
+                    "label": "Sujet*",
+                    "type": "text"
+                },
+                {
+                    "id": "message",
+                    "label": "Message*",
+                    "type": "textarea"
+                }
+            ]
+        },
+        {
+            "type": "infoImg",
+            "src": "assets/img/support-room.jpg",
+            "alt": "Salle de préparation avec du matériel sur les tables et un étudiant"
+        }
+    ]
+}
