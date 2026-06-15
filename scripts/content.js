@@ -308,7 +308,7 @@ function renderContent(blocks) {
                 <button class="btn general-sans-semibold" type="submit">${b.submit ?? 'Envoyer'}</button>
             </form>`,
 
-        accordionGroup: b => `
+        SummaryGroup: b => `
             <div class="accordion-group">
                 ${(b.items ?? []).map(acc => `
                 <details class="summary">
