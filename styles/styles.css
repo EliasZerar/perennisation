@@ -257,6 +257,22 @@ footer p {
     white-space: nowrap;
 }
 
+.page-nav-prev::before,
+.page-nav-next::after {
+    content: "";
+    width: 0.75rem;
+    height: 0.75rem;
+    display: inline-block;
+    background-color: currentColor;
+    -webkit-mask: url("../assets/svg/iconChevronRight.svg") center / contain no-repeat;
+    mask: url("../assets/svg/iconChevronRight.svg") center / contain no-repeat;
+    flex-shrink: 0;
+}
+
+.page-nav-prev::before {
+    transform: rotate(180deg);
+}
+
 .page-nav-btn:hover {
     background: var(--bg-subtle);
     border-color: var(--primary-color);
