@@ -10,7 +10,14 @@
     window.resolveSitePath = function (path) {
         if (!path || typeof path !== 'string') return '';
         if (/^(?:https?:)?\/\//.test(path) || path.startsWith('data:')) return path;
-        return `${getSiteBasePath()}${path.replace(/^\/+/, '').replace(/^\.\//, '')}`;
+
+        // 🌟 Nettoie automatiquement les ../../ de tes fichiers JSON pour éviter les bugs en prod
+        const cleanedPath = path
+            .replace(/^(\.\.\/+)+/, '') // Enlève tous les ../../
+            .replace(/^\.\//, '')       // Enlève les ./
+            .replace(/^\/+/, '');       // Enlève les / en trop au début
+
+        return `${getSiteBasePath()}${cleanedPath}`;
     };
 })();
 
@@ -61,11 +68,10 @@ function renderNav(nav, activePageId) {
 
     let html = '';
     let breadcrumb = null;
-    let groupIdCounter = 0; // 🌟 Pour aria-labelledby
+    let groupIdCounter = 0; // Pour aria-labelledby
 
     for (const link of nav.links ?? []) {
         const active = isActive(link);
-        // 🌟 Ajout de aria-current="page"
         html += `<a href="${link.href}" class="nav-link${active ? ' active' : ''}" ${active ? 'aria-current="page"' : ''}>${link.label}</a>`;
         if (active && !breadcrumb) breadcrumb = { label: link.label };
     }
@@ -74,7 +80,6 @@ function renderNav(nav, activePageId) {
         groupIdCounter++;
         const groupId = `nav-group-title-${groupIdCounter}`;
 
-        // 🌟 Titres h2 et liaison avec la liste ul
         html += `<div class="nav-group">
             <h2 class="nav-group-title" id="${groupId}">${group.title}</h2>
             <ul aria-labelledby="${groupId}">`;
@@ -160,10 +165,8 @@ function renderContent(blocks) {
 
     function renderCardIcon(icon, fallbackAlt = '') {
         if (!icon) return '';
-
         const iconSrc = typeof icon === 'string' ? icon : icon.src;
         if (!iconSrc) return '';
-
         const alt = typeof icon === 'object' && typeof icon.alt === 'string' ? icon.alt : fallbackAlt;
         const src = window.resolveSitePath(iconSrc);
         return `<img class="card-icon invert-on-dark" src="${src}" alt="${alt}">`;
@@ -333,7 +336,7 @@ function renderContent(blocks) {
     for (let i = 0; i < blocks.length; i++) {
         const block = blocks[i];
 
-        // 1. Logique pour infoImg
+        // 1. Logique propre pour infoImg
         if (block.type === 'infoImg') {
             const gallery = [block];
             while (i + 1 < blocks.length && blocks[i + 1].type === 'infoImg') {
@@ -352,7 +355,7 @@ function renderContent(blocks) {
             continue;
         }
 
-        // 2. Logique pour img_content (Grille dynamique)
+        // 2. Logique propre pour img_content (Grille dynamique pour tes caméras)
         if (block.type === 'img_content') {
             const gallery = [block];
             while (i + 1 < blocks.length && blocks[i + 1].type === 'img_content') {
@@ -390,6 +393,7 @@ function renderContent(blocks) {
     });
 }
 
+
 // ─── Footer ──────────────────────────────────────────────────────────────────
 function renderSiteFooter() {
     const existingFooter = document.querySelector('body > footer.site-footer');
@@ -406,6 +410,7 @@ function renderSiteFooter() {
         </footer>
     `);
 }
+
 
 // ─── Navigation mobile ────────────────────────────────────────────────────────
 function setupMobileNav() {
@@ -429,6 +434,7 @@ function setupMobileNav() {
     backdrop?.addEventListener('click', closeNav);
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && !overlay.hasAttribute('hidden')) closeNav(); });
 }
+
 
 // ─── TOC mobile ───────────────────────────────────────────────────────────────
 function setupMobileToc() {
