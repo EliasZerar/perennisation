@@ -1,13 +1,13 @@
 {
-    "title": "À propos d'Alibi",
+    "title": "À propos de VR-AI",
     "toc": [
         {
-            "href": "#quest-ce-qualibi",
-            "label": "Qu'est-ce qu'Alibi ?"
+            "href": "#quest-ce-que-vr-ai",
+            "label": "Qu'est-ce que VR-AI ?"
         },
         {
-            "href": "#pourquoi",
-            "label": "Pourquoi cet atelier existe ?"
+            "href": "#objectif",
+            "label": "Quel est l'objectif de cet atelier ?"
         },
         {
             "href": "#approche",
@@ -29,21 +29,21 @@
     "content": [
         {
             "type": "introImg",
-            "title": "Alibi, une enquête au cœur du numérique",
-            "description": "Alibi est un atelier qui aide les élèves de 6e à comprendre comment les images sont <strong>créées et manipulées</strong> à l'ère de l'intelligence artificielle."
+            "title": "VR-AI, une enquête au cœur du numérique",
+            "description": "VR-AI est un atelier qui aide les élèves de 6ème à comprendre comment les images sont <strong>créées et manipulées</strong> à l'ère de l'intelligence artificielle."
         },
         {
             "type": "h2",
-            "id": "quest-ce-qualibi",
-            "text": "Qu'est-ce qu'Alibi ?"
+            "id": "quest-ce-que-vr-ai",
+            "text": "Qu'est-ce que VR-AI ?"
         },
         {
             "type": "p",
-            "text": "Alibi est un atelier conçu par un groupe d'étudiants en troisième année de BUT MMI, dans le cadre d'un projet autour du thème « les coulisses du numérique »."
+            "text": "VR-AI est un atelier conçu par un groupe d'étudiants en troisième année de BUT MMI, dans le cadre d'un projet autour du thème « les coulisses du numérique »."
         },
         {
             "type": "p",
-            "text": "On a imaginé cet atelier en partant d'un constat simple : aujourd'hui, les élèves utilisent énormément d'images au quotidien, mais ils ne se posent presque jamais de questions sur leur <strong>origine</strong> ou leur <strong>fabrication</strong>."
+            "text": "Nous avons imaginé cet atelier à partir d’un constat simple : aujourd’hui, les élèves consomment chaque jour énormément d’images, sans vraiment se questionner sur leur <strong>origine</strong> ni sur la façon dont elles sont <strong>créées</strong>."
         },
         {
             "type": "alertInfo",
@@ -51,16 +51,16 @@
         },
         {
             "type": "h2",
-            "id": "pourquoi",
-            "text": "Pourquoi cet atelier existe ?"
+            "id": "objectif",
+            "text": "Quel est l'objectif de cet atelier ?"
         },
         {
             "type": "p",
-            "text": "En avançant dans nos recherches, on s'est rendu compte que les élèves sont très à l'aise avec les réseaux sociaux, les vidéos ou les contenus numériques en général."
+            "text": "En avançant dans nos recherches, nous avons constaté que les élèves sont très à l'aise avec les réseaux sociaux, les vidéos ou les contenus numériques en général."
         },
         {
             "type": "p",
-            "text": "Mais cette facilité d'usage cache une réalité : ils ont peu de recul sur ce qu'ils regardent."
+            "text": "Pourtant, cette facilité d’usage masque une réalité : ils prennent peu de recul sur ce qu’ils consultent."
         },
         {
             "type": "p",
@@ -68,7 +68,7 @@
         },
         {
             "type": "p",
-            "text": "C'est dans ce contexte qu'Alibi a été conçu."
+            "text": "C’est dans ce contexte qu’a été conçu VR-AI."
         },
         {
             "type": "h2",
@@ -81,7 +81,7 @@
         },
         {
             "type": "p",
-            "text": "Dans Alibi, les élèves ne sont pas spectateurs. Ils doivent <strong>enquêter</strong>, manipuler des éléments, échanger entre eux et confronter leurs idées pour résoudre une situation."
+            "text": "Dans VR-AI, les élèves ne sont pas spectateurs. Ils doivent <strong>enquêter</strong>, manipuler des éléments, échanger entre eux et confronter leurs idées pour résoudre une situation."
         },
         {
             "type": "p",
@@ -94,7 +94,7 @@
         },
         {
             "type": "p",
-            "text": "L'atelier est conçu pour des élèves de 6e, sans aucun prérequis technique."
+            "text": "L'atelier est conçu pour des élèves de 6ème, sans aucun prérequis technique."
         },
         {
             "type": "p",
@@ -119,7 +119,7 @@
         },
         {
             "type": "p",
-            "text": "Alibi n'est pas un atelier à usage unique."
+            "text": "VR-AI n'est pas un atelier à usage unique."
         },
         {
             "type": "p",
