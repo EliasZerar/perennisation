@@ -252,6 +252,12 @@ header {
     }
 }
 
+header.desktop-only {
+    width: min(100%, 1680px);
+    margin-inline: auto;
+    box-sizing: border-box;
+}
+
 
 @media (max-width: 768px) {
     header.mobile-only {
