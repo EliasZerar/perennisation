@@ -47,7 +47,7 @@
 })();
 
 
-// ─── Navigation ───────────────────────────────────────────────────────────────
+// ─── Navigation (100% Accessible RGAA) ────────────────────────────────────────
 function renderNav(nav, activePageId) {
     const navEl        = document.querySelector('.nav nav');
     const mobileNavEl  = document.querySelector('.mobile-nav-list');
@@ -60,18 +60,27 @@ function renderNav(nav, activePageId) {
 
     let html = '';
     let breadcrumb = null;
+    let groupIdCounter = 0; // 🌟 Pour aria-labelledby
 
     for (const link of nav.links ?? []) {
         const active = isActive(link);
-        html += `<a href="${link.href}" class="nav-link${active ? ' active' : ''}">${link.label}</a>`;
+        // 🌟 Ajout de aria-current="page"
+        html += `<a href="${link.href}" class="nav-link${active ? ' active' : ''}" ${active ? 'aria-current="page"' : ''}>${link.label}</a>`;
         if (active && !breadcrumb) breadcrumb = { label: link.label };
     }
 
     for (const group of nav.groups ?? []) {
-        html += `<div class="nav-group"><p class="nav-group-title">${group.title}</p><ul>`;
+        groupIdCounter++;
+        const groupId = `nav-group-title-${groupIdCounter}`;
+        
+        // 🌟 Titres h2 et liaison avec la liste ul
+        html += `<div class="nav-group">
+            <h2 class="nav-group-title" id="${groupId}">${group.title}</h2>
+            <ul aria-labelledby="${groupId}">`;
+            
         for (const link of group.links) {
             const active = isActive(link);
-            html += `<li><a href="${link.href}" class="nav-link${active ? ' active' : ''}">${link.label}</a></li>`;
+            html += `<li><a href="${link.href}" class="nav-link${active ? ' active' : ''}" ${active ? 'aria-current="page"' : ''}>${link.label}</a></li>`;
             if (active && !breadcrumb) breadcrumb = { group: group.title, label: link.label };
         }
         html += `</ul></div>`;
@@ -158,23 +167,20 @@ function renderContent(blocks) {
         ul: b => `<ul>${(b.items ?? []).map(i => `<li>${i}</li>`).join('')}</ul>`,
         ol: b => `<ol>${(b.items ?? []).map(i => `<li>${i}</li>`).join('')}</ol>`,
 
-        alertInfo:  b => `<div class="alert info"><div class="icon-alert-svg"></div><span>${b.text}</span></div>`,
-        alertError: b => `<div class="alert error"><div class="icon-alert-svg"></div><span>${b.text}</span></div>`,
+        alertInfo:  b => `<div class="alert ${b.variant ?? 'info'}"><div class="icon-alert-svg"></div><span>${b.text}</span></div>`,
+        alertError: b => `<div class="alert ${b.variant ?? 'error'}"><div class="icon-alert-svg"></div><span>${b.text}</span></div>`,
 
         copyBox: b => `
             <div class="copy-box">
-                <p class="copy-text text_limit">${b.text}</p>
-                <button class="copy-button" aria-label="Copier le texte">
-                    <div class="copy-logo" aria-hidden="true"></div>
-                    <div class="copy-logo copy-check" aria-hidden="true"></div>
-                </button>
-                <p class="copy-message" role="status" aria-live="polite">Le texte a été copié !</p>
+                <p class="copy-text text_limit" id="text">${b.text}</p>
+                <button onclick="copyText()" class="copy-button" aria-label="Copier le texte d'exemple"><div class="copy-logo" id="copy-logo"></div><div class="copy-logo check" id=""></div></button>
+                <p class="copy-message" id="check" aria-label="Message de confirmation" aria-live="polite" style="display:none;">Le texte a été copié !</p>
             </div>`,
 
         table: b => {
             const headers = b.headers.map(h => `<th scope="col">${h}</th>`).join('');
-            const rows    = b.rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('');
-            return `<div class="table-wrapper"><table><caption>${b.caption ?? ''}</caption><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table></div>`;
+            const rows    = b.rows.map(r => `<tr>${r.map(c => `<td class="general-sans-extralight">${c}</td>`).join('')}</tr>`).join('');
+            return `<div class="table-wrapper"><table><caption class="squareserif specimen-lg">${b.caption ?? 'Liste du Matériel'}</caption><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table></div>`;
         },
 
         introImg: b => `
@@ -210,26 +216,49 @@ function renderContent(blocks) {
             </ol>`;
         },
 
-        card: b => `
-            <div class="input">
-                <div class="input-text">
-                    <h2 class="squareserif">${b.title}</h2>
-                    <p class="general-sans-medium">${b.content}</p>
-                </div>
-                ${b.link ? `<div class="link"><a href="${b.link.href}">${b.link.label}<div class="icon-arrow-svg"></div></a></div>` : ''}
-            </div>`,
-
-        cardContainer: b => `
-            <div class="card-container">
-                ${(b.cards ?? []).map(card => `
+        // 🌟 Cartes avec aria-labelledby dynamique et svg dans le lien
+        card: (b, index) => {
+            const cardId = `card-title-single-${Math.random().toString(36).substr(2, 9)}`;
+            return `
                 <div class="input">
                     <div class="input-text">
-                        <h2 class="squareserif">${card.title}</h2>
-                        <p class="general-sans-medium">${card.content}</p>
+                        <h2 class="squareserif" id="${cardId}">${b.title}</h2>
+                        <p class="general-sans-medium">${b.content}</p>
                     </div>
-                    ${card.link ? `<div class="link"><a href="${card.link.href}">${card.link.label}<div class="icon-arrow-svg"></div></a></div>` : ''}
-                </div>`).join('')}
-            </div>`,
+                    ${b.link ? `
+                    <div class="link">
+                        <a href="${b.link.href}" aria-labelledby="${cardId} ${cardId}-link-text" id="${cardId}-link-text">
+                            ${b.link.label}
+                            <div class="icon-arrow-svg"></div>
+                        </a>
+                    </div>` : ''}
+                </div>`;
+        },
+
+        cardContainer: b => {
+            let containerIdCounter = 0;
+            return `
+                <div class="card-container">
+                    ${(b.cards ?? []).map(card => {
+                        containerIdCounter++;
+                        const cardId = `card-title-${containerIdCounter}-${Math.floor(Math.random() * 1000)}`;
+                        return `
+                        <div class="input">
+                            <div class="input-text">
+                                <h2 class="squareserif" id="${cardId}">${card.title}</h2>
+                                <p class="general-sans-medium">${card.content}</p>
+                            </div>
+                            ${card.link ? `
+                            <div class="link">
+                                <a href="${card.link.href}" aria-labelledby="${cardId} ${cardId}-link-text" id="${cardId}-link-text">
+                                    ${card.link.label}
+                                    <div class="icon-arrow-svg"></div>
+                                </a>
+                            </div>` : ''}
+                        </div>`;
+                    }).join('')}
+                </div>`;
+        },
 
         questionGrid: b => `
             <div class="question-grid">
@@ -249,9 +278,15 @@ function renderContent(blocks) {
         form: b => `
             <form action="${b.action ?? '#'}" method="POST" class="form" novalidate>
                 <p>*Tous les champs sont obligatoires.</p>
-                ${(b.fields ?? []).map(f => f.type === 'textarea'
-                    ? `<label for="${f.id}"><textarea id="${f.id}" name="${f.id}" placeholder=" " required></textarea><span>${f.label}</span></label>`
-                    : `<label for="${f.id}"><input type="${f.type ?? 'text'}" id="${f.id}" name="${f.id}" placeholder=" " required ${f.autocomplete ? `autocomplete="${f.autocomplete}"` : ''}><span>${f.label}</span></label>`
+                ${(b.fields ?? []).map(f => f.type === 'textarea' ? 
+                    `<label for="${f.id}">
+                        <textarea id="${f.id}" name="${f.id}" placeholder=" " required></textarea>
+                        <span>${f.label}</span>
+                    </label>` : 
+                    `<label for="${f.id}">
+                        <input type="${f.type ?? 'text'}" id="${f.id}" name="${f.id}" placeholder=" " required ${f.autocomplete ? `autocomplete="${f.autocomplete}"` : (f.id === 'name' ? 'autocomplete="name"' : f.id === 'email' ? 'autocomplete="email"' : '')}>
+                        <span>${f.label}</span>
+                    </label>`
                 ).join('')}
                 <div id="errors" role="alert" aria-live="assertive" class="form-feedback">
                     <div class="icon-alert-svg"></div>
@@ -292,7 +327,16 @@ function renderContent(blocks) {
     if (mobileHeader) contentEl.insertBefore(mobileHeader, contentEl.firstChild);
     if (typeof initForm === 'function') initForm();
 
-    // Footer injecté dans .content pour qu'il suive le scroll et s'arrête à la sidebar
+    // 🌟 Ajout dynamique de aria-current="location" sur le lien actif de la table des matières
+    const tocLinks = document.querySelectorAll('.toc-link');
+    tocLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            tocLinks.forEach(l => l.removeAttribute('aria-current'));
+            link.setAttribute('aria-current', 'location');
+        });
+    });
+
+    // Injection automatique du footer à la fin du content
     contentEl.insertAdjacentHTML('beforeend', `
         <footer>
             <a href="index.html" class="logo-link">
