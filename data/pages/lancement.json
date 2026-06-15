@@ -32,7 +32,7 @@
                 ]
             }
         ]},
-        { "type": "placeholder", "ratio": "16/9", "label": "Vidéo de surveillance — placeholder" },
+        { "type": "img_content", "ratio": "16/9", "label": "Vidéo de surveillance — placeholder" },
         { "type": "steps", "items": [
             {
                 "title": "Créer une rupture",

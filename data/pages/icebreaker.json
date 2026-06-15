@@ -75,7 +75,7 @@
             "text": "Chaque élève choisit une réponse et peut, s'il le souhaite, expliquer son choix."
         },
         {
-            "type": "placeholder",
+            "type": "img_content",
             "ratio": "4/3",
             "caption": "Les élèves peuvent utiliser des supports simples, comme des cartes ou de petits panneaux, pour rendre l'activité plus interactive."
         },

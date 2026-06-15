@@ -56,7 +56,7 @@
             ]
         },
         {
-            "type": "placeholder",
+            "type": "img_content",
             "ratio": "16/7",
             "caption": "Pièce 1 (gauche) — Pièce 2 (droite)"
         },

@@ -105,12 +105,12 @@
             ]
         },
         {
-            "type": "placeholder",
+            "type": "img_content",
             "ratio": "4/3",
             "caption": "Version originale de la scène"
         },
         {
-            "type": "placeholder",
+            "type": "img_content",
             "ratio": "16/9",
             "caption": "AVANT (gauche) — APRÈS modification IA (droite)"
         },
