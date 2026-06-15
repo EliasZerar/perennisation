@@ -201,13 +201,19 @@ function renderContent(blocks) {
                 ${b.description ? `<p class="text_limit">${b.description}</p>` : ''}
             </div>`,
 
-        placeholder: b => `
-            <figure class="placeholder-img">
-                <div class="placeholder-box" style="aspect-ratio:${b.ratio ?? '16/9'}">
+        placeholder: b => {
+            const visualContent = b.src 
+                ? `<img src="${window.resolveSitePath(b.src)}" alt="${b.label ?? b.caption ?? ''}" style="width: 100%; height: auto; border-radius: var(--radius-lg); object-fit: cover; aspect-ratio: ${b.ratio ?? 'auto'};">`
+                : `<div class="placeholder-box" style="aspect-ratio:${b.ratio ?? '16/9'}">
                     <span>${b.label ?? 'Image à venir'}</span>
-                </div>
+                   </div>`;
+
+            return `
+            <figure class="placeholder-img">
+                ${visualContent}
                 ${b.caption ? `<figcaption>${b.caption}</figcaption>` : ''}
-            </figure>`,
+            </figure>`;
+        },
 
         steps: b => {
             const start = b.startAt ?? 1;

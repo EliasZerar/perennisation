@@ -93,11 +93,6 @@
                     "type": "textarea"
                 }
             ]
-        },
-        {
-            "type": "infoImg",
-            "src": "assets/img/support-room.jpg",
-            "alt": "Salle de préparation avec du matériel sur les tables et un étudiant"
         }
     ]
 }
