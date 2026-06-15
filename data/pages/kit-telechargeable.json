@@ -26,7 +26,7 @@
         },
         {
             "type": "p",
-            "text": "Pour faciliter la mise en place de l'atelier, l'ensemble des ressources est regroupé dans un kit prêt à l'emploi."
+            "text": "Pour faciliter la mise en place de l'atelier, l'ensemble des ressources is regroupé dans un kit prêt à l'emploi."
         },
         {
             "type": "p",
@@ -46,10 +46,7 @@
             "cards": [
                 {
                     "title": "Fiches élèves",
-                    "icon": {
-                        "src": "assets/svg/iconDoc.svg",
-                        "alt": "Icône fiches"
-                    },
+                    "icon": "doc",
                     "content": "Documents remis pendant l'enquête pour guider l'analyse des images.",
                     "link": {
                         "href": "#",
@@ -58,10 +55,7 @@
                 },
                 {
                     "title": "Images et preuves",
-                    "icon": {
-                        "src": "assets/svg/iconImg.svg",
-                        "alt": "Icône images"
-                    },
+                    "icon": "img",
                     "content": "Captures d'écran et éléments visuels utilisés dans l'enquête.",
                     "link": {
                         "href": "#",
@@ -70,10 +64,7 @@
                 },
                 {
                     "title": "Vidéos",
-                    "icon": {
-                        "src": "assets/svg/iconVideo.svg",
-                        "alt": "Icône vidéos"
-                    },
+                    "icon": "video",
                     "content": "Vidéos de surveillance (version modifiée et originale).",
                     "link": {
                         "href": "#",
@@ -82,10 +73,7 @@
                 },
                 {
                     "title": "Guide d'animation",
-                    "icon": {
-                        "src": "assets/svg/iconGuide.svg",
-                        "alt": "Icône guide"
-                    },
+                    "icon": "guide",
                     "content": "Document récapitulatif pour accompagner l'animateur.",
                     "link": {
                         "href": "#",
@@ -94,10 +82,7 @@
                 },
                 {
                     "title": "Supports imprimables",
-                    "icon": {
-                        "src": "assets/svg/iconPrint.svg",
-                        "alt": "Icône supports"
-                    },
+                    "icon": "print",
                     "content": "Éléments à imprimer pour la mise en place de l'atelier.",
                     "link": {
                         "href": "#",
@@ -160,11 +145,11 @@
             "type": "pageNav",
             "prev": {
                 "href": "adapter.html",
-                "label": "Adapter l'atelier"
+                "label": "Adapter l'atelier VR-AI"
             },
             "next": {
                 "href": "documents.html",
-                "label": "Documents"
+                "label": "Documents de VR-AI"
             }
         }
     ]

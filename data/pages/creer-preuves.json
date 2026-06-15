@@ -160,11 +160,11 @@
             "type": "pageNav",
             "prev": {
                 "href": "debrief.html",
-                "label": "Débrief"
+                "label": "Débrief de VR-AI"
             },
             "next": {
                 "href": "adapter.html",
-                "label": "Adapter l'atelier"
+                "label": "Adapter l'atelier VR-AI"
             }
         }
     ]
