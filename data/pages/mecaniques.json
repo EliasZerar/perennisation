@@ -83,9 +83,16 @@
             "text": "Le but est de les amener à <strong>comparer les informations</strong> et à repérer ce qui ne correspond pas."
         },
         {
-            "type": "placeholder",
-            "ratio": "16/7",
-            "caption": "Preuve cohérente (gauche) — Preuve incohérente (droite)"
+            "type": "img_content",
+            "src": "../../assets/img/eg-preuve-coherente.png",
+            "alt": "Photo sans anomalie apparente, elle peut être légitime.",
+            "caption": "Preuve cohérente."
+        },
+        {
+            "type": "img_content",
+            "src": "../../assets/img/eg-preuve-incoherente.png",
+            "alt": "Photo présentant une incohérence, elle doit être manipulée.",
+            "caption": "Preuve incohérente."
         },
         {
             "type": "h2",
