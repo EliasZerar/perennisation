@@ -120,9 +120,9 @@
         },
         {
             "type": "img_content",
-            "src": "../../assets/img/dispositif.png",
+            "src": "../../assets/img/dispositif-deux-pieces.png",
             "ratio": "16/7",
-            "caption": "Dispositif deux salles"
+            "caption": "Séparation des deux groupes dans des espaces distincts."
         },
         {
             "type": "h2",
