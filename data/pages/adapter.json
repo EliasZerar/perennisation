@@ -174,11 +174,11 @@
             "type": "pageNav",
             "prev": {
                 "href": "creer-preuves.html",
-                "label": "Créer ses preuves"
+                "label": "Créer ses preuves pour VR-AI"
             },
             "next": {
                 "href": "kit-telechargeable.html",
-                "label": "Kit téléchargeable"
+                "label": "Kit téléchargeable de VR-AI"
             }
         }
     ]
