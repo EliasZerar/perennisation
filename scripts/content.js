@@ -242,8 +242,8 @@ function renderContent(blocks) {
 
         pageNav: b => `
             <nav class="page-nav" aria-label="Navigation entre pages">
-                ${b.prev ? `<a href="${b.prev.href}" class="page-nav-btn page-nav-prev">‹ ${b.prev.label}</a>` : '<span></span>'}
-                ${b.next ? `<a href="${b.next.href}" class="page-nav-btn page-nav-next">${b.next.label} ›</a>` : ''}
+                ${b.prev ? `<a href="${b.prev.href}" class="page-nav-btn page-nav-prev">${b.prev.label}</a>` : '<span></span>'}
+                ${b.next ? `<a href="${b.next.href}" class="page-nav-btn page-nav-next">${b.next.label}</a>` : ''}
             </nav>`,
 
         form: b => `
