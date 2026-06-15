@@ -57,8 +57,17 @@
         },
         {
             "type": "img_content",
-            "ratio": "16/7",
-            "caption": "Pièce 1 (gauche) — Pièce 2 (droite)"
+            "src": "../../assets/img/piece_1.jpg",
+            "ratio": "4/3",
+            "alt": "Photographie du premier espace de l'atelier dédié à l'analyse des captures d'écran",
+            "caption": "Pièce 1 (Gauche)"
+        },
+        {
+            "type": "img_content",
+            "src": "../../assets/img/piece_2.jpg",
+            "ratio": "4/3",
+            "alt": "Photographie du deuxième espace de l'atelier dédié à l'examen des indices physiques",
+            "caption": "Pièce 2 (Droite)"
         },
         {
             "type": "steps",
