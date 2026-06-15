@@ -1,5 +1,5 @@
 {
-    "title": "Mécaniques de jeu",
+    "title": "Mécaniques de jeu de VR-AI",
     "toc": [
         {
             "href": "#equipe",
@@ -150,11 +150,11 @@
             "type": "pageNav",
             "prev": {
                 "href": "synopsis.html",
-                "label": "Synopsis"
+                "label": "Synopsis de VR-AI"
             },
             "next": {
                 "href": "icebreaker.html",
-                "label": "Icebreaker"
+                "label": "Icebreaker de VR-AI"
             }
         }
     ]

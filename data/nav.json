@@ -19,11 +19,6 @@
                     "label": "Objectifs pédagogiques",
                     "href": "objectifs.html",
                     "pageId": "objectifs"
-                },
-                {
-                    "label": "Template",
-                    "href": "template.html",
-                    "pageId": "template"
                 }
             ]
         },

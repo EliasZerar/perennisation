@@ -1,5 +1,5 @@
 {
-    "title": "Synopsis — VR-AI",
+    "title": "Synopsis de VR-AI",
     "toc": [
         {
             "href": "#situation",
@@ -32,7 +32,7 @@
     ],
     "content": [
         {
-            "type": "h1",
+            "type": "h1 ",
             "id": "titre",
             "text": "Une enquête au cœur du collège"
         },
@@ -70,7 +70,7 @@
             "ratio": "4/3",
             "src": "../../assets/img/bureau.png",
             "alt": "Image de la vidéo de surveillance montrant Eden près du bureau",
-            "caption": "Eden aperçu dans la vidéo de la caméra de surveillance"
+            "caption": "Eden aperçu dans la vidéo de la caméra de surveillance en train de photographier les sujets du brevet dans le bureau du directeur."
         },
         {
             "type": "h2",
@@ -122,7 +122,7 @@
             "type": "placeholder",
             "src": "../../assets/img/dispositif.png",
             "ratio": "16/7",
-            "caption": "Dispositif deux salles — Pièce 1 et Pièce 2"
+            "caption": "Dispositif deux salles"
         },
         {
             "type": "h2",
@@ -208,11 +208,11 @@
             "type": "pageNav",
             "prev": {
                 "href": "objectifs.html",
-                "label": "Objectifs pédagogiques"
+                "label": "Objectifs pédagogiques de VR-AI"
             },
             "next": {
                 "href": "mecaniques.html",
-                "label": "Mécaniques de jeu"
+                "label": "Mécaniques de jeu de VR-AI"
             }
         }
     ]
