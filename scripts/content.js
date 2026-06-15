@@ -117,11 +117,11 @@ function renderToc(toc) {
 }
 
 function setupTocScroll() {
-    const contentEl = document.querySelector('.content');
+    const scrollEl = document.querySelector('.main-right');
     const headings  = Array.from(document.querySelectorAll('.content h1, .content h2, .content h3')).filter(h => h.id);
     const tocLinks  = Array.from(document.querySelectorAll('.toc-link'));
 
-    if (!contentEl || !headings.length || !tocLinks.length) return;
+    if (!scrollEl || !headings.length || !tocLinks.length) return;
 
     const idToLink = {};
     tocLinks.forEach(link => {
@@ -135,18 +135,18 @@ function setupTocScroll() {
             const target = document.getElementById(link.getAttribute('href')?.slice(1));
             if (!target) return;
             const offset = window.innerWidth <= 768 ? 16 : 30;
-            contentEl.scrollTo({
-                top: target.getBoundingClientRect().top - contentEl.getBoundingClientRect().top + contentEl.scrollTop - offset,
+            scrollEl.scrollTo({
+                top: target.getBoundingClientRect().top - scrollEl.getBoundingClientRect().top + scrollEl.scrollTop - offset,
                 behavior: 'smooth'
             });
         });
     });
 
-    contentEl.addEventListener('scroll', () => {
-        const contentTop = contentEl.getBoundingClientRect().top;
+    scrollEl.addEventListener('scroll', () => {
+        const scrollTop = scrollEl.getBoundingClientRect().top;
         let activeLink = tocLinks[0];
         headings.forEach(h => {
-            if (h.getBoundingClientRect().top - contentTop - 30 <= 1 && idToLink[h.id]) {
+            if (h.getBoundingClientRect().top - scrollTop - 30 <= 1 && idToLink[h.id]) {
                 activeLink = idToLink[h.id];
             }
         });
@@ -161,7 +161,7 @@ function renderContent(blocks) {
     const contentEl   = document.querySelector('.content');
     if (!contentEl) return;
 
-    const mobileHeader = contentEl.querySelector('.mobile-toc-header');
+    const mobileHeader = document.querySelector('.mobile-toc-header');
 
     function renderCardIcon(icon, fallbackAlt = '') {
         if (!icon) return '';
@@ -396,11 +396,14 @@ function renderContent(blocks) {
 
 // ─── Footer ──────────────────────────────────────────────────────────────────
 function renderSiteFooter() {
-    const existingFooter = document.querySelector('body > footer.site-footer');
+    const existingFooter = document.querySelector('.main-right > footer.site-footer');
     if (existingFooter) return;
 
+    const mainRight = document.querySelector('.main-right');
+    if (!mainRight) return;
+
     const logoSrc = window.resolveSitePath('assets/svg/logoMetfordTigers.svg');
-    document.body.insertAdjacentHTML('beforeend', `
+    mainRight.insertAdjacentHTML('beforeend', `
         <footer class="site-footer">
             <a href="index.html" class="logo-link">
                 <img src="${logoSrc}" alt="Accueil Metford Tigers">

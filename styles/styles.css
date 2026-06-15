@@ -9,6 +9,7 @@
 @import "table.css";
 @import "img.css";
 @import "summary.css";
+@import "ellipses.css";
 
 .mobile-only {
     display: none;
@@ -41,7 +42,6 @@ html {
 }
 
 body {
-    --header-height: 90.5px;
     background-color: transparent;
     font-family: var(--font-body);
     color: var(--text-primary);
@@ -136,7 +136,11 @@ body::-webkit-scrollbar-thumb:hover {
 
 h2{
     font-family: var(--font-heading);
-    
+    margin-top: var(--spacing-12);
+}
+
+p {
+    margin-bottom: var(--spacing-2);
 }
 
 .text_limit {
@@ -212,7 +216,7 @@ h2{
     border-radius: var(--radius-full);
     border: 1px solid var(--primary-color);
     color: var(--text-secondary);
-    background-color: var(--bg-subtle); 
+    background-color: var(--bg-subtle);
     font-family: var(--font-body);
     font-weight: 700;
     font-size: 0.9rem;
@@ -376,22 +380,18 @@ h2{
     }
 }
 
-/* ── Grille d'images (img_content) ──────────────────────── */
 .img-content-grid {
-    display: grid;
     /* La variable --grid-cols est injectée par le JS (ex: 2) */
     grid-template-columns: repeat(var(--grid-cols, 1), 1fr);
     gap: var(--spacing-4);
     margin: var(--spacing-4) 0;
 }
 
-/* On supprime les marges sur les figures quand elles sont dans la grille */
 .img-content-grid .placeholder-img {
     margin: 0;
-    height: 100%; /* S'assure que les boîtes ont la même hauteur */
+    height: 100%;
 }
 
-/* Sur mobile, on repasse sur 1 seule colonne pour que les images ne soient pas trop petites */
 @media (max-width: 768px) {
     .img-content-grid {
         grid-template-columns: 1fr;
