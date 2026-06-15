@@ -481,12 +481,11 @@ main {
         padding: var(--spacing-2);
     }
 
-    .mobile-toc-list {
+    .mobile-toc-popup .mobile-toc-list {
         list-style: none;
         padding: 0;
         margin: 0;
-        display: flex;
-        flex-direction: column;
+        padding-left: 0; 
     }
 
     .mobile-toc-list .toc-link {
