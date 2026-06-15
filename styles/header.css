@@ -62,7 +62,7 @@ header {
         margin-left: 3px;
         position: relative;
 
-        img{
+        img {
             width: 120px;
             position: relative;
             top: 5px;
@@ -351,6 +351,7 @@ header.desktop-only {
         align-items: center;
         justify-content: center;
         color: var(--text-primary);
+        gap: var(--spacing-2);
     }
 
     .mobile-burger-btn:hover {

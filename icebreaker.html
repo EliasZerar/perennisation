@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,600&display=swap" rel="stylesheet">
     <script>
-        (function() {
+        (function () {
             var t = localStorage.getItem('theme');
             if (t) document.documentElement.setAttribute('data-theme', t);
         })();
@@ -38,7 +38,8 @@
             <label class="visually-hidden" for="site-search">Rechercher</label>
             <div class="search-bar">
                 <img class="invert-on-dark" src="assets/svg/iconSearch.svg" alt="">
-                <input id="site-search" type="search" autocomplete="off" placeholder="Rechercher…" aria-label="Rechercher dans le site">
+                <input id="site-search" type="search" autocomplete="off" placeholder="Rechercher…"
+                    aria-label="Rechercher dans le site">
                 <div class="search-shortcuts" data-tooltip="CTRL + K pour focus la barre de recherche">
                     <kbd class="shortcut-mac" hidden>⌘</kbd>
                     <kbd class="shortcut-ctrl">CTRL</kbd>
@@ -69,10 +70,14 @@
                 <a class="mobile-help-btn" href="support.html" aria-label="Aide">
                     <img class="invert-on-dark" src="assets/svg/iconHelp.svg" alt="">
                 </a>
-                <button class="mobile-burger-btn" id="mobile-nav-trigger" aria-expanded="false" aria-label="Ouvrir la navigation">
-                    <img class="invert-on-dark" src="assets/svg/iconBurger.svg" alt="">
-                </button>
+
             </div>
+        </div>
+        <div class="mobile-header-breadcrumb">
+            <button class="mobile-burger-btn" id="mobile-nav-trigger" aria-expanded="false"
+                aria-label="Ouvrir la navigation">
+                <img class="invert-on-dark" src="assets/svg/iconBurger.svg" alt=""><span class="mobile-breadcrumb-text" aria-current="page"></span>
+            </button>
         </div>
     </header>
 
@@ -93,7 +98,8 @@
                 <label class="visually-hidden" for="mobile-site-search">Rechercher</label>
                 <div class="mobile-nav-search-bar">
                     <img class="invert-on-dark" src="assets/svg/iconSearch.svg" alt="">
-                    <input id="mobile-site-search" type="search" autocomplete="off" placeholder="Rechercher…" aria-label="Rechercher dans le site">
+                    <input id="mobile-site-search" type="search" autocomplete="off" placeholder="Rechercher…"
+                        aria-label="Rechercher dans le site">
                 </div>
                 <div class="mobile-search-results" hidden></div>
             </div>
