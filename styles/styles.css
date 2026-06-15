@@ -41,14 +41,16 @@ html {
 }
 
 body {
+    --header-height: 90.5px;
     background-color: transparent;
     font-family: var(--font-body);
     color: var(--text-primary);
     padding: 0;
     margin: 0;
     position: relative;
-    overflow: hidden;
-    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -101,6 +103,7 @@ body {
 @media (max-width: 768px) {
     :root {
         --mobile-header-height: 110px;
+        --header-height: var(--mobile-header-height);
     }
 }
 
@@ -123,9 +126,8 @@ h2{
     width: 100%;
 }
 
-footer {
+.site-footer {
     border-top: 0.125rem solid var(--border-default);
-    margin-top: var(--spacing-8);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -134,11 +136,11 @@ footer {
     flex-wrap: wrap;
 }
 
-footer .logo-link img {
+.site-footer .logo-link img {
     width: 80px;
 }
 
-footer p {
+.site-footer p {
     font-family: var(--font-body);
     font-size: 0.875rem;
     color: var(--text-secondary);
@@ -146,7 +148,7 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    footer {
+    .site-footer {
         padding: var(--spacing-4);
         flex-direction: column;
         align-items: flex-start;
@@ -239,6 +241,7 @@ footer p {
     align-items: center;
     margin-top: var(--spacing-8);
     padding-top: var(--spacing-6);
+    margin-bottom: var(--spacing-8);
     border-top: 1px solid var(--border-default);
     gap: var(--spacing-4);
 }
