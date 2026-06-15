@@ -231,6 +231,7 @@ function renderContent(blocks) {
                         ${(step.extraBody ?? []).map(line => `<p>${line}</p>`).join('')}
                         ${step.extraList2 ? `<ul>${step.extraList2.map(li => `<li>${li}</li>`).join('')}</ul>` : ''}
                         ${(step.extraBody2 ?? []).map(line => `<p>${line}</p>`).join('')}
+                        ${step.img ? `<figure class="placeholder-img" style="margin: var(--spacing-2) 0;"><img src="${window.resolveSitePath(step.img.src)}" alt="${step.img.alt ?? ''}" style="width: 100%; object-fit: cover; border-radius: var(--radius-lg); aspect-ratio: ${step.img.ratio ?? 'auto'};">${step.img.caption ? `<figcaption>${step.img.caption}</figcaption>` : ''}</figure>` : ''}
                         ${step.alert ? `<div class="alert ${step.alert.type}"><div class="icon-alert-svg"></div><span>${step.alert.text}</span></div>` : ''}
                     </div>
                 </li>`).join('')}
