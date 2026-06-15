@@ -55,6 +55,7 @@
         },
         {
             "type": "steps",
+            "startAt": 1,
             "items": [
                 {
                     "title": "Définir le scénario",
@@ -80,14 +81,38 @@
                         "Cela peut être une photo ou une courte vidéo.",
                         "Cette version servira de base pour générer les preuves modifiées."
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "img_content",
+            "src": "../../assets/img/vrai_vol.png",
+            "ratio": "4/3",
+            "caption": "Version originale de la scène"
+        },
+        {
+            "type": "steps",
+            "startAt": 4,
+            "items": [
                 {
                     "title": "Générer les images modifiées",
                     "body": [
                         "Utilisez un outil d'intelligence artificielle pour transformer la scène.",
                         "L'objectif est de remplacer certains éléments ou d'ajouter des détails tout en conservant une apparence crédible."
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "img_content",
+            "src": "../../assets/img/avant_apres.jpg",
+            "ratio": "16/9",
+            "caption": "AVANT (gauche) — APRÈS modification IA (droite)"
+        },
+        {
+            "type": "steps",
+            "startAt": 5,
+            "items": [
                 {
                     "title": "Sélectionner les captures",
                     "body": [
@@ -103,16 +128,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "type": "img_content",
-            "ratio": "4/3",
-            "caption": "Version originale de la scène"
-        },
-        {
-            "type": "img_content",
-            "ratio": "16/9",
-            "caption": "AVANT (gauche) — APRÈS modification IA (droite)"
         },
         {
             "type": "h2",
