@@ -19,6 +19,13 @@
     margin: var(--spacing-6);
 }
 
+.card-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: var(--spacing-3);
+    display: block;
+}
+
 .input a,
 .link a {
     color: var(--text-secondary);

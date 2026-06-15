@@ -8,6 +8,7 @@
 @import "copy-box.css";
 @import "table.css";
 @import "img.css";
+@import "summary.css";
 
 .mobile-only {
     display: none;
@@ -40,16 +41,36 @@ html {
 }
 
 body {
+    --header-height: 90.5px;
     background-color: transparent;
     font-family: var(--font-body);
     color: var(--text-primary);
     padding: 0;
     margin: 0;
     position: relative;
-    overflow: hidden;
-    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+body::-webkit-scrollbar {
+    width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+    background: none;
+    margin: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-hover);
 }
 
 .skip-links {
@@ -100,6 +121,7 @@ body {
 @media (max-width: 768px) {
     :root {
         --mobile-header-height: 110px;
+        --header-height: var(--mobile-header-height);
     }
 }
 
@@ -122,9 +144,8 @@ h2{
     width: 100%;
 }
 
-footer {
+.site-footer {
     border-top: 0.125rem solid var(--border-default);
-    margin-top: var(--spacing-8);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -133,11 +154,11 @@ footer {
     flex-wrap: wrap;
 }
 
-footer .logo-link img {
+.site-footer .logo-link img {
     width: 80px;
 }
 
-footer p {
+.site-footer p {
     font-family: var(--font-body);
     font-size: 0.875rem;
     color: var(--text-secondary);
@@ -145,7 +166,7 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    footer {
+    .site-footer {
         padding: var(--spacing-4);
         flex-direction: column;
         align-items: flex-start;
@@ -159,13 +180,29 @@ footer p {
     margin: var(--spacing-4) 0;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-6);
+    gap: 0;
 }
 
 .step-item {
     display: flex;
     gap: var(--spacing-4);
     align-items: flex-start;
+    position: relative;
+    padding-bottom: var(--spacing-6);
+}
+
+.step-item::after {
+    content: "";
+    position: absolute;
+    left: calc(1rem - 1px);
+    top: calc(3rem);
+    bottom: 2.5rem;
+    width: 2px;
+    background-color: var(--bg-subtle);
+}
+
+.step-item:last-child {
+    padding-bottom: 0;
 }
 
 .step-number {
@@ -173,8 +210,9 @@ footer p {
     width: 2rem;
     height: 2rem;
     border-radius: var(--radius-full);
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--text-secondary);
+    background-color: var(--bg-subtle); 
     font-family: var(--font-body);
     font-weight: 700;
     font-size: 0.9rem;
@@ -238,6 +276,7 @@ footer p {
     align-items: center;
     margin-top: var(--spacing-8);
     padding-top: var(--spacing-6);
+    margin-bottom: var(--spacing-8);
     border-top: 1px solid var(--border-default);
     gap: var(--spacing-4);
 }
@@ -255,6 +294,22 @@ footer p {
     font-size: 0.9rem;
     transition: background 0.15s, border-color 0.15s;
     white-space: nowrap;
+}
+
+.page-nav-prev::before,
+.page-nav-next::after {
+    content: "";
+    width: 0.75rem;
+    height: 0.75rem;
+    display: inline-block;
+    background-color: currentColor;
+    -webkit-mask: url("../assets/svg/iconChevronRight.svg") center / contain no-repeat;
+    mask: url("../assets/svg/iconChevronRight.svg") center / contain no-repeat;
+    flex-shrink: 0;
+}
+
+.page-nav-prev::before {
+    transform: rotate(180deg);
 }
 
 .page-nav-btn:hover {

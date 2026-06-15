@@ -15,10 +15,10 @@
 }
 
 .icon-alert-svg {
-    height: var(--spacing-4);
-    width: var(--spacing-4);
-    -webkit-mask-image: url('/assets/svg/alert.svg');
-    mask-image: url('/assets/svg/alert.svg');
+    min-height: var(--spacing-4);
+    min-width: var(--spacing-4);
+    -webkit-mask-image: url('../assets/svg/alert.svg');
+    mask-image: url('../assets/svg/alert.svg');
     -webkit-mask-size: contain;
     mask-size: contain;
     -webkit-mask-repeat: no-repeat;

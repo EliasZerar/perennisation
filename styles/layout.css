@@ -2,8 +2,9 @@ main {
     display: flex;
     justify-content: center;
     overflow: hidden;
-    flex: 1;
-    height: auto;
+    flex: 0 0 auto;
+    height: calc(100vh - var(--header-height, 90.5px));
+    min-height: calc(100vh - var(--header-height, 90.5px));
 }
 
 
@@ -13,6 +14,7 @@ main {
     border-right: 1px solid var(--border-default);
     padding: var(--spacing-6) var(--spacing-4) var(--spacing-6) var(--spacing-6);
     overflow-y: auto;
+    max-width: 320px;
 
     nav {
         display: flex;
@@ -121,6 +123,7 @@ main {
     flex: 0 0 15%;
     padding: var(--spacing-6);
     overflow-y: auto;
+    max-width: 320px;
 
     ul {
         list-style: none;
@@ -172,7 +175,7 @@ main {
 @media (max-width: 768px) {
     main {
         flex-direction: column;
-        height: calc(100vh - var(--mobile-header-height));
+        height: calc(100vh - var(--header-height, var(--mobile-header-height)));
         overflow: hidden;
     }
 
@@ -329,6 +332,24 @@ main {
         flex-direction: column;
         gap: var(--spacing-2);
         box-sizing: border-box;
+    }
+
+    .mobile-search-results::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .mobile-search-results::-webkit-scrollbar-track {
+        background: none;
+        margin: 5px;
+    }
+
+    .mobile-search-results::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: 2px;
+    }
+
+    .mobile-search-results::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-color-hover);
     }
 
     .mobile-nav-search-wrapper:has(input:focus) .mobile-search-results {

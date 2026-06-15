@@ -35,6 +35,7 @@
 
         if (page.title)   document.title = page.title;
         if (page.content) renderContent(page.content);
+        renderSiteFooter();
         if (page.toc)     renderToc(page.toc);
         if (page.toc)     setupTocScroll();
 
@@ -72,12 +73,12 @@ function renderNav(nav, activePageId) {
     for (const group of nav.groups ?? []) {
         groupIdCounter++;
         const groupId = `nav-group-title-${groupIdCounter}`;
-        
+
         // 🌟 Titres h2 et liaison avec la liste ul
         html += `<div class="nav-group">
             <h2 class="nav-group-title" id="${groupId}">${group.title}</h2>
             <ul aria-labelledby="${groupId}">`;
-            
+
         for (const link of group.links) {
             const active = isActive(link);
             html += `<li><a href="${link.href}" class="nav-link${active ? ' active' : ''}" ${active ? 'aria-current="page"' : ''}>${link.label}</a></li>`;
@@ -157,6 +158,17 @@ function renderContent(blocks) {
 
     const mobileHeader = contentEl.querySelector('.mobile-toc-header');
 
+    function renderCardIcon(icon, fallbackAlt = '') {
+        if (!icon) return '';
+
+        const iconSrc = typeof icon === 'string' ? icon : icon.src;
+        if (!iconSrc) return '';
+
+        const alt = typeof icon === 'object' && typeof icon.alt === 'string' ? icon.alt : fallbackAlt;
+        const src = window.resolveSitePath(iconSrc);
+        return `<img class="card-icon invert-on-dark" src="${src}" alt="${alt}">`;
+    }
+
     const renderers = {
         h1: b => `<h1${b.id ? ` id="${b.id}"` : ''}>${b.text}</h1>`,
         h2: b => `<h2${b.id ? ` id="${b.id}"` : ''}>${b.text}</h2>`,
@@ -222,7 +234,8 @@ function renderContent(blocks) {
             return `
                 <div class="input">
                     <div class="input-text">
-                        <h2 class="squareserif" id="${cardId}">${b.title}</h2>
+                        ${renderCardIcon(b.icon, '')}
+                    <h2 class="squareserif"id="${cardId}">${b.title}</h2>
                         <p class="general-sans-medium">${b.content}</p>
                     </div>
                     ${b.link ? `
@@ -245,7 +258,8 @@ function renderContent(blocks) {
                         return `
                         <div class="input">
                             <div class="input-text">
-                                <h2 class="squareserif" id="${cardId}">${card.title}</h2>
+                                ${renderCardIcon(card.icon, '')}
+                        <h2 class="squareserif"id="${cardId}">${card.title}</h2>
                                 <p class="general-sans-medium">${card.content}</p>
                             </div>
                             ${card.link ? `
@@ -271,12 +285,12 @@ function renderContent(blocks) {
 
         pageNav: b => `
             <nav class="page-nav" aria-label="Navigation entre pages">
-                ${b.prev ? `<a href="${b.prev.href}" class="page-nav-btn page-nav-prev">‹ ${b.prev.label}</a>` : '<span></span>'}
-                ${b.next ? `<a href="${b.next.href}" class="page-nav-btn page-nav-next">${b.next.label} ›</a>` : ''}
+                ${b.prev ? `<a href="${b.prev.href}" class="page-nav-btn page-nav-prev">${b.prev.label}</a>` : '<span></span>'}
+                ${b.next ? `<a href="${b.next.href}" class="page-nav-btn page-nav-next">${b.next.label}</a>` : ''}
             </nav>`,
 
         form: b => `
-            <form action="${b.action ?? '#'}" method="POST" class="form" novalidate>
+            <form action="https://formspree.io/f/mbdeleeb" method="POST" class="form" novalidate>
                 <p>*Tous les champs sont obligatoires.</p>
                 ${(b.fields ?? []).map(f => f.type === 'textarea' ? 
                     `<label for="${f.id}">
@@ -294,6 +308,20 @@ function renderContent(blocks) {
                 </div>
                 <button class="btn general-sans-semibold" type="submit">${b.submit ?? 'Envoyer'}</button>
             </form>`,
+
+        SummaryGroup: b => `
+            <div class="accordion-group">
+                ${(b.items ?? []).map(acc => `
+                <details class="summary">
+                    <summary class="summary-header">
+                        <span class="summary-title">${acc.title}</span>
+                        <div class="icon-arrow-svg summary-icon"></div>
+                    </summary>
+                    <div class="summary-body">
+                        <p class="general-sans-medium">${acc.content}</p>
+                    </div>
+                </details>`).join('')}
+            </div>`,
     };
 
     // Regroupement automatique des infoImg consécutives en galerie
@@ -336,11 +364,17 @@ function renderContent(blocks) {
         });
     });
 
-    // Injection automatique du footer à la fin du content
-    contentEl.insertAdjacentHTML('beforeend', `
-        <footer>
+}
+
+function renderSiteFooter() {
+    const existingFooter = document.querySelector('body > footer.site-footer');
+    if (existingFooter) return;
+
+    const logoSrc = window.resolveSitePath('assets/svg/logoMetfordTigers.svg');
+    document.body.insertAdjacentHTML('beforeend', `
+        <footer class="site-footer">
             <a href="index.html" class="logo-link">
-                <img src="assets/svg/logoMetfordTigers.svg" alt="Accueil Metford Tigers">
+                <img src="${logoSrc}" alt="Accueil Metford Tigers">
             </a>
             <p>Alibi — Atelier pédagogique</p>
             <p>Projet BUT MMI 2026-2027</p>
