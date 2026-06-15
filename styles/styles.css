@@ -262,7 +262,7 @@ h2{
 }
 
 .placeholder-img figcaption {
-    text-align: center;
+    text-align: right;
     font-size: 0.8rem;
     color: var(--text-secondary);
     margin-top: var(--spacing-2);

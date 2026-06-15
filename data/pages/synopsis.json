@@ -68,6 +68,8 @@
         {
             "type": "placeholder",
             "ratio": "4/3",
+            "src": "../../assets/img/bureau.png",
+            "alt": "Image de la vidéo de surveillance montrant Eden près du bureau",
             "caption": "Eden aperçu dans la vidéo de la caméra de surveillance"
         },
         {
@@ -118,6 +120,7 @@
         },
         {
             "type": "placeholder",
+            "src": "../../assets/img/dispositif.png",
             "ratio": "16/7",
             "caption": "Dispositif deux salles — Pièce 1 et Pièce 2"
         },
