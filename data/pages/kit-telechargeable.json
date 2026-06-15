@@ -46,6 +46,10 @@
             "cards": [
                 {
                     "title": "Fiches élèves",
+                    "icon": {
+                        "src": "assets/svg/iconDoc.svg",
+                        "alt": "Icône fiches"
+                    },
                     "content": "Documents remis pendant l'enquête pour guider l'analyse des images.",
                     "link": {
                         "href": "#",
@@ -54,6 +58,10 @@
                 },
                 {
                     "title": "Images et preuves",
+                    "icon": {
+                        "src": "assets/svg/iconImg.svg",
+                        "alt": "Icône images"
+                    },
                     "content": "Captures d'écran et éléments visuels utilisés dans l'enquête.",
                     "link": {
                         "href": "#",
@@ -62,6 +70,10 @@
                 },
                 {
                     "title": "Vidéos",
+                    "icon": {
+                        "src": "assets/svg/iconVideo.svg",
+                        "alt": "Icône vidéos"
+                    },
                     "content": "Vidéos de surveillance (version modifiée et originale).",
                     "link": {
                         "href": "#",
@@ -70,6 +82,10 @@
                 },
                 {
                     "title": "Guide d'animation",
+                    "icon": {
+                        "src": "assets/svg/iconGuide.svg",
+                        "alt": "Icône guide"
+                    },
                     "content": "Document récapitulatif pour accompagner l'animateur.",
                     "link": {
                         "href": "#",
@@ -78,6 +94,10 @@
                 },
                 {
                     "title": "Supports imprimables",
+                    "icon": {
+                        "src": "assets/svg/iconPrint.svg",
+                        "alt": "Icône supports"
+                    },
                     "content": "Éléments à imprimer pour la mise en place de l'atelier.",
                     "link": {
                         "href": "#",

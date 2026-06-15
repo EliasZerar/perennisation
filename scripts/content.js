@@ -72,12 +72,12 @@ function renderNav(nav, activePageId) {
     for (const group of nav.groups ?? []) {
         groupIdCounter++;
         const groupId = `nav-group-title-${groupIdCounter}`;
-        
+
         // 🌟 Titres h2 et liaison avec la liste ul
         html += `<div class="nav-group">
             <h2 class="nav-group-title" id="${groupId}">${group.title}</h2>
             <ul aria-labelledby="${groupId}">`;
-            
+
         for (const link of group.links) {
             const active = isActive(link);
             html += `<li><a href="${link.href}" class="nav-link${active ? ' active' : ''}" ${active ? 'aria-current="page"' : ''}>${link.label}</a></li>`;
@@ -157,6 +157,17 @@ function renderContent(blocks) {
 
     const mobileHeader = contentEl.querySelector('.mobile-toc-header');
 
+    function renderCardIcon(icon, fallbackAlt = '') {
+        if (!icon) return '';
+
+        const iconSrc = typeof icon === 'string' ? icon : icon.src;
+        if (!iconSrc) return '';
+
+        const alt = typeof icon === 'object' && typeof icon.alt === 'string' ? icon.alt : fallbackAlt;
+        const src = window.resolveSitePath(iconSrc);
+        return `<img class="card-icon invert-on-dark" src="${src}" alt="${alt}">`;
+    }
+
     const renderers = {
         h1: b => `<h1${b.id ? ` id="${b.id}"` : ''}>${b.text}</h1>`,
         h2: b => `<h2${b.id ? ` id="${b.id}"` : ''}>${b.text}</h2>`,
@@ -222,7 +233,8 @@ function renderContent(blocks) {
             return `
                 <div class="input">
                     <div class="input-text">
-                        <h2 class="squareserif" id="${cardId}">${b.title}</h2>
+                        ${renderCardIcon(b.icon, '')}
+                    <h2 class="squareserif"id="${cardId}">${b.title}</h2>
                         <p class="general-sans-medium">${b.content}</p>
                     </div>
                     ${b.link ? `
@@ -245,7 +257,8 @@ function renderContent(blocks) {
                         return `
                         <div class="input">
                             <div class="input-text">
-                                <h2 class="squareserif" id="${cardId}">${card.title}</h2>
+                                ${renderCardIcon(card.icon, '')}
+                        <h2 class="squareserif"id="${cardId}">${card.title}</h2>
                                 <p class="general-sans-medium">${card.content}</p>
                             </div>
                             ${card.link ? `
