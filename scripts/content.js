@@ -242,7 +242,8 @@ function renderContent(blocks) {
             return `
                 <div class="input">
                     <div class="input-text">
-                        ${renderCardIcon(b.icon, '')}
+                        /* 🌟 Utilisation du div de masque CSS si une icône est renseignée */
+                        ${b.icon ? `<div class="card-icon-svg ${b.icon}" aria-hidden="true"></div>` : ''}
                         <h2 class="squareserif" id="${cardId}">${b.title}</h2>
                         <p class="general-sans-medium">${b.content}</p>
                     </div>
@@ -266,7 +267,7 @@ function renderContent(blocks) {
                         return `
                         <div class="input">
                             <div class="input-text">
-                                ${renderCardIcon(card.icon, '')}
+                                ${card.icon ? `<div class="card-icon-svg ${card.icon}" aria-hidden="true"></div>` : ''}
                                 <h2 class="squareserif" id="${cardId}">${card.title}</h2>
                                 <p class="general-sans-medium">${card.content}</p>
                             </div>

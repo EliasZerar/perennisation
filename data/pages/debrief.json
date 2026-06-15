@@ -181,11 +181,11 @@
             "type": "pageNav",
             "prev": {
                 "href": "resolution.html",
-                "label": "Résolution (phase 2)"
+                "label": "Résolution (phase 2) de VR-AI"
             },
             "next": {
                 "href": "creer-preuves.html",
-                "label": "Créer ses preuves"
+                "label": "Créer ses preuves dans VR-AI"
             }
         }
     ]

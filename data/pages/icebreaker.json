@@ -171,11 +171,11 @@
             "type": "pageNav",
             "prev": {
                 "href": "mecaniques.html",
-                "label": "Mécaniques de jeu"
+                "label": "Mécaniques de jeu de VR-AI"
             },
             "next": {
                 "href": "materiel.html",
-                "label": "Matériel"
+                "label": "Matériel de VR-AI"
             }
         }
     ]

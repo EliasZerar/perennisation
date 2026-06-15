@@ -64,8 +64,8 @@
         { "type": "alertInfo", "text": "Le jeu de rôle n'a pas besoin d'être théâtral. Une intervention simple suffit à créer l'immersion." },
         { "type": "alertError", "text": "Évitez de trop expliquer au départ. Les élèves doivent découvrir par eux-mêmes." },
         { "type": "pageNav",
-          "prev": { "href": "materiel.html", "label": "Matériel" },
-          "next": { "href": "enquete-1.html", "label": "Enquête (phase 1)" }
+          "prev": { "href": "materiel.html", "label": "Matériel de VR-AI" },
+          "next": { "href": "enquete-1.html", "label": "Enquête (phase 1) de VR-AI" }
         }
     ]
 }
