@@ -1,5 +1,5 @@
 {
-    "title": "Vue d'ensemble — VR-AI",
+    "title": "VR-AI",
     "toc": [
         {
             "href": "#presentation",
@@ -20,86 +20,109 @@
     ],
     "content": [
         {
-            "type": "introImg",
-            "title": "VR-AI",
-            "description": "Un atelier pédagogique sur les images et l'intelligence artificielle."
-        },
-        {
-            "type": "h2",
-            "id": "presentation",
-            "text": "Présentation"
+            "type": "h1",
+            "id": "titre",
+            "text": "VR-AI, une enquête au cœur du numérique"
         },
         {
             "type": "p",
-            "text": "VR-AI est un atelier ludo-pédagogique conçu pour aider les élèves de 6ème à comprendre comment les images peuvent être créées, modifiées ou manipulées à l’ère de l’intelligence artificielle."
+            "text": "Un atelier ludo-pédagogique conçu pour aider les élèves de 6e à comprendre comment les images peuvent être créées, modifiées et manipulées à l’ère de l’intelligence artificielle."
         },
         {
             "type": "h2",
-            "id": "objectif",
-            "text": "L'objectif pédagogique"
-        },
-        {
-            "type": "p",
-            "text": "L'atelier ne cherche pas à donner des réponses toutes faites. Il vise à développer un réflexe : prendre le temps d'observer avant de croire."
-        },
-        {
-            "type": "alertInfo",
-            "text": "VR-AI s'inscrit dans une démarche d'éducation aux médias et à l'information (EMI)."
-        },
-        {
-            "type": "h2",
-            "id": "deroulement",
-            "text": "Déroulement global"
-        },
-        {
-            "type": "p",
-            "text": "L'atelier se déroule en plusieurs étapes successives, de la mise en place jusqu'au débrief final."
+            "id": "quick-access",
+            "text": "Accès rapide"
         },
         {
             "type": "cardContainer",
             "cards": [
                 {
-                    "title": "Préparation",
-                    "content": "Rassembler le matériel et préparer les espaces avant l'arrivée des élèves.",
+                    "title": "Présentation",
+                    "content": "Découvrez le contexte du projet, les intentions pédagogiques et les objectifs de l’atelier VR-AI.",
                     "link": {
-                        "href": "materiel.html",
-                        "label": "Voir le matériel"
+                        "href": "a-propos.html",
+                        "label": "À propos de VR-AI"
                     }
                 },
                 {
-                    "title": "Lancement",
-                    "content": "Installer l'ambiance, présenter la situation et lancer l'enquête.",
+                    "title": "L’atelier",
+                    "content": "Explorez le scénario de l’enquête, les mécaniques de jeu et le fonctionnement global de l’atelier.",
+                    "link": {
+                        "href": "synopsis.html",
+                        "label": "Découvrir le Synopsis"
+                    }
+                },
+                {
+                    "title": "Préparation",
+                    "content": "Préparez le matériel, l’espace et les activités nécessaires avant le début de l’atelier.",
+                    "link": {
+                        "href": "icebreaker.html",
+                        "label": "Préparer l’atelier"
+                    }
+                },
+                {
+                    "title": "Guide d’animation",
+                    "content": "Suivez le déroulé complet de l’atelier, de l’introduction jusqu’au débrief final.",
                     "link": {
                         "href": "lancement.html",
-                        "label": "Voir le lancement"
+                        "label": "Voir le guide d’animation"
                     }
                 },
                 {
-                    "title": "Enquête",
-                    "content": "Les élèves analysent les indices en groupes séparés.",
+                    "title": "Personnalisation",
+                    "content": "Adaptez le scénario, créez vos propres preuves et modifiez l’atelier selon vos besoins.",
                     "link": {
-                        "href": "enquete-1.html",
-                        "label": "Voir l'enquête"
+                        "href": "creer-preuves.html",
+                        "label": "Personnaliser l’atelier"
                     }
                 },
                 {
-                    "title": "Résolution",
-                    "content": "Les groupes se rejoignent pour découvrir la vérité.",
+                    "title": "Ressources",
+                    "content": "Accédez au kit téléchargeable, aux documents et aux différents supports pédagogiques.",
                     "link": {
-                        "href": "resolution.html",
-                        "label": "Voir la résolution"
+                        "href": "kit-telechargeable.html",
+                        "label": "Explorer les ressources"
                     }
                 }
             ]
         },
         {
             "type": "h2",
-            "id": "commencer",
-            "text": "Par où commencer ?"
+            "id": "contact",
+            "text": "Nous contacter"
         },
         {
             "type": "p",
-            "text": "Si c'est votre première fois avec VR-AI, commencez par lire la page À propos pour comprendre le projet, puis consultez le Guide d'animation."
+            "text": "Si vous rencontrez un problème, souhaitez adapter l’atelier ou partager un retour d’expérience, vous pouvez nous contacter directement."
+        },
+        {
+            "type": "form",
+            "action": "#",
+            "submit": "Envoyer le message",
+            "fields": [
+                {
+                    "id": "name",
+                    "label": "Nom*",
+                    "type": "text",
+                    "autocomplete": "name"
+                },
+                {
+                    "id": "email",
+                    "label": "Adresse e-mail*",
+                    "type": "email",
+                    "autocomplete": "email"
+                },
+                {
+                    "id": "subject",
+                    "label": "Sujet*",
+                    "type": "text"
+                },
+                {
+                    "id": "message",
+                    "label": "Message*",
+                    "type": "textarea"
+                }
+            ]
         },
         {
             "type": "pageNav",

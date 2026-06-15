@@ -13,10 +13,6 @@
     transition: background-color 0.3s ease;
 }
 
-.summary[open] {
-    background-color: var(--bg-subtle);
-}
-
 .summary-header {
     display: flex;
     justify-content: space-between;
@@ -38,7 +34,7 @@
 }
 
 .summary[open] .summary-icon {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
 }
 
 .summary-body {

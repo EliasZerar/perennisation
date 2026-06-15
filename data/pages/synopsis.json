@@ -120,9 +120,11 @@
         },
         {
             "type": "img_content",
-            "src": "../../assets/img/dispositif.png",
-            "ratio": "16/7",
-            "caption": "Dispositif deux salles"
+            "src": "../../assets/img/dispositif-deux-pieces1.png"
+        },
+        {
+            "type": "img_content",
+            "src": "../../assets/img/dispositif-deux-pieces2.png"
         },
         {
             "type": "h2",

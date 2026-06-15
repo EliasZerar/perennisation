@@ -218,6 +218,23 @@ function renderContent(blocks) {
             </figure>`;
         },
 
+        youtube: b => `
+            <div class="youtube-wrapper" style="margin: var(--spacing-4) 0 var(--spacing-8) 0;">
+                <iframe src="${b.url}" style="width: 100%; aspect-ratio: 16/9; border: 0; border-radius: var(--radius-lg); margin-bottom: var(--spacing-4);" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="${b.title ?? 'Vidéo YouTube'}"></iframe>
+                ${b.transcript ? `
+                <details class="summary">
+                    <summary class="summary-header">
+                        <span class="summary-title">${b.transcriptLabel ?? 'Voir la transcription'}</span>
+                        <svg class="summary-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </summary>
+                    <div class="summary-body">
+                        ${Array.isArray(b.transcript) 
+                            ? b.transcript.map(line => `<p class="general-sans-medium">${line}</p>`).join('') 
+                            : `<p class="general-sans-medium">${b.transcript}</p>`}
+                    </div>
+                </details>` : ''}
+            </div>`,
+
         steps: b => {
             const start = b.startAt ?? 1;
             return `<ol class="steps-list" style="counter-reset: step-counter ${start - 1}">
@@ -231,6 +248,7 @@ function renderContent(blocks) {
                         ${(step.extraBody ?? []).map(line => `<p>${line}</p>`).join('')}
                         ${step.extraList2 ? `<ul>${step.extraList2.map(li => `<li>${li}</li>`).join('')}</ul>` : ''}
                         ${(step.extraBody2 ?? []).map(line => `<p>${line}</p>`).join('')}
+                        ${step.img ? `<figure class="placeholder-img" style="margin: var(--spacing-2) 0;"><img src="${window.resolveSitePath(step.img.src)}" alt="${step.img.alt ?? ''}" style="width: 100%; object-fit: cover; border-radius: var(--radius-lg); aspect-ratio: ${step.img.ratio ?? 'auto'};">${step.img.caption ? `<figcaption>${step.img.caption}</figcaption>` : ''}</figure>` : ''}
                         ${step.alert ? `<div class="alert ${step.alert.type}"><div class="icon-alert-svg"></div><span>${step.alert.text}</span></div>` : ''}
                     </div>
                 </li>`).join('')}
@@ -324,7 +342,7 @@ function renderContent(blocks) {
                 <details class="summary">
                     <summary class="summary-header">
                         <span class="summary-title">${acc.title}</span>
-                        <div class="icon-arrow-svg summary-icon"></div>
+                        <svg class="summary-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </summary>
                     <div class="summary-body">
                         <p class="general-sans-medium">${acc.content}</p>

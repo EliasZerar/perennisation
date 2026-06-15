@@ -1,5 +1,5 @@
 {
-    "title": "Lancement — Démarrer l'enquête VR-AI",
+    "title": "Démarrer l'enquête VR-AI",
     "toc": [
         { "href": "#etapes", "label": "Étapes du lancement" }
     ],
@@ -36,7 +36,15 @@
                 }
             ]
         },
-        { "type": "img_content", "ratio": "16/9", "label": "Vidéo de surveillance — placeholder" },
+        { 
+            "type": "youtube", 
+            "url": "https://www.youtube.com/embed/", 
+            "transcriptLabel": "Dérouler pour voir la transcription",
+            "transcript": [
+                "Bon là faut écrire la transcription de la vidéo",
+                "C'est pas fait encore, mais ça va venir"
+            ]
+        },
         { 
             "type": "steps",
             "startAt": 4,
