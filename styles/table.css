@@ -56,7 +56,36 @@ td > img:not(.table-icons img) {
 }
 
 .table-icons:hover {
-    background-color: var(--border-default);
+    background-color: var(--bg-subtle);
     transform: scale(1.1);
 }
+
+.table-wrapper::-webkit-scrollbar {
+    height:4px ;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: none;
+    margin: 5px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-hover);
+}
+
+th:nth-child(4), td:nth-child(4),
+th:nth-child(5), td:nth-child(5) {
+    text-align: center;
+}
+
+td:nth-child(4) .table-icons,
+td:nth-child(5) .table-icons {
+    display: inline-flex;
+}
+
  

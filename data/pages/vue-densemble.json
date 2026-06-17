@@ -12,13 +12,26 @@
     ],
     "content": [
         {
-            "type": "h1",
-            "id": "titre",
-            "text": "VR-AI, une enquête au cœur du numérique"
-        },
-        {
-            "type": "p",
-            "text": "Un atelier ludo-pédagogique conçu pour aider les élèves de 6e à comprendre comment les images peuvent être créées, modifiées et manipulées à l’ère de l’intelligence artificielle."
+            "type": "flexBox",
+            "align": "start", 
+            "items1": [
+                {
+                    "type": "h1",
+                    "id": "titre",
+                    "text": "VR-AI, une enquête au cœur du numérique"
+                },
+                {
+                    "type": "p",
+                    "text": "Un atelier ludo-pédagogique conçu pour aider les élèves de 6e à comprendre comment les images peuvent être créées, modifiées et manipulées à l’ère de l’intelligence artificielle."
+                }
+            ],
+            "items2": [
+                {
+                    "type": "img_content",
+                    "src": "../../assets/img/ex_atelier.jpg",
+                    "alt": "Photo d'un atelier VR-AI en classe"
+                }
+            ]
         },
         {
             "type": "h2",
@@ -79,40 +92,53 @@
             ]
         },
         {
-            "type": "h2",
-            "id": "contact",
-            "text": "Nous contacter"
-        },
-        {
-            "type": "p",
-            "text": "Si vous rencontrez un problème, souhaitez adapter l’atelier ou partager un retour d’expérience, vous pouvez nous contacter directement."
-        },
-        {
-            "type": "form",
-            "action": "#",
-            "submit": "Envoyer le message",
-            "fields": [
+            "type": "flexBox",
+            "align": "start", 
+            "items1": [
                 {
-                    "id": "name",
-                    "label": "Nom*",
-                    "type": "text",
-                    "autocomplete": "name"
+                    "type": "h2",
+                    "id": "contact",
+                    "text": "Nous contacter"
                 },
                 {
-                    "id": "email",
-                    "label": "Adresse e-mail*",
-                    "type": "email",
-                    "autocomplete": "email"
+                    "type": "p",
+                    "text": "Si vous rencontrez un problème, souhaitez adapter l’atelier ou partager un retour d’expérience, vous pouvez nous contacter directement."
                 },
                 {
-                    "id": "subject",
-                    "label": "Sujet*",
-                    "type": "text"
-                },
+                    "type": "img_content",
+                    "src": "../../assets/img/equipe_vrai.jpg",
+                    "alt": "Photo de l'équipe de conception de l'atelier VR-AI"
+                }
+            ],
+            "items2": [
                 {
-                    "id": "message",
-                    "label": "Message*",
-                    "type": "textarea"
+                    "type": "form",
+                    "action": "#",
+                    "submit": "Envoyer le message",
+                    "fields": [
+                        {
+                            "id": "name",
+                            "label": "Nom*",
+                            "type": "text",
+                            "autocomplete": "name"
+                        },
+                        {
+                            "id": "email",
+                            "label": "Adresse e-mail*",
+                            "type": "email",
+                            "autocomplete": "email"
+                        },
+                        {
+                            "id": "subject",
+                            "label": "Sujet*",
+                            "type": "text"
+                        },
+                        {
+                            "id": "message",
+                            "label": "Message*",
+                            "type": "textarea"
+                        }
+                    ]
                 }
             ]
         },

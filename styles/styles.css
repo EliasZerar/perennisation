@@ -11,6 +11,7 @@
 @import "summary.css";
 @import "ellipses.css";
 @import "verbatim.css";
+@import "flex_box.css";
 
 .mobile-only {
     display: none;

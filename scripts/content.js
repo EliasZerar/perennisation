@@ -103,7 +103,6 @@ function renderNav(nav, activePageId) {
 }
 
 
-// ─── Table des matières ───────────────────────────────────────────────────────
 function renderToc(toc) {
     const tocList       = document.querySelector('.toc ul');
     const mobileTocList = document.querySelector('.mobile-toc-list');
@@ -200,6 +199,27 @@ function renderContent(blocks) {
             return `<div class="table-wrapper"><table><caption class="squareserif specimen-lg">${b.caption ?? 'Liste du Matériel'}</caption><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table></div>`;
         },
 
+            flexBox: b => {
+            const col1Content = (b.items1 ?? []).map(item => {
+                return renderers[item.type] ? renderers[item.type](item) : '';
+            }).join('');
+            
+            const col2Content = (b.items2 ?? []).map(item => {
+                return renderers[item.type] ? renderers[item.type](item) : '';
+            }).join('');
+            
+            const alignClass = b.align ? ` flex-align-${b.align}` : '';
+            
+            return `
+            <div class="flex-box${alignClass}">
+                <div class="item">
+                    ${col1Content}
+                </div>
+                <div class="item">
+                    ${col2Content}
+                </div>
+            </div>`;
+        },
         introImg: b => `
             <div class="intro_img">
                 <h1 class="squareserif specimen-xl">${b.title}</h1>
