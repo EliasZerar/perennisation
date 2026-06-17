@@ -104,6 +104,11 @@
                     "label": "Documents",
                     "href": "documents.html",
                     "pageId": "documents"
+                },
+                {
+                    "label": "Avis des élèves",
+                    "href": "avis-des-eleves.html",
+                    "pageId": "avis-des-eleves"
                 }
             ]
         }
