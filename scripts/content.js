@@ -239,14 +239,20 @@ function renderContent(blocks) {
             </div>`,
 
         img_content: b => {
+<<<<<<< HEAD
+            const ariaHiddenAttr = b.hidden === true ? ' aria-hidden="true"' : '';
+
+            const visualContent = b.src 
+=======
             const visualContent = b.src
+>>>>>>> 7e0f587fe3917a6525e3241606386254f384550f
                 ? `<img src="${window.resolveSitePath(b.src)}" alt="${b.alt ?? ''}" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg); aspect-ratio: ${b.ratio ?? 'auto'};">`
                 : `<div class="placeholder-box" style="aspect-ratio:${b.ratio ?? '16/9'}; height: 100%;">
                     <span>${b.label ?? 'Image à venir'}</span>
-                   </div>`;
+                </div>`;
 
             return `
-            <figure class="placeholder-img">
+            <figure class="placeholder-img"${ariaHiddenAttr}>
                 ${visualContent}
                 ${b.caption ? `<figcaption>${b.caption}</figcaption>` : ''}
             </figure>`;
@@ -408,7 +414,6 @@ function renderContent(blocks) {
             continue;
         }
 
-        // 2. Logique propre pour img_content (Grille dynamique pour tes caméras)
         if (block.type === 'img_content') {
             const gallery = [block];
             while (i + 1 < blocks.length && blocks[i + 1].type === 'img_content') {
