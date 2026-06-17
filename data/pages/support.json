@@ -56,41 +56,54 @@
                 }
             ]
         },
-        {
-            "type": "h2",
-            "id": "contact",
-            "text": "Nous contacter"
-        },
-        {
-            "type": "p",
-            "text": "Si vous rencontrez un problème, souhaitez adapter l'atelier ou partager un retour d'expérience, vous pouvez nous contacter directement."
-        },
-        {
-            "type": "form",
-            "action": "#",
-            "submit": "Envoyer le message",
-            "fields": [
                 {
-                    "id": "name",
-                    "label": "Nom*",
-                    "type": "text",
-                    "autocomplete": "name"
+            "type": "flexBox",
+            "align": "start", 
+            "items1": [
+                {
+                    "type": "h2",
+                    "id": "contact",
+                    "text": "Nous contacter"
                 },
                 {
-                    "id": "email",
-                    "label": "Adresse e-mail*",
-                    "type": "email",
-                    "autocomplete": "email"
+                    "type": "p",
+                    "text": "Si vous rencontrez un problème, souhaitez adapter l’atelier ou partager un retour d’expérience, vous pouvez nous contacter directement."
                 },
                 {
-                    "id": "subject",
-                    "label": "Sujet*",
-                    "type": "text"
-                },
+                    "type": "img_content",
+                    "src": "../../assets/img/equipe_vrai.jpg",
+                    "alt": "Photo de l'équipe de conception de l'atelier VR-AI"
+                }
+            ],
+            "items2": [
                 {
-                    "id": "message",
-                    "label": "Message*",
-                    "type": "textarea"
+                    "type": "form",
+                    "action": "#",
+                    "submit": "Envoyer le message",
+                    "fields": [
+                        {
+                            "id": "name",
+                            "label": "Nom*",
+                            "type": "text",
+                            "autocomplete": "name"
+                        },
+                        {
+                            "id": "email",
+                            "label": "Adresse e-mail*",
+                            "type": "email",
+                            "autocomplete": "email"
+                        },
+                        {
+                            "id": "subject",
+                            "label": "Sujet*",
+                            "type": "text"
+                        },
+                        {
+                            "id": "message",
+                            "label": "Message*",
+                            "type": "textarea"
+                        }
+                    ]
                 }
             ]
         }
