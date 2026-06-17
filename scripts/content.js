@@ -239,13 +239,9 @@ function renderContent(blocks) {
             </div>`,
 
         img_content: b => {
-<<<<<<< HEAD
             const ariaHiddenAttr = b.hidden === true ? ' aria-hidden="true"' : '';
 
             const visualContent = b.src 
-=======
-            const visualContent = b.src
->>>>>>> 7e0f587fe3917a6525e3241606386254f384550f
                 ? `<img src="${window.resolveSitePath(b.src)}" alt="${b.alt ?? ''}" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg); aspect-ratio: ${b.ratio ?? 'auto'};">`
                 : `<div class="placeholder-box" style="aspect-ratio:${b.ratio ?? '16/9'}; height: 100%;">
                     <span>${b.label ?? 'Image à venir'}</span>
@@ -358,7 +354,7 @@ function renderContent(blocks) {
 
         form: b => `
             <form action="https://formspree.io/f/mbdeleeb" method="POST" class="form" novalidate>
-                <p>*Tous les champs sont obligatoires.</p>
+                <p>Tous les champs sont obligatoires.</p>
                 ${(b.fields ?? []).map(f => f.type === 'textarea' ?
             `<label for="${f.id}">
                         <textarea id="${f.id}" name="${f.id}" placeholder=" " required></textarea>
