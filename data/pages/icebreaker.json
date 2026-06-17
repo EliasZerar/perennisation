@@ -1,9 +1,9 @@
 {
-    "title": "Icebreaker — Briser la glace dans VR-AI",
+    "title": "Icebreaker - Briser la glace dans VR-AI",
     "toc": [
         {
             "href": "#pourquoi",
-            "label": "Pourquoi utiliser un icebreaker ?"
+            "label": "Pourquoi utiliser un <span lang=\"en\">icebreaker</span> ?"
         },
         {
             "href": "#exemple",
@@ -34,12 +34,12 @@
         },
         {
             "type": "p",
-            "text": "Un <strong>icebreaker</strong> est une courte activité qui permet aux élèves de se mettre à l'aise et de commencer à interagir entre eux."
+            "text": "Un <strong><span lang=\"en\">icebreaker</span></strong> est une courte activité qui permet aux élèves de se mettre à l'aise et de commencer à interagir entre eux."
         },
         {
             "type": "h2",
             "id": "pourquoi",
-            "text": "Pourquoi utiliser un icebreaker ?"
+            "text": "Pourquoi utiliser un <span lang=\"en\">icebreaker</span> ?"
         },
         {
             "type": "p",
@@ -47,7 +47,7 @@
         },
         {
             "type": "p",
-            "text": "Un icebreaker permet de :"
+            "text": "Un <span lang=\"en\">icebreaker</span> permet de :"
         },
         {
             "type": "ul",
@@ -59,7 +59,7 @@
         },
         {
             "type": "alertInfo",
-            "text": "Un icebreaker ne doit pas durer longtemps. 5 minutes suffisent pour lancer la dynamique."
+            "text": "Un <span lang=\"en\">icebreaker</span> ne doit pas durer longtemps. 5 minutes suffisent pour lancer la dynamique."
         },
         {
             "type": "h2",
@@ -155,7 +155,7 @@
         },
         {
             "type": "p",
-            "text": "L'icebreaker peut être ajusté selon le temps disponible ou le groupe."
+            "text": "L'<span lang=\"en\">icebreaker</span> peut être ajusté selon le temps disponible ou le groupe."
         },
         {
             "type": "p",

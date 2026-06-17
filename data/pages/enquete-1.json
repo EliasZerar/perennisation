@@ -51,7 +51,11 @@
                     ],
                     "extraBody2": [
                         "Les élèves commencent à observer et à discuter entre eux."
-                    ]
+                    ],
+                    "alert": {
+                        "type": "info",
+                        "text": "Encouragez les élèves à verbaliser leurs observations. Dire à voix haute permet souvent de mieux repérer les incohérences."
+                    }
                 }
             ]
         },

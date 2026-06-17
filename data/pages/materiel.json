@@ -10,7 +10,6 @@
         { "type": "h1", "id": "titre", "text": "Le matériel nécessaire" },
         { "type": "p", "text": "Pour organiser l'atelier VR-AI, il est important de préparer en amont l'ensemble du matériel." },
         { "type": "p", "text": "L'objectif est de pouvoir lancer l'activité rapidement, sans interruption, et de garantir une bonne expérience pour les élèves." },
-        { "type": "h2", "id": "liste", "text": "Liste du matériel" },
         { "type": "table",
           "caption": "Liste du Matériel",
           "headers": ["Élément", "Description", "Quantité"],
