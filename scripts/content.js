@@ -185,6 +185,8 @@ function renderContent(blocks) {
         alertInfo:  b => `<div class="alert ${b.variant ?? 'info'}"><div class="icon-alert-svg"></div><span>${b.text}</span></div>`,
         alertError: b => `<div class="alert ${b.variant ?? 'error'}"><div class="icon-alert-svg"></div><span>${b.text}</span></div>`,
 
+        verbatim: b => `<blockquote class="verbatim">« ${b.text}»<br>— ${b.author}</blockquote>`,
+
         copyBox: b => `
             <div class="copy-box">
                 <p class="copy-text text_limit" id="text">${b.text}</p>

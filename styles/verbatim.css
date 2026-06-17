@@ -1,0 +1,11 @@
+@import "variables.css";
+
+.verbatim {
+    font-family: var(--font-family-monospace);
+    padding: 0;
+    padding-left: var(--spacing-4);
+    margin: 0;
+    margin-bottom: var(--spacing-2);
+    white-space: pre-wrap;
+    border-left: 1px solid var(--primary-color);
+}
