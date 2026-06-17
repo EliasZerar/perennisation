@@ -107,7 +107,8 @@
         {
             "type": "img_content",
             "src": "../../assets/img/avant_apres.jpg",
-            "ratio": "16/9"
+            "ratio": "16/9",
+            "hidden":true
         },
         {
             "type": "steps",

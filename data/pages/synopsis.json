@@ -120,11 +120,15 @@
         },
         {
             "type": "img_content",
-            "src": "../../assets/img/piece_1.jpg"
+            "src": "../../assets/img/piece_1.jpg",
+            "alt": "",
+            "hidden":true
         },
         {
             "type": "img_content",
-            "src": "../../assets/img/piece_2.jpg"
+            "src": "../../assets/img/piece_2.jpg",
+            "alt": "",
+            "hidden":true
         },
         {
             "type": "h2",
