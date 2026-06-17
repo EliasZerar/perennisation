@@ -126,7 +126,6 @@ main {
 .content {
     flex: 1;
     padding: var(--spacing-4) var(--spacing-12);
-    max-width: clamp(664px, 47.5vw, 906px);
     overflow-x: hidden;
     margin-left: auto;
     margin-right: auto;

@@ -340,7 +340,7 @@ function renderContent(blocks) {
 
         form: b => `
             <form action="https://formspree.io/f/mbdeleeb" method="POST" class="form" novalidate>
-                <p>*Tous les champs sont obligatoires.</p>
+                <p>Tous les champs sont obligatoires.</p>
                 ${(b.fields ?? []).map(f => f.type === 'textarea' ? 
                     `<label for="${f.id}">
                         <textarea id="${f.id}" name="${f.id}" placeholder=" " required></textarea>
