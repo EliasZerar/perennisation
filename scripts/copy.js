@@ -29,14 +29,14 @@
                 document.body.removeChild(ta);
             }
 
-            if (copyIcon)  copyIcon.style.display  = 'none';
-            if (checkIcon) checkIcon.style.display = 'block';
-            if (message)   message.style.display   = 'block';
+            if (copyIcon)  copyIcon.style.opacity  = '0';
+            if (checkIcon) checkIcon.style.opacity = '1';
+            if (message)   message.textContent     = 'Le texte a été copié !';
 
             setTimeout(() => {
-                if (copyIcon)  copyIcon.style.display  = '';
-                if (checkIcon) checkIcon.style.display = '';
-                if (message)   message.style.display   = '';
+                if (copyIcon)  copyIcon.style.opacity  = '';
+                if (checkIcon) checkIcon.style.opacity = '';
+                if (message)   message.textContent     = '';
             }, 5000);
 
         } catch (err) {

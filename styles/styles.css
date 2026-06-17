@@ -150,7 +150,6 @@ p {
 }
 
 .text_limit {
-    max-width: 55ch;
     width: 100%;
 }
 
