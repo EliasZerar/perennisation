@@ -11,10 +11,9 @@
         if (!path || typeof path !== 'string') return '';
         if (/^(?:https?:)?\/\//.test(path) || path.startsWith('data:')) return path;
 
-        // 🌟 Nettoie automatiquement les ../../ de tes fichiers JSON pour éviter les bugs en prod
         const cleanedPath = path
-            .replace(/^(\.\.\/+)+/, '') // Enlève tous les ../../
-            .replace(/^\.\//, '')       // Enlève les ./
+            .replace(/^(\.\.\/+)+/, '')
+            .replace(/^\.\//, '')
             .replace(/^\/+/, '');       // Enlève les / en trop au début
 
         return `${getSiteBasePath()}${cleanedPath}`;
@@ -22,7 +21,6 @@
 })();
 
 
-// ─── Chargement de la page ────────────────────────────────────────────────────
 (async function () {
     const pageId = document.body.dataset.page;
     if (!pageId) return;
@@ -142,13 +140,27 @@ function setupTocScroll() {
     });
 
     scrollEl.addEventListener('scroll', () => {
-        const scrollTop = scrollEl.getBoundingClientRect().top;
+        const containerTop = scrollEl.getBoundingClientRect().top;
+        const threshold = scrollEl.clientHeight * 0.4;
+        const atBottom = scrollEl.scrollTop + scrollEl.clientHeight >= scrollEl.scrollHeight - 10;
+
         let activeLink = tocLinks[0];
+
         headings.forEach(h => {
-            if (h.getBoundingClientRect().top - scrollTop - 30 <= 1 && idToLink[h.id]) {
+            if (h.getBoundingClientRect().top - containerTop - threshold <= 0 && idToLink[h.id]) {
                 activeLink = idToLink[h.id];
             }
         });
+
+        // Seulement si on est vraiment en bas ET que le dernier heading est visible
+        if (atBottom) {
+            const lastHeading = headings[headings.length - 1];
+            const lastTop = lastHeading.getBoundingClientRect().top - containerTop;
+            if (lastTop < scrollEl.clientHeight && idToLink[lastHeading.id]) {
+                activeLink = idToLink[lastHeading.id];
+            }
+        }
+
         tocLinks.forEach(l => l.classList.remove('active'));
         activeLink?.classList.add('active');
     });
@@ -188,28 +200,28 @@ function renderContent(blocks) {
 
         copyBox: b => `
             <div class="copy-box">
-                <p class="copy-text text_limit" id="text">${b.text}</p>
-                <button onclick="copyText()" class="copy-button" aria-label="Copier le texte d'exemple"><div class="copy-logo" id="copy-logo"></div><div class="copy-logo check" id=""></div></button>
-                <p class="copy-message" id="check" aria-label="Message de confirmation" aria-live="polite" style="display:none;">Le texte a été copié !</p>
+                <p class="copy-text text_limit">${b.text}</p>
+                <button role="checkbox" aria-checked="true" class="copy-button" aria-label="Copier le texte d'exemple"><div class="copy-logo"></div><div class="copy-logo check copy-check"></div></button>
+                <p class="copy-message" aria-live="polite"></p>
             </div>`,
 
         table: b => {
             const headers = b.headers.map(h => `<th scope="col">${h}</th>`).join('');
             const rows    = b.rows.map(r => `<tr>${r.map(c => `<td class="general-sans-extralight">${c}</td>`).join('')}</tr>`).join('');
-            return `<div class="table-wrapper"${b.id ? ` id="${b.id}"` : ''}><table><caption class="squareserif specimen-lg">${b.caption ?? 'Liste du Matériel'}</caption><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table></div>`;
+            return `<div class="table-wrapper"><table><caption class="squareserif specimen-lg">${b.caption ?? 'Liste du Matériel'}</caption><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table></div>`;
         },
 
-            flexBox: b => {
+        flexBox: b => {
             const col1Content = (b.items1 ?? []).map(item => {
                 return renderers[item.type] ? renderers[item.type](item) : '';
             }).join('');
-            
+
             const col2Content = (b.items2 ?? []).map(item => {
                 return renderers[item.type] ? renderers[item.type](item) : '';
             }).join('');
-            
+
             const alignClass = b.align ? ` flex-align-${b.align}` : '';
-            
+
             return `
             <div class="flex-box${alignClass}">
                 <div class="item">
@@ -227,7 +239,7 @@ function renderContent(blocks) {
             </div>`,
 
         img_content: b => {
-            const visualContent = b.src 
+            const visualContent = b.src
                 ? `<img src="${window.resolveSitePath(b.src)}" alt="${b.alt ?? ''}" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg); aspect-ratio: ${b.ratio ?? 'auto'};">`
                 : `<div class="placeholder-box" style="aspect-ratio:${b.ratio ?? '16/9'}; height: 100%;">
                     <span>${b.label ?? 'Image à venir'}</span>
@@ -242,7 +254,7 @@ function renderContent(blocks) {
 
         youtube: b => `
             <div class="youtube-wrapper" style="margin: var(--spacing-4) 0 var(--spacing-8) 0;">
-                <iframe src="${b.url}" style="width: 100%; aspect-ratio: 16/9; border: 0; border-radius: var(--radius-lg); margin-bottom: var(--spacing-4);" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="${b.title ?? 'Vidéo YouTube'}"></iframe>
+                <iframe src="${b.url}" style="width: 100%; aspect-ratio: 16/9; border: 0; border-radius: var(--radius-lg); margin-bottom: var(--spacing-4);" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="${b.title ?? "Vidéo d'explication de l'atelier"}"></iframe>
                 ${b.transcript ? `
                 <details class="summary">
                     <summary class="summary-header">
@@ -250,9 +262,9 @@ function renderContent(blocks) {
                         <svg class="summary-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </summary>
                     <div class="summary-body">
-                        ${Array.isArray(b.transcript) 
-                            ? b.transcript.map(line => `<p class="general-sans-medium">${line}</p>`).join('') 
-                            : `<p class="general-sans-medium">${b.transcript}</p>`}
+                        ${Array.isArray(b.transcript)
+            ? b.transcript.map(line => `<p class="general-sans-medium">${line}</p>`).join('')
+            : `<p class="general-sans-medium">${b.transcript}</p>`}
                     </div>
                 </details>` : ''}
             </div>`,
@@ -302,9 +314,9 @@ function renderContent(blocks) {
             return `
                 <div class="card-container">
                     ${(b.cards ?? []).map(card => {
-                        containerIdCounter++;
-                        const cardId = `card-title-${containerIdCounter}-${Math.floor(Math.random() * 1000)}`;
-                        return `
+                containerIdCounter++;
+                const cardId = `card-title-${containerIdCounter}-${Math.floor(Math.random() * 1000)}`;
+                return `
                         <div class="input">
                             <div class="input-text">
                                 ${card.icon ? `<div class="card-icon-svg ${card.icon}" aria-hidden="true"></div>` : ''}
@@ -319,7 +331,7 @@ function renderContent(blocks) {
                                 </a>
                             </div>` : ''}
                         </div>`;
-                    }).join('')}
+            }).join('')}
                 </div>`;
         },
 
@@ -341,16 +353,16 @@ function renderContent(blocks) {
         form: b => `
             <form action="https://formspree.io/f/mbdeleeb" method="POST" class="form" novalidate>
                 <p>*Tous les champs sont obligatoires.</p>
-                ${(b.fields ?? []).map(f => f.type === 'textarea' ? 
-                    `<label for="${f.id}">
+                ${(b.fields ?? []).map(f => f.type === 'textarea' ?
+            `<label for="${f.id}">
                         <textarea id="${f.id}" name="${f.id}" placeholder=" " required></textarea>
                         <span>${f.label}</span>
-                    </label>` : 
-                    `<label for="${f.id}">
+                    </label>` :
+            `<label for="${f.id}">
                         <input type="${f.type ?? 'text'}" id="${f.id}" name="${f.id}" placeholder=" " required ${f.autocomplete ? `autocomplete="${f.autocomplete}"` : (f.id === 'name' ? 'autocomplete="name"' : f.id === 'email' ? 'autocomplete="email"' : '')}>
                         <span>${f.label}</span>
                     </label>`
-                ).join('')}
+        ).join('')}
                 <div id="errors" role="alert" aria-live="assertive" class="form-feedback">
                     <div class="icon-alert-svg"></div>
                     <span class="feedback-text"></span>
@@ -402,9 +414,9 @@ function renderContent(blocks) {
             while (i + 1 < blocks.length && blocks[i + 1].type === 'img_content') {
                 gallery.push(blocks[++i]);
             }
-            
+
             if (gallery.length > 1) {
-                const cols = Math.min(gallery.length, 2); 
+                const cols = Math.min(gallery.length, 2);
                 htmlParts.push(
                     `<div class="img-content-grid" style="--grid-cols:${cols};">` +
                     gallery.map(item => renderers.img_content(item)).join('') +
