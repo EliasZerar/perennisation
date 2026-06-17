@@ -93,13 +93,13 @@
         },
         { "type": "table",
           "caption": "Images",
-          "headers": ["Aperçu", "Intitulé", "Utilité, Visualiser, Télécharger"],
+          "headers": ["Aperçu", "Intitulé", "Utilité", "Visualiser", "Télécharger"],
           "rows": [
-            ["<img src='../../assets/images/kit-telechargeable/1.png' alt='Image 1' />", "Image 1", "<a href='../../assets/images/kit-telechargeable/1.png' target='_blank'>Télécharger</a>"],
-            ["<img src='../../assets/images/kit-telechargeable/2.png' alt='Image 2' />", "Image 2", "<a href='../../assets/images/kit-telechargeable/2.png' target='_blank'>Télécharger</a>"],
-            ["<img src='../../assets/images/kit-telechargeable/3.png' alt='Image 3' />", "Image 3", "<a href='../../assets/images/kit-telechargeable/3.png' target='_blank'>Télécharger</a>"],
-            ["<img src='../../assets/images/kit-telechargeable/4.png' alt='Image 4' />", "Image 4", "<a href='../../assets/images/kit-telechargeable/4.png' target='_blank'>Télécharger</a>"],
-            ["<img src='../../assets/images/kit-telechargeable/5.png' alt='Image 5' />", "Image 5", "<a href='../../assets/images/kit-telechargeable/5.png' target='_blank'>Télécharger</a>"]
+            ["<img src='../../assets/images/kit-telechargeable/1.png' alt='Image 1' />", "Image 1","ça sert à ça", "<div class='table-icons visualiser-svg'><a href='../../assets/images/kit-telechargeable/1.png' target='_blank'></a></div>", "<div class='table-icons télécharger-svg'><a href='../../assets/images/kit-telechargeable/1.png' target='_blank'></a></div>"],
+            ["<img src='../../assets/images/kit-telechargeable/2.png' alt='Image 2' />", "Image 2","ça sert à ça", "<div class='table-icons visualiser-svg'><a href='../../assets/images/kit-telechargeable/2.png' target='_blank'></a></div>", "<div class='table-icons télécharger-svg'><a href='../../assets/images/kit-telechargeable/2.png' target='_blank'></a></div>"],
+            ["<img src='../../assets/images/kit-telechargeable/3.png' alt='Image 3' />", "Image 3","ça sert à ça", "<div class='table-icons visualiser-svg'><a href='../../assets/images/kit-telechargeable/3.png' target='_blank'></a></div>", "<div class='table-icons télécharger-svg'><a href='../../assets/images/kit-telechargeable/3.png' target='_blank'></a></div>"],
+            ["<img src='../../assets/images/kit-telechargeable/4.png' alt='Image 4' />", "Image 4","ça sert à ça", "<div class='table-icons visualiser-svg'><a href='../../assets/images/kit-telechargeable/4.png' target='_blank'></a></div>", "<div class='table-icons télécharger-svg'><a href='../../assets/images/kit-telechargeable/4.png' target='_blank'></a></div>"],
+            ["<img src='../../assets/images/kit-telechargeable/5.png' alt='Image 5' />", "Image 5","ça sert à ça", "<div class='table-icons visualiser-svg'><a href='../../assets/images/kit-telechargeable/5.png' target='_blank'></a></div>", "<div class='table-icons télécharger-svg'><a href='../../assets/images/kit-telechargeable/5.png' target='_blank'></a></div>"]
           ]
         },
         {

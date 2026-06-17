@@ -28,3 +28,26 @@ td, tbody th {
     border-top: 0.125rem solid var(--border-default);
     padding: var(--spacing-2) 0; 
 }
+
+.table-icons{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: var(--spacing-3);
+    display: block;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background-color: var(--text-secondary); 
+    transition: background-color 0.3s ease;
+}
+
+.visualiser-svg {
+    -webkit-mask-image: url('../assets/svg/eye.svg');
+    mask-image: url('../assets/svg/eye.svg');
+}
+
+.télécharger-svg {
+    -webkit-mask-image: url('../assets/svg/download.svg');
+    mask-image: url('../assets/svg/download.svg');
+}
