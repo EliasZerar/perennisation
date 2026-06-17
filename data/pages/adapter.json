@@ -112,10 +112,13 @@
         {
             "type": "pageNav",
             "prev": {
+                "href": "#ressources",
+                "label": "Créer ses preuves"
+            },
+            "next": {
                 "href": "kit-telechargeable.html",
                 "label": "Kit téléchargeable"
-            },
-            "next": null
+            }
         }
     ]
 }

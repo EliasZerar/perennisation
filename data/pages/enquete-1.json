@@ -149,11 +149,11 @@
             "type": "pageNav",
             "prev": {
                 "href": "lancement.html",
-                "label": "Lancement de VR-AI"
+                "label": "Lancement"
             },
             "next": {
                 "href": "resolution.html",
-                "label": "Résolution (phase 2) de VR-AI"
+                "label": "Résolution (phase 2)"
             }
         }
     ]

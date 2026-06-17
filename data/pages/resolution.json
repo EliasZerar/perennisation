@@ -116,11 +116,11 @@
             "type": "pageNav",
             "prev": {
                 "href": "enquete-1.html",
-                "label": "Enquête de VR-AI"
+                "label": "Enquête (phase 1)"
             },
             "next": {
                 "href": "debrief.html",
-                "label": "Débrief de VR-AI"
+                "label": "Débrief"
             }
         }
     ]

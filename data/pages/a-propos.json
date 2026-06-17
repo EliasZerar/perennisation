@@ -149,9 +149,13 @@
 
         {
             "type": "pageNav",
+            "prev":{
+                "href":"index.html",
+                "label":"Vue d'ensemble"
+            },
             "next": {
                 "href": "objectifs.html",
-                "label": "Objectifs pédagogiques de VR-AI"
+                "label": "Objectifs pédagogiques"
             }
         }
     ]

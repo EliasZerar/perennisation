@@ -210,11 +210,11 @@
             "type": "pageNav",
             "prev": {
                 "href": "objectifs.html",
-                "label": "Objectifs pédagogiques de VR-AI"
+                "label": "Objectifs pédagogiques"
             },
             "next": {
                 "href": "mecaniques.html",
-                "label": "Mécaniques de jeu de VR-AI"
+                "label": "Mécaniques de jeu"
             }
         }
     ]

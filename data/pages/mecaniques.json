@@ -157,11 +157,11 @@
             "type": "pageNav",
             "prev": {
                 "href": "synopsis.html",
-                "label": "Synopsis de VR-AI"
+                "label": "Synopsis"
             },
             "next": {
                 "href": "icebreaker.html",
-                "label": "Icebreaker de VR-AI"
+                "label": "Icebreaker"
             }
         }
     ]

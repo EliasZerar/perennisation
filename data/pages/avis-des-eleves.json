@@ -135,7 +135,7 @@
             "type": "pageNav",
             "prev": {
                 "href": "documents.html",
-                "label": "Documents de VR-AI"
+                "label": "Documents"
             },
             "next": null
         }
