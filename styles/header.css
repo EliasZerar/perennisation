@@ -100,13 +100,36 @@ header {
     }
 
     .search-bar input::-webkit-search-cancel-button {
-        -webkit-appearance: none;
+        display: none;
+    }
+
+    .search-results ul,
+    .mobile-search-results ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .search-clear {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
         cursor: pointer;
-        height: 0.75rem;
+        padding: 0;
+        flex-shrink: 0;
+    }
+
+    .search-clear img {
         width: 0.75rem;
-        background-image: url("../assets/svg/iconCancelSearch.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
+        height: 0.75rem;
+    }
+
+    .search-clear:focus-visible {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 2px;
+        border-radius: var(--radius-sm);
     }
 
     .search-bar img {
@@ -258,6 +281,16 @@ header {
         line-height: 1.2;
     }
 
+    .search-results-meta {
+        padding: var(--spacing-2) var(--spacing-4);
+        color: var(--text-secondary);
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        margin: 0;
+        border-bottom: 1px solid var(--border-default);
+        padding-bottom: var(--spacing-2);
+    }
+
     .search-no-results {
         padding: var(--spacing-4);
         color: var(--text-secondary);
@@ -388,13 +421,7 @@ header.desktop-only {
 
 
     .mobile-nav-search-bar input::-webkit-search-cancel-button {
-        -webkit-appearance: none;
-        cursor: pointer;
-        height: 0.75rem;
-        width: 0.75rem;
-        background-image: url("../assets/svg/iconCancelSearch.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
+        display: none;
     }
 
     .mobile-nav-search-wrapper:has(.mobile-search-results:not([hidden])) .mobile-nav-search-bar {
@@ -404,7 +431,4 @@ header.desktop-only {
 
 }
 
-:root[data-theme="dark"] header .search-bar input::-webkit-search-cancel-button,
-:root[data-theme="dark"] .mobile-nav-search-bar input::-webkit-search-cancel-button {
-    background-image: url("../assets/svg/iconCancelSearch-dark.svg");
-}
+
