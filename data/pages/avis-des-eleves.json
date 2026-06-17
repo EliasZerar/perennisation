@@ -119,17 +119,32 @@
         },
         {
             "type": "p",
-            "text": "Quelques photographies prises pendant les différentes étapes de l'expérience : icebreaker, enquête, analyse des preuves, résolution et débrief."
+            "text": "Quelques photographies prises au cours de l'événement desquelles vous inspirer."
         },
         {
-            "type": "infoImg",
-            "src": "assets/img/placeholder.jpg",
-            "alt": "Espace réservé pour une photo de l'atelier"
+            "type": "img_content",
+            "src": "assets/img/deroule/deroule-1.png",
+            "alt": "Membre de l'équipe VR-AI animant l'icebreaker de l'atelier"
         },
         {
-            "type": "infoImg",
-            "src": "assets/img/placeholder.jpg",
-            "alt": "Espace réservé pour une photo de l'atelier"
+            "type": "img_content",
+            "src": "assets/img/deroule/deroule-2.png",
+            "alt": "Participants de l'atelier analysant des indices sur le clonage"
+        },
+        {
+            "type": "img_content",
+            "src": "assets/img/deroule/deroule-3.png",
+            "alt": "Participants de l'atelier analysant des indices issus de caméras de surveillance"
+        },
+        {
+            "type": "img_content",
+            "src": "assets/img/deroule/deroule-4.png",
+            "alt": "Participants de l'atelier comparant des indices visuels aux documents officiels pour résoudre l'enquête"
+        },
+        {
+            "type": "img_content",
+            "src": "assets/img/deroule/deroule-5.png",
+            "alt": "Participants découvrant la véritable vidéo révélant le coupable de l'affaire juste avant l'irruption du directeur dans son bureau"
         },
         {
             "type": "pageNav",
