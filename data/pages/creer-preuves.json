@@ -6,28 +6,12 @@
             "label": "Une démarche en plusieurs étapes"
         },
         {
-            "href": "#scenario",
-            "label": "Définir le scénario"
+            "href": "#exemple-prompt",
+            "label": "Exemple de prompt"
         },
         {
-            "href": "#erreurs",
-            "label": "Identifier les erreurs à intégrer"
-        },
-        {
-            "href": "#originale",
-            "label": "Créer une version originale"
-        },
-        {
-            "href": "#modifiees",
-            "label": "Générer les images modifiées"
-        },
-        {
-            "href": "#captures",
-            "label": "Sélectionner les captures"
-        },
-        {
-            "href": "#supports",
-            "label": "Préparer les supports"
+            "href": "#adapter-besoins",
+            "label": "Adapter selon vos besoins"
         }
     ],
     "content": [
