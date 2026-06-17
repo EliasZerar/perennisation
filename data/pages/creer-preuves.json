@@ -88,6 +88,7 @@
             "type": "img_content",
             "src": "../../assets/img/vrai_vol.png",
             "ratio": "4/3",
+            "alt":"Photo d'une scène de l'atelier non modifié par IA",
             "caption": "Version originale de la scène"
         },
         {
@@ -106,8 +107,7 @@
         {
             "type": "img_content",
             "src": "../../assets/img/avant_apres.jpg",
-            "ratio": "16/9",
-            "caption": "AVANT (gauche) — APRÈS modification IA (droite)"
+            "ratio": "16/9"
         },
         {
             "type": "steps",

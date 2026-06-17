@@ -86,13 +86,13 @@
             "type": "img_content",
             "src": "../../assets/img/eg-preuve-coherente.png",
             "alt": "Photo sans anomalie apparente, elle peut être légitime.",
-            "caption": "Preuve cohérente."
+            "caption": "Preuve cohérente où l'on voit Eden de manière réaliste"
         },
         {
             "type": "img_content",
             "src": "../../assets/img/eg-preuve-incoherente.png",
             "alt": "Photo présentant une incohérence, elle doit être manipulée.",
-            "caption": "Preuve incohérente."
+            "caption": "Preuve incohérente car on voit Eden deux fois sur l'image."
         },
         {
             "type": "h2",

@@ -9,6 +9,10 @@
     border-radius: var(--radius-md);
 }
 
+.copy-box p {
+    margin: var(--spacing-2);
+}
+
 .copy-button {
     position: absolute;
     bottom: 0.75rem;
