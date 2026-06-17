@@ -1,6 +1,6 @@
 @import "variables.css";
 
-.table-wrapper{
+.table-wrapper {
     width: 100%;
     overflow-x: auto;
 }
@@ -26,28 +26,37 @@ td, tbody th {
     text-align: left;
     font-weight: 300;
     border-top: 0.125rem solid var(--border-default);
-    padding: var(--spacing-2) 0; 
+    padding: var(--spacing-3) 0; 
+    vertical-align: middle; 
 }
 
-.table-icons{
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-bottom: var(--spacing-3);
+td > img:not(.table-icons img) {
+    max-width: 60px;
+    height: auto;
     display: block;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    background-color: var(--text-secondary); 
-    transition: background-color 0.3s ease;
 }
 
-.visualiser-svg {
-    -webkit-mask-image: url('../assets/svg/eye.svg');
-    mask-image: url('../assets/svg/eye.svg');
+.table-icons {
+    display: flex;         
+    align-items: center;    
+    justify-content: center;
+    width: 2.5rem;        
+    height: 2.5rem;         
+    margin: 0 auto;      
+    border-radius: var(--radius-lg);
+    border: 0.125rem solid var(--border-default);
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
 }
 
-.télécharger-svg {
-    -webkit-mask-image: url('../assets/svg/download.svg');
-    mask-image: url('../assets/svg/download.svg');
+.table-icons img {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: block; 
 }
+
+.table-icons:hover {
+    background-color: var(--border-default);
+    transform: scale(1.1);
+}
+ 
