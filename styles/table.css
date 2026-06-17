@@ -1,9 +1,15 @@
 @import "variables.css";
 
+.table-wrapper{
+    width: 100%;
+    overflow-x: auto;
+}
+
 table {
     width: 100%;
     margin: auto;
     border-collapse: collapse; 
+    min-width: 40rem;
 }
 
 table caption {
