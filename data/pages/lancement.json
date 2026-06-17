@@ -87,8 +87,8 @@
         { "type": "alertError", "text": "Évitez de trop expliquer au départ. Les élèves doivent découvrir par eux-mêmes." },
         { 
             "type": "pageNav",
-            "prev": { "href": "materiel.html", "label": "Matériel de VR-AI" },
-            "next": { "href": "enquete-1.html", "label": "Enquête (phase 1) de VR-AI" }
+            "prev": { "href": "materiel.html", "label": "Matériel" },
+            "next": { "href": "enquete-1.html", "label": "Enquête (phase 1)" }
         }
     ]
 }

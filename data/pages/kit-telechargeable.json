@@ -156,11 +156,11 @@
             "type": "pageNav",
             "prev": {
                 "href": "adapter.html",
-                "label": "Adapter l'atelier VR-AI"
+                "label": "Adapter l'atelier"
             },
             "next": {
                 "href": "documents.html",
-                "label": "Documents de VR-AI"
+                "label": "Documents"
             }
         }
     ]

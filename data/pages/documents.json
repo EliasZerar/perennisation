@@ -117,11 +117,11 @@
             "type": "pageNav",
             "prev": {
                 "href": "kit-telechargeable.html",
-                "label": "Kit téléchargeable de VR-AI"
+                "label": "Kit téléchargeable"
             },
             "next": {
                 "href": "avis-des-eleves.html",
-                "label": "Avis des élèves sur VR-AI"
+                "label": "Avis des élèves"
             }
         }
     ]
