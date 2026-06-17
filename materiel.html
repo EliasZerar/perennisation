@@ -44,14 +44,18 @@
             <label class="visually-hidden" for="site-search">Rechercher</label>
             <div class="search-bar">
                 <img class="invert-on-dark" src="assets/svg/iconSearch.svg" alt="">
-                <input id="site-search" type="search" autocomplete="off" placeholder="Rechercher…" aria-label="Rechercher dans le site">
+                <input id="site-search" type="search" autocomplete="off" placeholder="Rechercher…" aria-label="Rechercher dans le site" aria-controls="search-listbox" aria-autocomplete="list">
+                <button class="search-clear invert-on-dark" aria-label="Effacer la recherche" hidden tabindex="0"><img src="assets/svg/iconCancelSearch.svg" alt=""></button>
                 <div class="search-shortcuts" data-tooltip="CTRL + K pour focus la barre de recherche">
                     <kbd class="shortcut-mac" hidden>⌘</kbd>
                     <kbd class="shortcut-ctrl">CTRL</kbd>
                     <kbd>K</kbd>
                 </div>
             </div>
-            <div class="search-results" hidden></div>
+            <div class="search-results" hidden>
+                    <p class="search-live-region visually-hidden" aria-live="polite" aria-atomic="true"></p>
+                    <ul id="search-listbox" role="listbox" aria-labelledby="site-search"></ul>
+                </div>
         </div>
         <span class="header-help">
             <a href="support.html">Support</a>
@@ -103,9 +107,13 @@
                 <label class="visually-hidden" for="mobile-site-search">Rechercher</label>
                 <div class="mobile-nav-search-bar">
                     <img class="invert-on-dark" src="assets/svg/iconSearch.svg" alt="">
-                    <input id="mobile-site-search" type="search" autocomplete="off" placeholder="Rechercher…" aria-label="Rechercher dans le site">
+                    <input id="mobile-site-search" type="search" autocomplete="off" placeholder="Rechercher…" aria-label="Rechercher dans le site" aria-controls="mobile-search-listbox" aria-autocomplete="list">
+                    <button class="search-clear invert-on-dark" aria-label="Effacer la recherche" hidden tabindex="0"><img src="assets/svg/iconCancelSearch.svg" alt=""></button>
                 </div>
-                <div class="mobile-search-results" hidden></div>
+                <div class="mobile-search-results" hidden>
+                    <p class="search-live-region visually-hidden" aria-live="polite" aria-atomic="true"></p>
+                    <ul id="mobile-search-listbox" role="listbox" aria-labelledby="mobile-site-search"></ul>
+                </div>
             </div>
             <div class="mobile-nav-content">
                 <nav class="mobile-nav-list"></nav>

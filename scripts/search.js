@@ -27,25 +27,39 @@
     }
 
     function renderResults(results, resultsEl) {
-        if (results.length === 0) {
-            resultsEl.innerHTML = '<p class="search-no-results" aria-live="polite" role="status">Aucun résultat</p>';
+        const count = results.length;
+        const listEl = resultsEl.querySelector('[role="listbox"]');
+        const liveEl = resultsEl.querySelector('.search-live-region');
+
+        if (liveEl) {
+            liveEl.textContent = count === 0
+                ? 'Aucun résultat'
+                : `${count} résultat${count > 1 ? 's' : ''}`;
+        }
+
+        if (count === 0) {
+            listEl.innerHTML = '<li class="search-no-results">Aucun résultat</li>';
         } else {
-            resultsEl.innerHTML = results.map(item => `
-                <a class="search-result-item" href="${safePath(item.href)}">
-                    <span class="search-result-breadcrumb">${item.breadcrumb.slice(0, -1).map(escapeHtml).join(' › ')}${item.breadcrumb.length > 1 ? ' › ' : ''}<strong>${escapeHtml(item.breadcrumb[item.breadcrumb.length - 1])}</strong></span>
-                    <span class="search-result-title">${escapeHtml(item.title)}</span>
-                </a>
+            listEl.innerHTML = results.map(item => `
+                <li role="option">
+                    <a class="search-result-item" href="${safePath(item.href)}">
+                        <span class="search-result-breadcrumb">${item.breadcrumb.slice(0, -1).map(escapeHtml).join(' › ')}${item.breadcrumb.length > 1 ? ' › ' : ''}<strong>${escapeHtml(item.breadcrumb[item.breadcrumb.length - 1])}</strong></span>
+                        <span class="search-result-title">${escapeHtml(item.title)}</span>
+                    </a>
+                </li>
             `).join('');
         }
+
         resultsEl.removeAttribute('hidden');
     }
 
-    function initSearchBar(inputEl, resultsEl, shortcutsEl, wrapperSelector) {
+    function initSearchBar(inputEl, resultsEl, shortcutsEl, clearBtn, wrapperSelector) {
         if (!inputEl || !resultsEl) return;
 
         function closeSearch() {
             resultsEl.setAttribute('hidden', '');
             if (shortcutsEl) shortcutsEl.removeAttribute('hidden');
+            if (clearBtn) clearBtn.setAttribute('hidden', '');
             inputEl.value = '';
         }
 
@@ -53,12 +67,20 @@
             const query = inputEl.value.trim().toLowerCase();
             if (!query) { closeSearch(); return; }
             if (shortcutsEl) shortcutsEl.setAttribute('hidden', '');
+            if (clearBtn) clearBtn.removeAttribute('hidden');
             const results = searchData.filter(item =>
                 item.title.toLowerCase().includes(query) ||
                 item.breadcrumb.some(b => b.toLowerCase().includes(query))
             );
             renderResults(results, resultsEl);
         });
+
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                closeSearch();
+                inputEl.focus();
+            });
+        }
 
         inputEl.addEventListener('keydown', e => {
             if (e.key === 'Escape') { closeSearch(); inputEl.blur(); }
@@ -73,6 +95,7 @@
         document.querySelector('.search-bar input'),
         document.querySelector('.search-results'),
         document.querySelector('.search-shortcuts'),
+        document.querySelector('.search-bar .search-clear'),
         '.search-wrapper'
     );
 
@@ -80,6 +103,7 @@
         document.querySelector('.mobile-nav-search-bar input'),
         document.querySelector('.mobile-search-results'),
         null,
+        document.querySelector('.mobile-nav-search-bar .search-clear'),
         '.mobile-nav-search-wrapper'
     );
 })();

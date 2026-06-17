@@ -52,7 +52,10 @@
                     <kbd>K</kbd>
                 </div>
             </div>
-            <div class="search-results" hidden></div>
+            <div class="search-results" hidden>
+                    <p class="search-live-region visually-hidden" aria-live="polite" aria-atomic="true"></p>
+                    <ul id="search-listbox" role="listbox" aria-labelledby="site-search"></ul>
+                </div>
         </div>
         <span class="header-help">
             <a href="support.html">Support</a>
@@ -107,7 +110,10 @@
                     <input id="mobile-site-search" type="search" autocomplete="off" placeholder="Rechercher…"
                         aria-label="Rechercher dans le site">
                 </div>
-                <div class="mobile-search-results" hidden></div>
+                <div class="mobile-search-results" hidden>
+                    <p class="search-live-region visually-hidden" aria-live="polite" aria-atomic="true"></p>
+                    <ul id="mobile-search-listbox" role="listbox" aria-labelledby="mobile-site-search"></ul>
+                </div>
             </div>
             <div class="mobile-nav-content">
                 <nav class="mobile-nav-list"></nav>
