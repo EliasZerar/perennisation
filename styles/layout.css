@@ -130,6 +130,22 @@ main {
     margin-right: auto;
 }
 
+@media (min-width: 1440px) {
+    .content {
+        max-width: 40.25rem;
+    }
+
+    body[data-page="vue-densemble"] .content {
+        max-width: 62.8125rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .content {
+        max-width: 56.625rem;
+    }
+}
+
 .toc {
     flex: 0 0 15%;
     padding: var(--spacing-6);

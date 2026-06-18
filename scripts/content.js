@@ -209,20 +209,20 @@ function renderContent(blocks) {
             const headers = b.headers.map(h => `<th scope="col">${h}</th>`).join('');
             const rows    = b.rows.map(r => `<tr>${r.map((c, colIndex) => {
                 let cellContent = c;
-                
+
                 if (typeof c === 'object' && c !== null && c.path) {
                     const resolvedPath = window.resolveSitePath(c.path);
                     const header = (b.headers[colIndex] || '').toLowerCase();
-                    
+
                     if (header === 'visualiser') {
-                        cellContent = `<a class="table-icons" href="${resolvedPath}" target="_blank"><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>`;
+                        cellContent = `<a class="table-icons" href="${resolvedPath}" target="_blank"><img class='invert-on-dark' src='${window.resolveSitePath('assets/svg/eye.svg')}' alt='Visualiser'/></a>`;
                     } else {
-                        cellContent = `<a class="table-icons" href="${resolvedPath}" download><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>`;
+                        cellContent = `<a class="table-icons" href="${resolvedPath}" download><img class='invert-on-dark' src='${window.resolveSitePath('assets/svg/download.svg')}' alt='Télécharger'/></a>`;
                     }
                 } else if (typeof c === 'string' && c.includes('<a ')) {
                     cellContent = c.replace(/href="([^"]+)"/, (match, url) => `href="${window.resolveSitePath(url)}"`);
                 }
-                
+
                 return `<td class="general-sans-extralight">${cellContent}</td>`;
             }).join('')}</tr>`).join('');
             return `<div class="table-wrapper" id="${b.id ?? ''}"><table><caption class="squareserif specimen-lg">${b.caption ?? 'Liste du Matériel'}</caption><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table></div>`;
