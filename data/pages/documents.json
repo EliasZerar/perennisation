@@ -62,37 +62,37 @@
                     "Tout télécharger",
                     ".rar (426 Ko)",
                     "",
-                    "<a href='../../assets/download/documents/notes de recherche/notes de recherche.rar' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                    "<a href='../../assets/download/documents/notes-de-recherche/notes-de-recherche.rar' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
                 ],
                 [
                     "Fake news et désinformation",
                     ".pdf (121 Ko)",
-                    "<a href='../../assets/download/documents/notes de recherche/fake-news.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
-                    "<a href='../../assets/download/documents/notes de recherche/fake-news.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                    "<a href='../../assets/download/documents/notes-de-recherche/fake-news.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/documents/notes-de-recherche/fake-news.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
                 ],
                 [
                     "Deepfakes et images générées par l'IA",
                     ".pdf (44 Ko)",
-                    "<a href='../../assets/download/documents/notes de recherche/deepfakes.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
-                    "<a href='../../assets/download/documents/notes de recherche/deepfakes.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                    "<a href='../../assets/download/documents/notes-de-recherche/deepfakes.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/documents/notes-de-recherche/deepfakes.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
                 ],
                 [
                     "Fake news et réseaux sociaux",
                     ".pdf (166 Ko)",
-                    "<a href='../../assets/download/documents/notes de recherche/fake-news-reseaux-sociaux.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
-                    "<a href='../../assets/download/documents/notes de recherche/fake-news-reseaux-sociaux.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                    "<a href='../../assets/download/documents/notes-de-recherche/fake-news-reseaux-sociaux.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/documents/notes-de-recherche/fake-news-reseaux-sociaux.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
                 ],
                 [
                     "IA et les enfants",
                     ".pdf (114 Ko)",
-                    "<a href='../../assets/download/documents/notes de recherche/ia-et-les-enfants.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
-                    "<a href='../../assets/download/documents/notes de recherche/ia-et-les-enfants.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                    "<a href='../../assets/download/documents/notes-de-recherche/ia-et-les-enfants.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/documents/notes-de-recherche/ia-et-les-enfants.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
                 ],
                 [
                     "Données personnelles et vie privée",
                     ".pdf (102 Ko)",
-                    "<a href='../../assets/download/documents/notes de recherche/donnees-perso.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
-                    "<a href='../../assets/download/documents/notes de recherche/donnees-perso.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                    "<a href='../../assets/download/documents/notes-de-recherche/donnees-perso.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/documents/notes-de-recherche/donnees-perso.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
                 ]
             ]
         },
