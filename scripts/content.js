@@ -1,4 +1,3 @@
-// ─── Résolution des chemins (local vs GitHub Pages) ──────────────────────────
 (function () {
     function getSiteBasePath() {
         const isGithubPages = window.location.hostname.endsWith('github.io');
@@ -14,7 +13,7 @@
         const cleanedPath = path
             .replace(/^(\.\.\/+)+/, '')
             .replace(/^\.\//, '')
-            .replace(/^\/+/, '');       // Enlève les / en trop au début
+            .replace(/^\/+/, '');       
 
         return `${getSiteBasePath()}${cleanedPath}`;
     };
@@ -53,7 +52,7 @@
 })();
 
 
-// ─── Navigation (100% Accessible RGAA) ────────────────────────────────────────
+
 function renderNav(nav, activePageId) {
     const navEl        = document.querySelector('.nav nav');
     const mobileNavEl  = document.querySelector('.mobile-nav-list');
@@ -66,7 +65,7 @@ function renderNav(nav, activePageId) {
 
     let html = '';
     let breadcrumb = null;
-    let groupIdCounter = 0; // Pour aria-labelledby
+    let groupIdCounter = 0; 
 
     for (const link of nav.links ?? []) {
         const active = isActive(link);
@@ -152,7 +151,6 @@ function setupTocScroll() {
             }
         });
 
-        // Seulement si on est vraiment en bas ET que le dernier heading est visible
         if (atBottom) {
             const lastHeading = headings[headings.length - 1];
             const lastTop = lastHeading.getBoundingClientRect().top - containerTop;
@@ -167,7 +165,6 @@ function setupTocScroll() {
 }
 
 
-// ─── Renderers de blocs ───────────────────────────────────────────────────────
 function renderContent(blocks) {
     const contentEl   = document.querySelector('.content');
     if (!contentEl) return;
@@ -354,7 +351,6 @@ function renderContent(blocks) {
 
         form: b => `
             <form action="https://formspree.io/f/mbdeleeb" method="POST" class="form" novalidate>
-                <p>Tous les champs sont obligatoires.</p>
                 ${(b.fields ?? []).map(f => f.type === 'textarea' ?
             `<label for="${f.id}">
                         <textarea id="${f.id}" name="${f.id}" placeholder=" " required></textarea>
@@ -391,7 +387,6 @@ function renderContent(blocks) {
     for (let i = 0; i < blocks.length; i++) {
         const block = blocks[i];
 
-        // 1. Logique propre pour infoImg
         if (block.type === 'infoImg') {
             const gallery = [block];
             while (i + 1 < blocks.length && blocks[i + 1].type === 'infoImg') {
@@ -429,7 +424,6 @@ function renderContent(blocks) {
             continue;
         }
 
-        // 3. Rendu par défaut
         htmlParts.push(renderers[block.type]?.(block) ?? '');
     }
 
@@ -448,7 +442,6 @@ function renderContent(blocks) {
 }
 
 
-// ─── Footer ──────────────────────────────────────────────────────────────────
 function renderSiteFooter() {
     const existingFooter = document.querySelector('.main-right > footer.site-footer');
     if (existingFooter) return;
@@ -469,7 +462,6 @@ function renderSiteFooter() {
 }
 
 
-// ─── Navigation mobile ────────────────────────────────────────────────────────
 function setupMobileNav() {
     const overlay   = document.getElementById('mobile-nav-overlay');
     const trigger   = document.getElementById('mobile-nav-trigger');
@@ -493,7 +485,6 @@ function setupMobileNav() {
 }
 
 
-// ─── TOC mobile ───────────────────────────────────────────────────────────────
 function setupMobileToc() {
     const btn   = document.querySelector('.mobile-toc-btn');
     const popup = document.querySelector('.mobile-toc-popup');

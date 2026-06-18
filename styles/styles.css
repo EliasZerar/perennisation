@@ -279,7 +279,6 @@ p {
     font-family: var(--font-body);
 }
 
-/* ── Page nav (précédent / suivant) ──────────────────── */
 .page-nav {
     display: flex;
     justify-content: space-between;
@@ -289,6 +288,19 @@ p {
     margin-bottom: var(--spacing-8);
     border-top: 1px solid var(--border-default);
     gap: var(--spacing-4);
+    flex-direction: row;
+}
+
+@media (max-width: 768px) {
+    .page-nav {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+
+@media screen {
+    
 }
 
 .page-nav-btn {
@@ -304,6 +316,8 @@ p {
     font-size: 0.9rem;
     transition: background 0.15s, border-color 0.15s;
     white-space: nowrap;
+    align-self: stretch;
+    justify-content: center;
 }
 
 .page-nav-prev::before,

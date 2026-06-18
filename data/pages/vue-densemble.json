@@ -105,6 +105,10 @@
                     "text": "Si vous rencontrez un problème, souhaitez adapter l’atelier ou partager un retour d’expérience, vous pouvez nous contacter directement."
                 },
                 {
+                    "type": "p",
+                    "text":"Tous les champs sont obligatoires."
+                },
+                {
                     "type": "img_content",
                     "src": "../../assets/img/equipe_vrai.jpg",
                     "alt": "Photo de l'équipe de conception de l'atelier VR-AI"
@@ -118,24 +122,24 @@
                     "fields": [
                         {
                             "id": "name",
-                            "label": "Nom*",
+                            "label": "Nom",
                             "type": "text",
                             "autocomplete": "name"
                         },
                         {
                             "id": "email",
-                            "label": "Adresse e-mail*",
+                            "label": "Adresse e-mail",
                             "type": "email",
                             "autocomplete": "email"
                         },
                         {
                             "id": "subject",
-                            "label": "Sujet*",
+                            "label": "Sujet",
                             "type": "text"
                         },
                         {
                             "id": "message",
-                            "label": "Message*",
+                            "label": "Message",
                             "type": "textarea"
                         }
                     ]
