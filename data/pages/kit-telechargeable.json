@@ -45,62 +45,393 @@
             "type": "cardContainer",
             "cards": [
                 {
-                    "title": "Fiches élèves",
+                    "title": "Fichier liés à l'icebreaker",
                     "icon": "doc",
-                    "content": "Documents remis pendant l'enquête pour guider l'analyse des images.",
+                    "content": "Tous les fichiers nécessaires pour l'icebreaker, y compris le support visuel et les affichettes de vote",
                     "link": {
-                        "href": "#",
-                        "label": "Voir les fiches"
+                        "href": "#icebreaker",
+                        "label": "Aller aux fichiers"
                     }
                 },
                 {
-                    "title": "Images et preuves",
+                    "title": "Fichier liés à la décoration",
                     "icon": "img",
-                    "content": "Captures d'écran et éléments visuels utilisés dans l'enquête.",
+                    "content": "Tous les fichiers nécessaires pour la décoration des différentes salles de l'atelier",
                     "link": {
-                        "href": "#",
-                        "label": "Explorer les ressources"
+                        "href": "#decoration",
+                        "label": "Aller aux fichiers"
                     }
                 },
                 {
-                    "title": "Vidéos",
-                    "icon": "video",
-                    "content": "Vidéos de surveillance (version modifiée et originale).",
-                    "link": {
-                        "href": "#",
-                        "label": "Voir les vidéos"
-                    }
-                },
-                {
-                    "title": "Guide d'animation",
+                    "title": "Fichier liés aux documents",
                     "icon": "guide",
-                    "content": "Document récapitulatif pour accompagner l'animateur.",
+                    "content": "Tous les documents à distribuer aux participants et à insérer dans les salles",
                     "link": {
-                        "href": "#",
-                        "label": "Consulter le guide"
+                        "href": "#documents",
+                        "label": "Aller aux fichiers"
                     }
                 },
                 {
-                    "title": "Supports imprimables",
-                    "icon": "print",
-                    "content": "Éléments à imprimer pour la mise en place de l'atelier.",
+                    "title": "Fichier liés au système de vidéosurveillance",
+                    "icon": "video",
+                    "content": "Tous les documents dont vous avez besoin pour mettre en place la révélationdu plot twist sur l'ordinateur du principal",
                     "link": {
-                        "href": "#",
-                        "label": "Télécharger les supports"
+                        "href": "#os",
+                        "label": "Aller aux fichiers"
                     }
                 }
             ]
         },
-        { "type": "table",
-          "caption": "Images",
-          "headers": ["Aperçu", "Intitulé", "Utilité", "Visualiser", "Télécharger"],
-          "rows": [
-            ["<img src='../../assets/images/kit-telechargeable/1.png' alt='Image 1' />", "Image 1","ça sert à ça", "<a href='../../assets/images/kit-telechargeable/1.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>", "<a href='../../assets/images/kit-telechargeable/1.png' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"],
-            ["<img src='../../assets/images/kit-telechargeable/2.png' alt='Image 2' />", "Image 2","ça sert à ça", "<a href='../../assets/images/kit-telechargeable/2.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>", "<a href='../../assets/images/kit-telechargeable/2.png' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"],
-            ["<img src='../../assets/images/kit-telechargeable/3.png' alt='Image 3' />", "Image 3","ça sert à ça", "<a href='../../assets/images/kit-telechargeable/3.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>", "<a href='../../assets/images/kit-telechargeable/3.png' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"],
-            ["<img src='../../assets/images/kit-telechargeable/4.png' alt='Image 4' />", "Image 4","ça sert à ça", "<a href='../../assets/images/kit-telechargeable/4.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>", "<a href='../../assets/images/kit-telechargeable/4.png' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"],
-            ["<img src='../../assets/images/kit-telechargeable/5.png' alt='Image 5' />", "Image 5","ça sert à ça", "<a href='../../assets/images/kit-telechargeable/5.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>", "<a href='../../assets/images/kit-telechargeable/5.png' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"]
-          ]
+        {
+            "type": "table",
+            "id": "icebreaker",
+            "caption": "Icebreaker",
+            "headers": [
+                "Intitulé",
+                "Utilité",
+                "Format et poids",
+                "Visualiser",
+                "Télécharger"
+            ],
+            "rows": [
+                [
+                    "Tout télécharger",
+                    "",
+                    ".rar (3 725 Ko)",
+                    "",
+                    "<a href='../../assets/download/kit telechargeable/icebreaker/icebreaker.rar' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Powerpoint",
+                    "Support visuel d'animation",
+                    ".pptx (3 937 Ko)",
+                    "",
+                    "<a href='../../assets/download/kit telechargeable/icebreaker/icebreaker.pptx' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Affichette physique",
+                    "À imprimer en 3D ou constuire soi-même",
+                    ".3mf (52 Ko)",
+                    "",
+                    "<a href='../../assets/download/kit telechargeable/icebreaker/affichettes.3mf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Affichette 1",
+                    "À coller sur l'affichette physique",
+                    ".pdf (43 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/icebreaker/affichette1.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/icebreaker/affichette1.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Affichette 2",
+                    "À coller sur l'affichette physique",
+                    ".pdf (43 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/icebreaker/affichette2.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/icebreaker/affichette2.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Affichette 3",
+                    "À coller sur l'affichette physique",
+                    ".pdf (43 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/icebreaker/affichette3.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/icebreaker/affichette3.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Affichette 4",
+                    "À coller sur l'affichette physique",
+                    ".pdf (36 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/icebreaker/affichette4.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/icebreaker/affichette4.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "id": "decoration",
+            "caption": "Décoration",
+            "headers": [
+                "Intitulé",
+                "Utilité",
+                "Format et poids",
+                "Visualiser",
+                "Télécharger"
+            ],
+            "rows": [
+                [
+                    "Tout télécharger",
+                    "",
+                    ".rar (15 189 Ko)",
+                    "",
+                    "<a href='../../assets/download/kit telechargeable/decoration/decoration.rar' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Affiche de sport 1",
+                    "À afficher dans les salles de recherche pour faciliter l'immersion",
+                    ".pdf (596 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/decoration/affiche-sport-1.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/decoration/affiche-sport-1.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Affiche de sport 2",
+                    "À afficher dans les salles de recherche pour faciliter l'immersion",
+                    ".pdf (13 329 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/decoration/affiche-sport-2.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/decoration/affiche-sport-2.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Banderole",
+                    "À afficher dans la salle de classe",
+                    ".pdf (63 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/decoration/banderole.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/decoration/banderole.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Panneau \"Bureau du principal\"",
+                    "À installer sur la porte du bureau du principal",
+                    ".pdf (128 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/decoration/panneau-bureau-principal.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/decoration/panneau-bureau-principal.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Drapeaux divers",
+                    "Collection de drapeaux afin de créer une banderole pour la salle de classe",
+                    ".pdf (287 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/decoration/drapeaux.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/decoration/drapeaux.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Emploi du temps du principal",
+                    "À insérer dans les preuves présentes dans les salles",
+                    ".pdf (167 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/decoration/edt-principal.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/decoration/edt-principal.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Éléments de décoration thème sport 1",
+                    "À afficher dans les salles de recherche pour faciliter l'immersion",
+                    ".pdf (62 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/decoration/elements-sport-1.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/decoration/elements-sport-1.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Éléments de décoration thème sport 2",
+                    "À afficher dans les salles de recherche pour faciliter l'immersion",
+                    ".pdf (55 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/decoration/elements-sport-2.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/decoration/elements-sport-2.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Fanion de sport",
+                    "Permet de créer une banderole pour faciliter l'immersion",
+                    ".pdf (81 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/decoration/fanion.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/decoration/fanion.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Bulles de texte \"Bonjour\" dans 9 langues",
+                    "À installer sur la porte de la salle de langue pour faciliter l'immersion",
+                    ".pdf (36 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/decoration/languages.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/decoration/languages.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Logo alternatif de l'école",
+                    "À afficher dans les salles de recherche pour faciliter l'immersion",
+                    ".pdf (55 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/decoration/logo-bis.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/decoration/logo-bis.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Plan de l'aile du bureau du principal",
+                    "À insérer dans les preuves présentes dans les salles",
+                    ".pdf (445 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/decoration/plan-bureau-directeur.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/decoration/plan-bureau-directeur.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Avertissement de vidéo-surveillance",
+                    "À afficher sur la porte de la salle de surveillance pour faciliter l'immersion",
+                    ".pdf (42 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/decoration/avertissement-video-surveillance.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/decoration/avertissement-video-surveillance.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Mascotte de l'école",
+                    "À afficher dans les salles de recherche pour faciliter l'immersion",
+                    ".pdf (129 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/decoration/mascotte.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/decoration/mascotte.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Affichage \"Welcome\"",
+                    "À afficher sur la porte de la salle de langue pour faciliter l'immersion",
+                    ".pdf (9 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/decoration/welcome.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/decoration/welcome.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "id": "documents",
+            "caption": "Documents",
+            "headers": [
+                "Intitulé",
+                "Utilité",
+                "Format et poids",
+                "Visualiser",
+                "Télécharger"
+            ],
+            "rows": [
+                [
+                    "Tout télécharger",
+                    "",
+                    ".rar (450 Ko)",
+                    "",
+                    "<a href='../../assets/download/kit telechargeable/documents/documents.rar' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Brochure",
+                    "À distribuer aux participants à la fin de l'atelier pour résumer les points clés",
+                    "(.pdf 181 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/documents/brochure.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/documents/brochure.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Diplôme",
+                    "À remettre aux participants à la fin de l'atelier pour valider leur participation après avoir inscrit leur nom sur l'espace prévu à cet effet",
+                    "(.pdf 72 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/documents/diplome.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/documents/diplome.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Guide d'atelier 1",
+                    "Permet de résoudre l'enquête, à insérer dans la salle 1",
+                    "(.pdf 164 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/documents/guide-atelier-1.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/documents/guide-atelier-1.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Guide d'atelier 2",
+                    "Permet de résoudre l'enquête, à insérer dans la salle 2",
+                    "(.pdf 164 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/documents/guide-atelier-2.pdf' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/documents/guide-atelier-2.pdf' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "id": "os",
+            "caption": "Système de vidéosurveillance du principal",
+            "headers": [
+                "Intitulé",
+                "Utilité",
+                "Format et poids",
+                "Visualiser",
+                "Télécharger"
+            ],
+            "rows": [
+                [
+                    "Tout télécharger (app non incluse)",
+                    "",
+                    ".rar (75 861 Ko)",
+                    "",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/images videosurveillance.rar' download class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "App video-surveillance pour Mac",
+                    "App récréant un OS pour l'ordinateur du principal. Version Mac",
+                    ".dmg (153 Mo)",
+                    "",
+                    "<a href='https://github.com/EliasZerar/SAE/releases/download/v1.0.0/MonOSSvelte-1.0.0-arm64.dmg'  class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "App video-surveillance pour Windows",
+                    "App récréant un OS pour l'ordinateur du principal. Version Windows",
+                    ".exe (135 Mo)",
+                    "",
+                    "<a href='https://github.com/EliasZerar/SAE/releases/download/v1.0.0/MonOSSvelte.Setup.1.0.0.exe'  class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Preuve salle de classe 1",
+                    "Preuve avancée à mettre dans la salle de classe",
+                    ".png (4 217 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle de classe/couloir-skibidi.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle de classe/couloir-skibidi.png'  class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Preuve salle de classe 2",
+                    "Preuve avancée à mettre dans la salle de classe",
+                    ".png (4 217 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle de classe/directeur.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle de classe/directeur.png'  class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Preuve salle de classe 3",
+                    "Preuve avancée à mettre dans la salle de classe",
+                    ".png (5 664 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle de classe/dehors.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle de classe/dehors.png'  class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Preuve salle de classe 4",
+                    "Preuve avancée à mettre dans la salle de classe",
+                    ".png (8 874 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle de classe/amphi.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle de classe/amphi.png'  class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Preuve salle de classe 5",
+                    "Preuve avancée à mettre dans la salle de classe",
+                    ".png (7 989 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle de classe/couloir.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle de classe/couloir.png'  class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Preuve salle de classe 6",
+                    "Preuve avancée à mettre dans la salle de classe",
+                    ".png (6 837 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle de classe/bureau.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle de classe/bureau.png'  class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Preuve salle de surveillance 1",
+                    "Preuve avancée à mettre dans la salle de surveillance",
+                    ".png (11 006 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle surveillance/grille.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle surveillance/grille.png'  class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Preuve salle de surveillance 2",
+                    "Preuve avancée à mettre dans la salle de surveillance",
+                    ".png (8 519 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle surveillance/entree.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle surveillance/entree.png'  class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Preuve salle de surveillance 3",
+                    "Preuve avancée à mettre dans la salle de surveillance",
+                    ".png (7 783 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle surveillance/escalier.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle surveillance/escalier.png'  class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Preuve salle de surveillance 4",
+                    "Preuve avancée à mettre dans la salle de surveillance",
+                    ".png (6 288 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle surveillance/passerelle.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle surveillance/passerelle.png'  class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ],
+                [
+                    "Preuve salle de surveillance 5",
+                    "Preuve avancée à mettre dans la salle de surveillance",
+                    ".png (5 378 Ko)",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle surveillance/couloir.png' target='_blank' class='table-icons'><img class='invert-on-dark' src='../../assets/svg/eye.svg' alt='Visualiser'/></a>",
+                    "<a href='../../assets/download/kit telechargeable/images videosurveillance/salle surveillance/couloir.png'  class='table-icons'><img class='invert-on-dark' src='../../assets/svg/download.svg' alt='Télécharger'/></a>"
+                ]
+
+            ]
         },
         {
             "type": "h2",
@@ -134,19 +465,7 @@
         },
         {
             "type": "p",
-            "text": "Les fichiers fournis peuvent être modifiés."
-        },
-        {
-            "type": "p",
-            "text": "Vous pouvez :"
-        },
-        {
-            "type": "ul",
-            "items": [
-                "adapter les images",
-                "modifier les fiches",
-                "ajuster les éléments selon votre contexte"
-            ]
+            "text": "Les fichiers ont vocation à être adaptés selon vos besoins, ils servent de base mais ne dictent pas la direction artistique que vous devez prendre tant que le contenu transmit reste le même."
         },
         {
             "type": "p",
