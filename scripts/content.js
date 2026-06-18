@@ -13,7 +13,7 @@
         const cleanedPath = path
             .replace(/^(\.\.\/+)+/, '')
             .replace(/^\.\//, '')
-            .replace(/^\/+/, '');       
+            .replace(/^\/+/, '');
 
         return `${getSiteBasePath()}${cleanedPath}`;
     };
@@ -65,7 +65,7 @@ function renderNav(nav, activePageId) {
 
     let html = '';
     let breadcrumb = null;
-    let groupIdCounter = 0; 
+    let groupIdCounter = 0;
 
     for (const link of nav.links ?? []) {
         const active = isActive(link);
@@ -236,16 +236,14 @@ function renderContent(blocks) {
             </div>`,
 
         img_content: b => {
-            const ariaHiddenAttr = b.hidden === true ? ' aria-hidden="true"' : '';
-
-            const visualContent = b.src 
+            const visualContent = b.src
                 ? `<img src="${window.resolveSitePath(b.src)}" alt="${b.alt ?? ''}" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg); aspect-ratio: ${b.ratio ?? 'auto'};">`
                 : `<div class="placeholder-box" style="aspect-ratio:${b.ratio ?? '16/9'}; height: 100%;">
                     <span>${b.label ?? 'Image à venir'}</span>
-                </div>`;
+                   </div>`;
 
             return `
-            <figure class="placeholder-img"${ariaHiddenAttr}>
+            <figure class="placeholder-img">
                 ${visualContent}
                 ${b.caption ? `<figcaption>${b.caption}</figcaption>` : ''}
             </figure>`;
@@ -282,6 +280,7 @@ function renderContent(blocks) {
                         ${step.extraList2 ? `<ul>${step.extraList2.map(li => `<li>${li}</li>`).join('')}</ul>` : ''}
                         ${(step.extraBody2 ?? []).map(line => `<p>${line}</p>`).join('')}
                         ${step.img ? `<figure class="placeholder-img" style="margin: var(--spacing-2) 0;"><img src="${window.resolveSitePath(step.img.src)}" alt="${step.img.alt ?? ''}" style="width: 100%; object-fit: cover; border-radius: var(--radius-lg); aspect-ratio: ${step.img.ratio ?? 'auto'};">${step.img.caption ? `<figcaption>${step.img.caption}</figcaption>` : ''}</figure>` : ''}
+                        ${step.images && step.images.length ? `<div class="step-img-gallery" style="--grid-cols:${Math.min(step.images.length, 2)};">${step.images.map(img => `<figure><img src="${window.resolveSitePath(img.src)}" alt="${img.alt ?? ''}" style="aspect-ratio:${img.ratio ?? 'auto'};"></figure>`).join('')}</div>` : ''}
                         ${step.alert ? `<div class="alert ${step.alert.type}"><div class="icon-alert-svg"></div><span>${step.alert.text}</span></div>` : ''}
                     </div>
                 </li>`).join('')}
@@ -405,6 +404,7 @@ function renderContent(blocks) {
             continue;
         }
 
+        // 2. Logique propre pour img_content (Grille dynamique pour tes caméras)
         if (block.type === 'img_content') {
             const gallery = [block];
             while (i + 1 < blocks.length && blocks[i + 1].type === 'img_content') {
