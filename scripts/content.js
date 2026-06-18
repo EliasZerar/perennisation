@@ -205,7 +205,7 @@ function renderContent(blocks) {
         table: b => {
             const headers = b.headers.map(h => `<th scope="col">${h}</th>`).join('');
             const rows    = b.rows.map(r => `<tr>${r.map(c => `<td class="general-sans-extralight">${c}</td>`).join('')}</tr>`).join('');
-            return `<div class="table-wrapper"><table><caption class="squareserif specimen-lg">${b.caption ?? 'Liste du Matériel'}</caption><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table></div>`;
+            return `<div class="table-wrapper" id="${b.id ?? ''}"><table><caption class="squareserif specimen-lg">${b.caption ?? 'Liste du Matériel'}</caption><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table></div>`;
         },
 
         flexBox: b => {
