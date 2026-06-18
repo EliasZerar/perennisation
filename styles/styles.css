@@ -294,6 +294,7 @@ p {
 @media (max-width: 768px) {
     .page-nav {
         flex-direction: column;
+        justify-content: center;
     }
 }
 
@@ -315,6 +316,8 @@ p {
     font-size: 0.9rem;
     transition: background 0.15s, border-color 0.15s;
     white-space: nowrap;
+    align-self: stretch;
+    justify-content: center;
 }
 
 .page-nav-prev::before,
