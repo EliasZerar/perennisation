@@ -83,24 +83,24 @@
                     "fields": [
                         {
                             "id": "name",
-                            "label": "Nom*",
+                            "label": "Nom",
                             "type": "text",
                             "autocomplete": "name"
                         },
                         {
                             "id": "email",
-                            "label": "Adresse e-mail*",
+                            "label": "Adresse e-mail",
                             "type": "email",
                             "autocomplete": "email"
                         },
                         {
                             "id": "subject",
-                            "label": "Sujet*",
+                            "label": "Sujet",
                             "type": "text"
                         },
                         {
                             "id": "message",
-                            "label": "Message*",
+                            "label": "Message",
                             "type": "textarea"
                         }
                     ]

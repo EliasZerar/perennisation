@@ -6,7 +6,11 @@
     width: 100%;
     margin-bottom: var(--spacing-4);
     gap: var(--spacing-4);
-    align-items: stretch;  
+    margin-top: 48px;
+}
+
+.flex-box h2 {
+    margin: 0;
 }
 
 .flex-box > * {
@@ -30,11 +34,16 @@
 .item {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
+    align-items: center;
     gap: var(--spacing-2);
     width: 100%;
     height: 100%;
+    align-items: flex-start;
+}
+
+.item h1 {
+    margin: 0;
 }
 
 .item img {
