@@ -1,9 +1,12 @@
 (function () {
     function getSiteBasePath() {
-        const isGithubPages = window.location.hostname.endsWith('github.io');
-        if (!isGithubPages) return '/';
-        const segments = window.location.pathname.split('/').filter(Boolean);
-        return segments.length > 0 ? `/${segments[0]}/` : '/';
+        let path = window.location.pathname;
+        if (path.match(/\.[a-z0-9]+$/i)) {
+            path = path.substring(0, path.lastIndexOf('/') + 1);
+        } else if (!path.endsWith('/')) {
+            path += '/';
+        }
+        return path;
     }
 
     window.resolveSitePath = function (path) {
@@ -204,8 +207,25 @@ function renderContent(blocks) {
 
         table: b => {
             const headers = b.headers.map(h => `<th scope="col">${h}</th>`).join('');
-            const rows    = b.rows.map(r => `<tr>${r.map(c => `<td class="general-sans-extralight">${c}</td>`).join('')}</tr>`).join('');
-            return `<div class="table-wrapper"><table><caption class="squareserif specimen-lg">${b.caption ?? 'Liste du Matériel'}</caption><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table></div>`;
+            const rows    = b.rows.map(r => `<tr>${r.map((c, colIndex) => {
+                let cellContent = c;
+
+                if (typeof c === 'object' && c !== null && c.path) {
+                    const resolvedPath = window.resolveSitePath(c.path);
+                    const header = (b.headers[colIndex] || '').toLowerCase();
+
+                    if (header === 'visualiser') {
+                        cellContent = `<a class="table-icons" href="${resolvedPath}" target="_blank"><img class='invert-on-dark' src='${window.resolveSitePath('assets/svg/eye.svg')}' alt='Visualiser'/></a>`;
+                    } else {
+                        cellContent = `<a class="table-icons" href="${resolvedPath}" download><img class='invert-on-dark' src='${window.resolveSitePath('assets/svg/download.svg')}' alt='Télécharger'/></a>`;
+                    }
+                } else if (typeof c === 'string' && c.includes('<a ')) {
+                    cellContent = c.replace(/href="([^"]+)"/, (match, url) => `href="${window.resolveSitePath(url)}"`);
+                }
+
+                return `<td class="general-sans-extralight">${cellContent}</td>`;
+            }).join('')}</tr>`).join('');
+            return `<div class="table-wrapper" id="${b.id ?? ''}"><table><caption class="squareserif specimen-lg">${b.caption ?? 'Liste du Matériel'}</caption><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table></div>`;
         },
 
         flexBox: b => {
